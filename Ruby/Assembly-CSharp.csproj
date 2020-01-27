@@ -63,7 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Damage.cs" />
+    <Compile Include="Assets\Health.cs" />
+    <Compile Include="Assets\Heart.cs" />
     <Compile Include="Assets\Movement.cs" />
+    <Compile Include="Assets\MovingEnemy.cs" />
     <Compile Include="Assets\Shoot.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/GitHub/2020s-team12/Ruby/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

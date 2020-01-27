@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    public Rigidbody2D heart;
+
+    Transform firePoint;
+    public GameObject heartPrefab;
     public float fireSpeed = 0.2f;
+    public float heartForce = 20f;
+
 
     // Start is called before the first frame update
     void Start()
     {
+
+        firePoint = transform.Find("FirePoint");
 
     }
 
@@ -17,21 +23,18 @@ public class Shoot : MonoBehaviour
     {
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
         Vector3 mouseInWorldCoords = Camera.main.ScreenToWorldPoint(mousePos);
-        print(mouseInWorldCoords.x + " " + mouseInWorldCoords.y);
 
-        float angleX = mouseInWorldCoords.x - transform.position.x;
-        float angleY = mouseInWorldCoords.y - transform.position.y;
-
-        //skrt
-        //print(angleX + " " + angleY);
+        float angleX = mouseInWorldCoords.x - firePoint.position.x;
+        float angleY = mouseInWorldCoords.y - firePoint.position.y;
 
         float angle = Mathf.Atan2(angleY, angleX) * Mathf.Rad2Deg - 90f;
         Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
-        Rigidbody2D heartInstance = (Rigidbody2D)Instantiate(heart, transform.position, rotation);
+        GameObject heart = Instantiate(heartPrefab, firePoint.position, rotation);
 
-        heartInstance.velocity = heartInstance.transform.up * fireSpeed;
+        Rigidbody2D rbheart = heart.GetComponent<Rigidbody2D>();
 
+        rbheart.AddForce(transform.up * heartForce, ForceMode2D.Impulse);
   
 
     }
