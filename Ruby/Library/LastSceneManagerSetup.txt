@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/Ethan.unity
-  isLoaded: 1
-  isActive: 1
