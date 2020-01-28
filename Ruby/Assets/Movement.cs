@@ -5,6 +5,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float moveVelocity = 0.125f;
+ 
+    Vector3 movement;
 
     // Start is called before the first frame update
     void Start()
@@ -18,9 +20,10 @@ public class Movement : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveX, moveY, 0f);
+        movement = new Vector3(moveX, moveY, 0f);
         movement.Normalize();
 
         transform.position += (moveVelocity * movement);
+
     }
 }
