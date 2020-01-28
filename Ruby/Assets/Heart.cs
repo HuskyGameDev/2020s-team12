@@ -19,7 +19,10 @@ public class Heart : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D hitInfo) // Checks for collision
     {
-        Destroy(gameObject); // Destroys the heart
+        if (!(hitInfo.CompareTag(tag)))
+        {
+            Destroy(gameObject); // Destroys the heart
+        }
     }
 
 

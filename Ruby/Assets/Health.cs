@@ -7,6 +7,8 @@ public class Health : MonoBehaviour
 
     public float maxHealth = 100f; // Creates and sets max health
     float currentHealth; // Creates a variable for current health
+    public float invincibilityTime = 0;
+    float invincibilityTimeRemaining = 0;//To ensure Ruby can take continual damage with i-frames between
 
     // Start is called before the first frame update
     void Start()
@@ -14,17 +16,20 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth; // Sets the current health to max upon opening the game
     }
 
-    void OnTriggerEnter2D(Collider2D collision) // This is checking for collision
+    void OnTriggerStay2D(Collider2D collision) // This is checking for collision
     {
-        if (collision.GetComponent<Damage>() != null) // This takes the collision detector from the damage script, which is on the bullet and the enemies
-        { 
-           if (!collision.CompareTag(tag)) // This makes sure the player can not shoot themself by comparing the tag and allowing it to go through if the tags are different
+        if (invincibilityTimeRemaining <= 0)
+        {
+            if (collision.GetComponent<Damage>() != null) // This takes the collision detector from the damage script, which is on the bullet and the enemies
             {
-                Damage damage = collision.GetComponent<Damage>(); // Creates an object of the damage class
+                if (!collision.CompareTag(tag)) // This makes sure the player can not shoot themself by comparing the tag and allowing it to go through if the tags are different
+                {
+                    Damage damage = collision.GetComponent<Damage>(); // Creates an object of the Damage Class
 
-                TakeDamage(damage.damageAmount); // Uses the Take Damage method and uses the damage amount from the damage class
+                    TakeDamage(damage.damageAmount); // Uses the Take Damage method and uses the damage amount from the damage class
 
-                print(tag + " Took " + damage.damageAmount); // Console print out for testing
+                    print(tag + " Took " + damage.damageAmount); // Console print out for testing
+                }
             }
         }
     }
@@ -41,9 +46,13 @@ public class Health : MonoBehaviour
         {
             currentHealth -= DMG; // Takes the damage amount from the health
             Mathf.Clamp(currentHealth, 0, maxHealth); // Prevents the health from dropping into negative values by placing bounds
-            if (IsDead()) // If dead, then die
+
+            
+            invincibilityTimeRemaining = invincibilityTime; //after damage taken and i-frames expire, resets time remaining.
+
+            if (IsDead())
             {
-                Die(); // Death
+                Die(); 
             }
         }
     }
@@ -56,9 +65,19 @@ public class Health : MonoBehaviour
  
     }
 
-    // Update is called once per frame
+    /* Update is called once per frame. Subtracts from i-frame time remaining while player has i-frames and changes 
+    color. Once invincibility expires and number is reset, returns original color to player.
+         */
     void Update()
     {
-        
+        if(invincibilityTimeRemaining > 0)
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
+            invincibilityTimeRemaining -= Time.deltaTime;
+        }
+        else if(invincibilityTime > 0)
+        {
+            GetComponent<SpriteRenderer>().color = Color.green;
+        }
     }
 }
