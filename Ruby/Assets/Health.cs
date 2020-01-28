@@ -16,19 +16,42 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth; // Sets the current health to max upon opening the game
     }
 
+    void OnTriggerEnter2D(Collider2D collision) // This is checking for collision
+    {
+        if (collision.CompareTag("Player")){
+            if (invincibilityTimeRemaining <= 0)
+            {
+                if (collision.GetComponent<Damage>() != null) // This takes the collision detector from the damage script, which is on the bullet and the enemies
+                {
+                    if (!collision.CompareTag(tag)) // This makes sure the player can not shoot themself by comparing the tag and allowing it to go through if the tags are different
+                    {
+                        Damage damage = collision.GetComponent<Damage>(); // Creates an object of the Damage Class
+
+                        TakeDamage(damage.damageAmount); // Uses the Take Damage method and uses the damage amount from the damage class
+
+                        print(tag + " Took " + damage.damageAmount); // Console print out for testing
+                    }
+                }
+            }
+        }
+    }
+
     void OnTriggerStay2D(Collider2D collision) // This is checking for collision
     {
-        if (invincibilityTimeRemaining <= 0)
+        if (collision.CompareTag("Enemy"))
         {
-            if (collision.GetComponent<Damage>() != null) // This takes the collision detector from the damage script, which is on the bullet and the enemies
+            if (invincibilityTimeRemaining <= 0)
             {
-                if (!collision.CompareTag(tag)) // This makes sure the player can not shoot themself by comparing the tag and allowing it to go through if the tags are different
+                if (collision.GetComponent<Damage>() != null) // This takes the collision detector from the damage script, which is on the bullet and the enemies
                 {
-                    Damage damage = collision.GetComponent<Damage>(); // Creates an object of the Damage Class
+                    if (!collision.CompareTag(tag)) // This makes sure the player can not shoot themself by comparing the tag and allowing it to go through if the tags are different
+                    {
+                        Damage damage = collision.GetComponent<Damage>(); // Creates an object of the Damage Class
 
-                    TakeDamage(damage.damageAmount); // Uses the Take Damage method and uses the damage amount from the damage class
+                        TakeDamage(damage.damageAmount); // Uses the Take Damage method and uses the damage amount from the damage class
 
-                    print(tag + " Took " + damage.damageAmount); // Console print out for testing
+                        print(tag + " Took " + damage.damageAmount); // Console print out for testing
+                    }
                 }
             }
         }
