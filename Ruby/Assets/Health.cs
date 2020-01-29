@@ -19,20 +19,7 @@ public class Health : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision) // This is checking for collision
     {
         if (collision.CompareTag("Player")){
-            if (invincibilityTimeRemaining <= 0)
-            {
-                if (collision.GetComponent<Damage>() != null) // This takes the collision detector from the damage script, which is on the bullet and the enemies
-                {
-                    if (!collision.CompareTag(tag)) // This makes sure the player can not shoot themself by comparing the tag and allowing it to go through if the tags are different
-                    {
-                        Damage damage = collision.GetComponent<Damage>(); // Creates an object of the Damage Class
-
-                        TakeDamage(damage.damageAmount); // Uses the Take Damage method and uses the damage amount from the damage class
-
-                        print(tag + " Took " + damage.damageAmount); // Console print out for testing
-                    }
-                }
-            }
+            checkTakeDamage(collision);
         }
     }
 
@@ -40,23 +27,27 @@ public class Health : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            if (invincibilityTimeRemaining <= 0)
+            checkTakeDamage(collision);
+        }
+    }
+
+    void checkTakeDamage(Collider2D collision)
+    {
+        if (invincibilityTimeRemaining <= 0)
+        {
+            if (collision.GetComponent<Damage>() != null) // This takes the collision detector from the damage script, which is on the bullet and the enemies
             {
-                if (collision.GetComponent<Damage>() != null) // This takes the collision detector from the damage script, which is on the bullet and the enemies
+                if (!collision.CompareTag(tag)) // This makes sure the player can not shoot themself by comparing the tag and allowing it to go through if the tags are different
                 {
-                    if (!collision.CompareTag(tag)) // This makes sure the player can not shoot themself by comparing the tag and allowing it to go through if the tags are different
-                    {
-                        Damage damage = collision.GetComponent<Damage>(); // Creates an object of the Damage Class
+                    Damage damage = collision.GetComponent<Damage>(); // Creates an object of the Damage Class
 
-                        TakeDamage(damage.damageAmount); // Uses the Take Damage method and uses the damage amount from the damage class
+                    TakeDamage(damage.damageAmount); // Uses the Take Damage method and uses the damage amount from the damage class
 
-                        print(tag + " Took " + damage.damageAmount); // Console print out for testing
-                    }
+                    print(tag + " Took " + damage.damageAmount); // Console print out for testing
                 }
             }
         }
     }
-
 
     bool IsDead() // This checks to see if the entity is dead, lessens code amount
     {
