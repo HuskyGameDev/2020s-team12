@@ -7,8 +7,9 @@ public class Shoot : MonoBehaviour
 
     Transform firePoint; // Makes a transform location called firePoint
     public GameObject heartPrefab; // Makes a GameObject for a heart instance
-    public float fireSpeed = 0.2f; // How fast it fires
-
+    public float fireSpeed = 0.2f; // How fast the bullet moves
+    public float fireRate; // How fast you can fire (in bullets per second)
+    private float currentFireCooldown = 0; // How much time until the player can shoot again
 
     // Start is called before the first frame update
     void Start() // Sets the firepoint at the opening of the script
@@ -32,19 +33,22 @@ public class Shoot : MonoBehaviour
         GameObject heart = Instantiate(heartPrefab, firePoint.position, rotation); // Instantiates a heart to fire from the firepoint to the rotation
 
         Rigidbody2D rbheart = heart.GetComponent<Rigidbody2D>(); // Gets the RigidBody of the heart  
-
+        currentFireCooldown = 60 / fireRate; // Set the cooldown to be the inverse of the fireRate in seconds (fireRate is the desired amount of bullets to be able to shot in a 60 frame [1 second] timeframe)
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetButtonDown("Fire1")) { // Uses the unity editor to choose the keybind
+        if (Input.GetButtonDown("Fire1") && currentFireCooldown == 0) { // Uses the unity editor to choose the keybind. Can't fire unless currentFireCooldown is 0
 
             Fire(); // Calls the fire method
 
         }
-
-
+        else
+        {
+            currentFireCooldown--; // Reduce the current cooldown by 1 frame for every frame after you've fired last
+            Mathf.Clamp(currentFireCooldown, 0, (60 / fireRate)); // Prevents currentFireCooldown from going below 0 and above (60/ fireRate)
+        }
     }
 }

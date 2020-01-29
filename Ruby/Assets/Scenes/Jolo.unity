@@ -274,38 +274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebcddbdadcf4f064f9dbf77f3e65d5aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &864822889
 Rigidbody2D:
   serializedVersion: 4
@@ -358,6 +326,7 @@ MonoBehaviour:
   heartPrefab: {fileID: 5349920854609116783, guid: 5982d51380ba9e840940da205ebbe8c2,
     type: 3}
   fireSpeed: 0.2
+  fireRate: 1
 --- !u!114 &864822892
 MonoBehaviour:
   m_ObjectHideFlags: 0
