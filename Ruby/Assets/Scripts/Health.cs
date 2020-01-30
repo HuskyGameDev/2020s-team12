@@ -43,6 +43,8 @@ public class Health : MonoBehaviour
 
                     TakeDamage(damage.damageAmount); // Uses the Take Damage method and uses the damage amount from the damage class
 
+                    KnockBack(collision, 1.0f);
+
                     print(tag + " Took " + damage.damageAmount); // Console print out for testing
                 }
             }
@@ -53,6 +55,15 @@ public class Health : MonoBehaviour
     {
         return currentHealth <= 0; // Returns a boolean
     }
+
+    void KnockBack(Collider2D collision, float distance) // Moves player a set distance away from damage source
+     {
+        Vector3 damageSource = collision.transform.position; // Obtains position of damage source
+        Vector3 push = transform.position - damageSource; // Obtains vector in the direction and length between player and source
+        push.Normalize(); // Normalization keeps the angle, but sets the total distance to 1
+        push = push * distance; // Applies given magnitude to the vector
+        transform.position += push; // Applies push to the player
+     }
 
     void TakeDamage(float DMG) // This Take Damage class takes in the damage amount
     {
