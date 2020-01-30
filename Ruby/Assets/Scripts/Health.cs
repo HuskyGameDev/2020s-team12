@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class Health : MonoBehaviour
 { // This works for both the player and enemies
 
     public float maxHealth = 100f; // Creates and sets max health
     float currentHealth; // Creates a variable for current health
     public float invincibilityTime = 0;
-    float invincibilityTimeRemaining = 0;//To ensure Ruby can take continual damage with i-frames between
+    float invincibilityTimeRemaining = 0; // To ensure Ruby can take continual damage with i-frames between
+    public float knockFactor = 0; // Set in editor
 
     // Start is called before the first frame update
     void Start()
@@ -16,26 +18,11 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth; // Sets the current health to max upon opening the game
     }
 
-    void OnTriggerEnter2D(Collider2D collision) // This is checking for collision
-    {
-        if (collision.CompareTag("Player")){
-            checkTakeDamage(collision);
-        }
-    }
-
     void OnTriggerStay2D(Collider2D collision) // This is checking for collision
-    {
-        if (collision.CompareTag("Enemy"))
-        {
-            checkTakeDamage(collision);
-        }
-    }
-
-    void checkTakeDamage(Collider2D collision)
     {
         if (invincibilityTimeRemaining <= 0)
         {
-            if (collision.GetComponent<Damage>() != null) // This takes the collision detector from the damage script, which is on the bullet and the enemies
+            if (collision.GetComponent<Damage>() != null) // This allows only things with the damage script to deal damage
             {
                 if (!collision.CompareTag(tag)) // This makes sure the player can not shoot themself by comparing the tag and allowing it to go through if the tags are different
                 {
@@ -43,7 +30,7 @@ public class Health : MonoBehaviour
 
                     TakeDamage(damage.damageAmount); // Uses the Take Damage method and uses the damage amount from the damage class
 
-                    KnockBack(collision, 1.0f);
+                    KnockBack(collision, knockFactor);
 
                     print(tag + " Took " + damage.damageAmount); // Console print out for testing
                 }

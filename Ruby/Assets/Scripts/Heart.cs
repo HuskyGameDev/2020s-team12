@@ -17,9 +17,9 @@ public class Heart : MonoBehaviour {
    
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo) // Checks for collision
+    void OnTriggerStay2D(Collider2D collision) // Checks for collision
     {
-        if (!(hitInfo.CompareTag(tag)))
+        if ((collision.GetComponent<MovingEnemy>() != null)) // Checks to see if the object has the MovingEnemy script
         {
             Destroy(gameObject); // Destroys the heart
         }
