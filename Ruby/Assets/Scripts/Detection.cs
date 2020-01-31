@@ -7,6 +7,8 @@ public class Detection : MonoBehaviour
     public GameObject player;
     bool inRadius;
     MovingEnemy move;
+    EnemyPatrol patrol;
+
 
 
     // Start is called before the first frame update
@@ -14,8 +16,10 @@ public class Detection : MonoBehaviour
     {
 
         move = transform.parent.GetComponent<MovingEnemy>();
+        patrol = transform.parent.GetComponent<EnemyPatrol>();
 
     }
+
 
     void OnTriggerEnter2D(Collider2D collision) // Collide with detection radius
     {
@@ -38,6 +42,10 @@ public class Detection : MonoBehaviour
         if (inRadius) // Run if in radius
         {
             move.MoveTowardsPlayer(); // Move towards player
+        }
+        else
+        {
+            patrol.PatrolPoints();
         }
     }
 }
