@@ -135,12 +135,12 @@ PrefabInstance:
     - target: {fileID: 6225342447639004590, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 5.25
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004590, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 2.74
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004590, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
@@ -398,7 +398,8 @@ MonoBehaviour:
   point1X: 4
   point1Y: 5
   point2X: 4
-  point2Y: 0
+  point2Y: -3
+  atPointWaitTime: 0.5
 --- !u!1 &1780778296 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1180911012121003224, guid: 053a2ba25f810c04ba4e4818adadf4c1,
