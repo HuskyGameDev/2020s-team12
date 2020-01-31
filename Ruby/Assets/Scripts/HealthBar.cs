@@ -6,6 +6,8 @@ public class HealthBar : MonoBehaviour
 {
     private Transform bar; // Creates Bar Object
 
+    public Health health;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,4 +23,11 @@ public class HealthBar : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+
+        SetBarPercent(health.GetHealth());
+    }
+
 }
+
