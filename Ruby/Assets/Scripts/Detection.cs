@@ -6,12 +6,11 @@ using UnityEngine;
 public class Detection : MonoBehaviour
 {
     public GameObject player;
-    bool inRadius;
+
     MovingEnemy move;
     EnemyPatrol patrol;
     Health health;
     AggroTimer aggroTimer;
-
 
 
     // Start is called before the first frame update
@@ -26,14 +25,10 @@ public class Detection : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision) // Collide with detection radius
     {
-
         if (collision.gameObject.Equals(player)) // If collision is with player
         {
-
-            inRadius = true; // Yes
-
+            move.seesPlayer = true; // This enemy can now see the player
         }
-
     }
 
 
