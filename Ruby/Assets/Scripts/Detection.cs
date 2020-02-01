@@ -8,6 +8,7 @@ public class Detection : MonoBehaviour
     bool inRadius;
     MovingEnemy move;
     EnemyPatrol patrol;
+    Health health;
 
 
 
@@ -17,7 +18,7 @@ public class Detection : MonoBehaviour
 
         move = transform.parent.GetComponent<MovingEnemy>();
         patrol = transform.parent.GetComponent<EnemyPatrol>();
-
+        health = transform.parent.GetComponent<Health>();
     }
 
 
@@ -38,7 +39,10 @@ public class Detection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (health.currentHealth < health.maxHealth)
+        {
+            inRadius = true;
+        }
         if (inRadius) // Run if in radius
         {
             move.MoveTowardsPlayer(); // Move towards player

@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
 { // This works for both the player and enemies
 
     public float maxHealth = 100f; // Creates and sets max health
-    float currentHealth; // Creates a variable for current health
+    public float currentHealth; // Creates a variable for current health
     public float invincibilityTime = 0;
     float invincibilityTimeRemaining = 0; // To ensure Ruby can take continual damage with i-frames between
     public float knockFactor = 0; // Set in editor
