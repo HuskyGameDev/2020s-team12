@@ -33,15 +33,12 @@ public class Detection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health.currentHealth < health.maxHealth)
-        {
-            inRadius = true;
-        }
-        if (inRadius) // Run if in radius
+        if (health.currentHealth < health.maxHealth) // Aggro if the enemy gets hit
         {
             move.seesPlayer = true; // This enemy can now see the player
         }
-        else
+
+        if(!move.seesPlayer && patrol != null) // Patrol if enemy isn't aggro'd
         {
             patrol.PatrolPoints();
         }
