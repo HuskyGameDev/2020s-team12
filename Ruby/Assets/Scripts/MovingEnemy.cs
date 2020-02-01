@@ -9,12 +9,14 @@ public class MovingEnemy : MonoBehaviour
     public bool seesPlayer = false;
 
     Rigidbody2D rb;
+    Animator anim;
     Vector3 movement; // Movement 3D vector
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     public void MoveTowardsPlayer()
@@ -29,6 +31,13 @@ public class MovingEnemy : MonoBehaviour
             movement.Normalize(); // Normalizes so it's not faster on diagonals
 
             rb.velocity = (movement * moveVelocity); // Moves the enemy towards the player
+
+            float facingAngle = Mathf.Atan2(moveY, moveX) * Mathf.Rad2Deg - 90f; // Sets the angle the enemy is facing in degrees
+            anim.SetFloat("Facing", facingAngle); // Tell the animator which way the enemy is facing to set the appropriate sprites
+        }
+        else
+        {
+            rb.velocity = Vector3.zero; // Don't move
         }
     }
 
@@ -43,5 +52,7 @@ public class MovingEnemy : MonoBehaviour
         {
             rb.velocity = Vector3.zero; // Don't move
         }
+
+        anim.SetBool("Walking", (!rb.velocity.Equals(Vector3.zero))); // Tell the animator if the enemy is moving to set the appropriate sprites
     }
 }

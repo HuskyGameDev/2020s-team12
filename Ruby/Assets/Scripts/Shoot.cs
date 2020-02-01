@@ -10,7 +10,7 @@ public class Shoot : MonoBehaviour
     public float fireSpeed = 0.2f; // How fast the bullet moves
     public float fireRate; // How fast you can fire (in bullets per second)
     float currentFireCooldown = 0; // How much time until the player can shoot again
-    float aimingAngle = 180f; // The angle in degree the player is aiming/facing (0/360 as north)
+    float aimingAngle = 180f; // The angle in degrees the player is aiming/facing (0 as north, -90 as east, -180 as south, 90/-270 as west)
     Animator anim;
 
     // Start is called before the first frame update
@@ -31,8 +31,6 @@ public class Shoot : MonoBehaviour
         aimingAngle = Mathf.Atan2(angleY, angleX) * Mathf.Rad2Deg - 90f; // Makes the angle of rotation to fire at
 
         anim.SetFloat("Facing", aimingAngle); // Tell the animator which way Ruby is facing to set the appropriate sprites
-
-        print("Aiming: "+aimingAngle);
     }
 
     void Fire(Quaternion bulletRotation) // A method for firing
