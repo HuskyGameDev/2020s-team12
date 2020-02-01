@@ -91,12 +91,13 @@ public class Health : MonoBehaviour
 
         if(invincibilityTimeRemaining > 0)
         {
-            GetComponent<SpriteRenderer>().color = Color.white;
+            //GetComponent<SpriteRenderer>().color = Color.white;
             invincibilityTimeRemaining -= Time.deltaTime;
         }
         else if(invincibilityTime > 0)
         {
-            GetComponent<SpriteRenderer>().color = Color.green;
+            //GetComponent<SpriteRenderer>().color = Color.green;
+            //TODO Make Invincibility Animation (Flashing) and set it here
         }
     }
 }

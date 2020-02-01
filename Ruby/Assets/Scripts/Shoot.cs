@@ -9,17 +9,18 @@ public class Shoot : MonoBehaviour
     public GameObject heartPrefab; // Makes a GameObject for a heart instance
     public float fireSpeed = 0.2f; // How fast the bullet moves
     public float fireRate; // How fast you can fire (in bullets per second)
-    private float currentFireCooldown = 0; // How much time until the player can shoot again
+    float currentFireCooldown = 0; // How much time until the player can shoot again
+    float aimingAngle = 180f; // The angle in degrees the player is aiming/facing (0 as north, -90 as east, -180 as south, 90/-270 as west)
+    Animator anim;
 
     // Start is called before the first frame update
     void Start() // Sets the firepoint at the opening of the script
     {
-
         firePoint = transform.Find("FirePoint"); // References the tranform object to the actual Fire Point object
-
+        anim = GetComponent<Animator>();
     }
 
-    void Fire() // A method for firing
+    void Aim()
     {
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10); // Finds the mouse position on the screen
         Vector3 mouseInWorldCoords = Camera.main.ScreenToWorldPoint(mousePos); // Converts the mouse position to the position in the game world
@@ -27,10 +28,14 @@ public class Shoot : MonoBehaviour
         float angleX = mouseInWorldCoords.x - firePoint.position.x; // Compares the world position in x to the firepoint
         float angleY = mouseInWorldCoords.y - firePoint.position.y; // Compares the world position in y to the firepoint
 
-        float angle = Mathf.Atan2(angleY, angleX) * Mathf.Rad2Deg - 90f; // Makes the angle of rotation to fire at
-        Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle)); // Makes a circular vector for rotation
+        aimingAngle = Mathf.Atan2(angleY, angleX) * Mathf.Rad2Deg - 90f; // Makes the angle of rotation to fire at
 
-        GameObject heart = Instantiate(heartPrefab, firePoint.position, rotation); // Instantiates a heart to fire from the firepoint to the rotation
+        anim.SetFloat("Facing", aimingAngle); // Tell the animator which way Ruby is facing to set the appropriate sprites
+    }
+
+    void Fire(Quaternion bulletRotation) // A method for firing
+    {
+        GameObject heart = Instantiate(heartPrefab, firePoint.position, bulletRotation); // Instantiates a heart to fire from the firepoint to the rotation
 
         Rigidbody2D rbheart = heart.GetComponent<Rigidbody2D>(); // Gets the RigidBody of the heart
 
@@ -40,9 +45,11 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Aim();
+
         if (Input.GetButton("Fire1") && (currentFireCooldown == 0)) // Uses the unity editor to choose the keybind. Can't fire unless currentFireCooldown is 0
         {    
-            Fire(); // Calls the fire method
+            Fire(Quaternion.Euler(new Vector3(0, 0, aimingAngle))); // Calls the fire method with the rotation needed for the bullet
         }
 
         currentFireCooldown--; // Reduce the current cooldown by 1 frame for every frame after you've fired last

@@ -5,17 +5,15 @@ using UnityEngine;
 public class Detection : MonoBehaviour
 {
     public GameObject player;
-    bool inRadius;
+
     MovingEnemy move;
     EnemyPatrol patrol;
     Health health;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
-
         move = transform.parent.GetComponent<MovingEnemy>();
         patrol = transform.parent.GetComponent<EnemyPatrol>();
         health = transform.parent.GetComponent<Health>();
@@ -24,14 +22,10 @@ public class Detection : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision) // Collide with detection radius
     {
-
         if (collision.gameObject.Equals(player)) // If collision is with player
         {
-
-            inRadius = true; // Yes
-
+            move.seesPlayer = true; // This enemy can now see the player
         }
-
     }
 
 
@@ -39,15 +33,12 @@ public class Detection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health.currentHealth < health.maxHealth)
+        if (health.currentHealth < health.maxHealth) // Aggro if the enemy gets hit
         {
-            inRadius = true;
+            move.seesPlayer = true; // This enemy can now see the player
         }
-        if (inRadius) // Run if in radius
-        {
-            move.MoveTowardsPlayer(); // Move towards player
-        }
-        else
+
+        if(!move.seesPlayer && patrol != null) // Patrol if enemy isn't aggro'd
         {
             patrol.PatrolPoints();
         }
