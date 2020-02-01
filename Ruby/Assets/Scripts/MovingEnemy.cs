@@ -5,16 +5,18 @@ using UnityEngine;
 public class MovingEnemy : MonoBehaviour
 {
     public Transform player; // Set who the player is in editor
-
     public float moveVelocity = .05f; // Enemy move speed
+    public bool seesPlayer = false;
 
+    Rigidbody2D rb;
     Vector3 movement; // Movement 3D vector
 
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
+
     public void MoveTowardsPlayer()
     {
         if (player != null) // If the player doesn't exist an error will occur, so the player must exist
@@ -26,13 +28,20 @@ public class MovingEnemy : MonoBehaviour
 
             movement.Normalize(); // Normalizes so it's not faster on diagonals
 
-            transform.position += (moveVelocity * movement); // Moves the enemy towards the player
+            rb.velocity = (movement * moveVelocity); // Moves the enemy towards the player
         }
     }
+
     // Update is called once per frame
     void Update()
     {
-
-
+        if(seesPlayer)
+        {
+            MoveTowardsPlayer(); // Move towards the player
+        }
+        else
+        {
+            rb.velocity = Vector3.zero; // Don't move
+        }
     }
 }

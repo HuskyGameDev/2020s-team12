@@ -5,13 +5,14 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float moveVelocity = 0.125f; // Player movement speed
- 
+
+    Rigidbody2D rb;
     Vector3 movement; // Makes a 3D vector
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -23,7 +24,6 @@ public class Movement : MonoBehaviour
         movement = new Vector3(moveX, moveY, 0f); // Creates movement vector using the two axis and sets Z to 0 because the games 2D
         movement.Normalize(); // Normalizes vector so that the character doesn't go faster on diagonals
 
-        transform.position += (moveVelocity * movement); // Moves the player
-
+        rb.velocity = (movement * moveVelocity); // Moves the player
     }
 }
