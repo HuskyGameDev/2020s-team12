@@ -7,10 +7,11 @@ public class Health : MonoBehaviour
 { // This works for both the player and enemies
 
     public float maxHealth = 100f; // Creates and sets max health
-    float currentHealth; // Creates a variable for current health
+    public float currentHealth; // Creates a variable for current health
     public float invincibilityTime = 0;
     float invincibilityTimeRemaining = 0; // To ensure Ruby can take continual damage with i-frames between
     public float knockFactor = 0; // Set in editor
+    HealthBar bar;
 
     // Start is called before the first frame update
     void Start()
@@ -77,11 +78,17 @@ public class Health : MonoBehaviour
  
     }
 
+    public float GetHealth() {
+
+        return (currentHealth/100);
+    }
+
     /* Update is called once per frame. Subtracts from i-frame time remaining while player has i-frames and changes 
     color. Once invincibility expires and number is reset, returns original color to player.
          */
     void Update()
     {
+
         if(invincibilityTimeRemaining > 0)
         {
             //GetComponent<SpriteRenderer>().color = Color.white;
