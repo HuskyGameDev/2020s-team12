@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class Detection : MonoBehaviour
 {
     public GameObject player;
@@ -9,20 +10,21 @@ public class Detection : MonoBehaviour
     MovingEnemy move;
     EnemyPatrol patrol;
     Health health;
+    AggroTimer aggroTimer;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-
         move = transform.parent.GetComponent<MovingEnemy>();
         patrol = transform.parent.GetComponent<EnemyPatrol>();
         health = transform.parent.GetComponent<Health>();
+        aggroTimer = transform.parent.GetComponent<AggroTimer>();
     }
 
 
-    void OnTriggerEnter2D(Collider2D collision) // Collide with detection radius
+    void OnTriggerStay2D(Collider2D collision) // Collide with detection radius
     {
 
         if (collision.gameObject.Equals(player)) // If collision is with player
@@ -39,13 +41,16 @@ public class Detection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health.currentHealth < health.maxHealth)
+        if (inRadius || health.tookDamage) // Run if in radius
         {
-            inRadius = true;
+            aggroTimer.StartAggro();
+            inRadius = false;
+            health.tookDamage = false;
         }
-        if (inRadius) // Run if in radius
+
+        if (aggroTimer.isAggro)
         {
-            move.MoveTowardsPlayer(); // Move towards player
+            move.MoveTowardsPlayer(); // Move towards Ruby
         }
         else
         {

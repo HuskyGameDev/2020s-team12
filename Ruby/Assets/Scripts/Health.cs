@@ -11,12 +11,15 @@ public class Health : MonoBehaviour
     public float invincibilityTime = 0;
     float invincibilityTimeRemaining = 0; // To ensure Ruby can take continual damage with i-frames between
     public float knockFactor = 0; // Set in editor
+
+    public bool tookDamage = false;
     HealthBar bar;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth; // Sets the current health to max upon opening the game
+
     }
 
     void OnTriggerStay2D(Collider2D collision) // This is checking for collision
@@ -34,6 +37,7 @@ public class Health : MonoBehaviour
                     KnockBack(collision, knockFactor);
 
                     print(tag + " Took " + damage.damageAmount); // Console print out for testing
+                    tookDamage = true; // Has the enemy taken damage? Used in the detection/aggroTimer scripts to determine when the enemy should chase the player.
                 }
             }
         }

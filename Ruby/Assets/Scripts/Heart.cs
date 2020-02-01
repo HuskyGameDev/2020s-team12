@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class Heart : MonoBehaviour { 
 
     public float fireSpeed = 10f; // Fire speed of heart
@@ -19,9 +20,13 @@ public class Heart : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D collision) // Checks for collision
     {
-        if ((collision.GetComponent<MovingEnemy>() != null)) // Checks to see if the object has the MovingEnemy script
+        if (collision.GetComponent<MovingEnemy>() != null) // Checks to see if the object has the MovingEnemy script
         {
             Destroy(gameObject); // Destroys the heart
+        }
+        else if (collision.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
         }
     }
 
