@@ -27,7 +27,6 @@ public class AggroTimer : MonoBehaviour
         if (currentAggroTime != 0)
         {
             isAggro = true; // Stay aggro'd as long as there is still currentAggroTime
-            print(currentAggroTime);
         }
         else
         {

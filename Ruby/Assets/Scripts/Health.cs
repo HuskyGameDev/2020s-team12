@@ -10,15 +10,24 @@ public class Health : MonoBehaviour
     public float currentHealth; // Creates a variable for current health
     public float invincibilityTime = 0;
     float invincibilityTimeRemaining = 0; // To ensure Ruby can take continual damage with i-frames between
+
     public float knockFactor = 0; // Set in editor
+    public float knockTimer = 0.1f; // How long knockback lasts
 
     public bool tookDamage = false;
     HealthBar bar;
+    Rigidbody2D rb;
+    Movement pmove;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth; // Sets the current health to max upon opening the game
+        rb = GetComponent<Rigidbody2D>(); // Get rigid body component
+        if (tag == "Player")
+        {
+            pmove = GetComponent<Movement>(); // Get player movement component if its a player
+        }
 
     }
 
@@ -34,7 +43,7 @@ public class Health : MonoBehaviour
 
                     TakeDamage(damage.damageAmount); // Uses the Take Damage method and uses the damage amount from the damage class
 
-                    KnockBack(collision, knockFactor);
+                    StartCoroutine(KnockBack(collision, knockFactor));
 
                     print(tag + " Took " + damage.damageAmount); // Console print out for testing
                     tookDamage = true; // Has the enemy taken damage? Used in the detection/aggroTimer scripts to determine when the enemy should chase the player.
@@ -48,13 +57,23 @@ public class Health : MonoBehaviour
         return currentHealth <= 0; // Returns a boolean
     }
 
-    void KnockBack(Collider2D collision, float distance) // Moves player a set distance away from damage source
+    IEnumerator KnockBack(Collider2D collision, float distance) // Moves player a set distance away from damage source
      {
         Vector3 damageSource = collision.transform.position; // Obtains position of damage source
         Vector3 push = transform.position - damageSource; // Obtains vector in the direction and length between player and source
         push.Normalize(); // Normalization keeps the angle, but sets the total distance to 1
         push = push * distance; // Applies given magnitude to the vector
-        transform.position += push; // Applies push to the player
+        rb.velocity = push; // Sets the gameObject's velocity to the resulting velocity vector
+        if (tag == "Player")
+        {
+            pmove.canMove = false; // If this is the player, keep them from moving
+        }
+        yield return new WaitForSeconds(knockTimer); // wait a bit
+        rb.velocity = Vector3.zero; // Stop knockback
+        if (tag == "Player")
+        {
+            pmove.canMove = true; // Player can move again
+        }
      }
 
     void TakeDamage(float DMG) // This Take Damage class takes in the damage amount
@@ -103,5 +122,6 @@ public class Health : MonoBehaviour
             //GetComponent<SpriteRenderer>().color = Color.green;
             //TODO Make Invincibility Animation (Flashing) and set it here
         }
+
     }
 }

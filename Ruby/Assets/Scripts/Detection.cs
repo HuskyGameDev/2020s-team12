@@ -40,20 +40,20 @@ public class Detection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (move.seesPlayer || health.tookDamage) // Run if in radius
+        if (move.seesPlayer || health.tookDamage) // Run if in radius or if taking damage from the player
         {
-            aggroTimer.StartAggro();
-            move.seesPlayer = false;
+            aggroTimer.StartAggro(); // Start chasing the player
+            move.seesPlayer = false; // reset these boolean values
             health.tookDamage = false;
         }
 
-        if (aggroTimer.isAggro)
+        if (aggroTimer.isAggro) // If the enemy is currently targeting Ruby
         {
             move.MoveTowardsPlayer(); // Move towards Ruby
         }
         else
         {
-            patrol.PatrolPoints();
+            patrol.PatrolPoints(); // Otherwise, continue to patrol points
         }
         anim.SetBool("Walking", (!rb.velocity.Equals(Vector3.zero))); // Tell the animator if the enemy is moving to set the appropriate sprites
 
