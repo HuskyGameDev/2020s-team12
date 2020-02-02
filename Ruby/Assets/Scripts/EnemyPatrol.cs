@@ -12,13 +12,16 @@ public class EnemyPatrol : MonoBehaviour
     public float point2Y = 0; // The Y coordinate of the second control point
     public float atPointWaitTime = 1f; // How long the enemy waits upon reaching one of the patrol points
     bool movingTowardsPoint1 = true; // Whether the enemy should be heading to point 1 or 2
+    Rigidbody2D rb;
+    Animator anim;
 
     float tolerance = .01f; // How close the enemy can be to the point for it to be called at the point
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = transform.GetComponent<Rigidbody2D>();
+        anim = transform.GetComponent<Animator>();
     }
 
     public void PatrolPoints() // Makes the enemy patrol between the points
@@ -52,7 +55,9 @@ public class EnemyPatrol : MonoBehaviour
             patrolMoveVelocity = velocityHolder; // Start moving again
         }
 
-        transform.position += (patrolMoveVelocity * movement); // Moves the enemy
+        rb.velocity = movement * patrolMoveVelocity; // Moves the enemy
+        float facingAngle = Mathf.Atan2(moveY, moveX) * Mathf.Rad2Deg - 90f; // Sets the angle the enemy is facing in degrees
+        anim.SetFloat("Facing", facingAngle); // Tell the animator which way the enemy is facing to set the appropriate sprites
     }
 
     // Update is called once per frame

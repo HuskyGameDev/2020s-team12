@@ -11,6 +11,8 @@ public class Detection : MonoBehaviour
     EnemyPatrol patrol;
     Health health;
     AggroTimer aggroTimer;
+    Animator anim;
+    Rigidbody2D rb;
 
 
     // Start is called before the first frame update
@@ -20,6 +22,8 @@ public class Detection : MonoBehaviour
         patrol = transform.parent.GetComponent<EnemyPatrol>();
         health = transform.parent.GetComponent<Health>();
         aggroTimer = transform.parent.GetComponent<AggroTimer>();
+        anim = transform.parent.GetComponent<Animator>();
+        rb = transform.parent.GetComponent<Rigidbody2D>();
     }
 
 
@@ -36,10 +40,10 @@ public class Detection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inRadius || health.tookDamage) // Run if in radius
+        if (move.seesPlayer || health.tookDamage) // Run if in radius
         {
             aggroTimer.StartAggro();
-            inRadius = false;
+            move.seesPlayer = false;
             health.tookDamage = false;
         }
 
@@ -51,5 +55,7 @@ public class Detection : MonoBehaviour
         {
             patrol.PatrolPoints();
         }
+        anim.SetBool("Walking", (!rb.velocity.Equals(Vector3.zero))); // Tell the animator if the enemy is moving to set the appropriate sprites
+
     }
 }

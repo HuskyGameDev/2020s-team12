@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587271, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -195,7 +195,7 @@ PrefabInstance:
     - target: {fileID: 6225342447639004593, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: moveVelocity
-      value: 0.025
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004594, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
@@ -448,12 +448,12 @@ PrefabInstance:
     - target: {fileID: 1180911012121003225, guid: 053a2ba25f810c04ba4e4818adadf4c1,
         type: 3}
       propertyPath: moveVelocity
-      value: 0.05
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1180911012121003229, guid: 053a2ba25f810c04ba4e4818adadf4c1,
         type: 3}
       propertyPath: knockFactor
-      value: 1000
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1180911012121003231, guid: 053a2ba25f810c04ba4e4818adadf4c1,
         type: 3}
@@ -878,9 +878,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9630ee42328c14bbd0e996064309aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolMoveVelocity: 0.02
+  patrolMoveVelocity: 1
   point1X: 4
-  point1Y: 4
+  point1Y: 2
   point2X: 4
   point2Y: -2
   atPointWaitTime: 0.5
@@ -896,7 +896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dfbf88ba2ed14946845fa5c2c476014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroTime: 0.5
+  aggroTime: 1
   isAggro: 0
 --- !u!1 &1458211243
 GameObject:

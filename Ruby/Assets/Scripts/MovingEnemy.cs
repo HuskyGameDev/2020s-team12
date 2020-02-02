@@ -44,15 +44,6 @@ public class MovingEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(seesPlayer)
-        {
-            MoveTowardsPlayer(); // Move towards the player
-        }
-        else
-        {
-            rb.velocity = Vector3.zero; // Don't move
-        }
 
-        anim.SetBool("Walking", (!rb.velocity.Equals(Vector3.zero))); // Tell the animator if the enemy is moving to set the appropriate sprites
     }
 }
