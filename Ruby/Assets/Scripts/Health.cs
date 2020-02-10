@@ -12,12 +12,13 @@ public class Health : MonoBehaviour
     float invincibilityTimeRemaining = 0; // To ensure Ruby can take continual damage with i-frames between
 
     public float knockFactor = 0; // Set in editor
-    public float knockTimer = 0.1f; // How long knockback lasts
+    public float knockTimer = 0; // How long knockback lasts
 
     public bool tookDamage = false;
     HealthBar bar;
     Rigidbody2D rb;
     Movement pmove;
+    MovingEnemy emove;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,10 @@ public class Health : MonoBehaviour
         {
             pmove = GetComponent<Movement>(); // Get player movement component if its a player
         }
+        if (tag == "Enemy")
+        {
+            emove = GetComponent<MovingEnemy>(); // Get enemy movement componenet
+        }
 
     }
 
@@ -36,8 +41,9 @@ public class Health : MonoBehaviour
         if (invincibilityTimeRemaining <= 0)
         {
             if (collision.GetComponent<Damage>() != null) // This allows only things with the damage script to deal damage
+                // This makes sure the player can not shoot themself by comparing the tag and allowing it to go through if the tags are different
             {
-                if (!collision.CompareTag(tag)) // This makes sure the player can not shoot themself by comparing the tag and allowing it to go through if the tags are different
+                if (!collision.CompareTag(tag)) 
                 {
                     Damage damage = collision.GetComponent<Damage>(); // Creates an object of the Damage Class
 
@@ -68,12 +74,22 @@ public class Health : MonoBehaviour
         {
             pmove.canMove = false; // If this is the player, keep them from moving
         }
+        if (tag == "Enemy") // If this is the enemy, keep them from moving
+        {
+            emove.canMove = false;
+        }
         yield return new WaitForSeconds(knockTimer); // wait a bit
         rb.velocity = Vector3.zero; // Stop knockback
         if (tag == "Player")
         {
             pmove.canMove = true; // Player can move again
         }
+        if (tag == "Enemy")
+        {
+            emove.canMove = true;//enemy move again
+        }
+
+
      }
 
     void TakeDamage(float DMG) // This Take Damage class takes in the damage amount

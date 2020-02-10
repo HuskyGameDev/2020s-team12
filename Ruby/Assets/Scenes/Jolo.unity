@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587272, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -211,7 +211,12 @@ PrefabInstance:
     - target: {fileID: 6225342447639004592, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: knockTimer
-      value: 0.1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225342447639004592, guid: e8c302960853e3741ae7f011aff30b63,
+        type: 3}
+      propertyPath: tookDamage
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004593, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
