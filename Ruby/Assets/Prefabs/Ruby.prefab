@@ -101,8 +101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  currentHealth: 0
   invincibilityTime: 2
   knockFactor: 2
+  knockTimer: 0
+  tookDamage: 0
 --- !u!114 &1180911012121003225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveVelocity: 9
+  canMove: 1
 --- !u!114 &1180911012121003228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +135,7 @@ MonoBehaviour:
   heartPrefab: {fileID: 5349920854609116783, guid: 5982d51380ba9e840940da205ebbe8c2,
     type: 3}
   fireSpeed: 10
-  fireRate: 1
+  fireRate: 5
 --- !u!50 &1180911012121003218
 Rigidbody2D:
   serializedVersion: 4

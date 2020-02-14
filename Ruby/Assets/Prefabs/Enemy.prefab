@@ -15,6 +15,10 @@ GameObject:
   - component: {fileID: 6225342447639004594}
   - component: {fileID: 8188144964286355754}
   - component: {fileID: 510383863}
+  - component: {fileID: 587397539}
+  - component: {fileID: 587397540}
+  - component: {fileID: 1870136732}
+  - component: {fileID: 1870136733}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -101,8 +105,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  currentHealth: 0
   invincibilityTime: 0
   knockFactor: 0
+  knockTimer: 0
+  tookDamage: 0
 --- !u!114 &6225342447639004593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +125,7 @@ MonoBehaviour:
   player: {fileID: 0}
   moveVelocity: 1
   seesPlayer: 0
+  canMove: 1
 --- !u!50 &6225342447639004594
 Rigidbody2D:
   serializedVersion: 4
@@ -137,7 +145,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &8188144964286355754
 BoxCollider2D:
@@ -184,6 +192,70 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &587397539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6225342447639004588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dfbf88ba2ed14946845fa5c2c476014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroTime: 1
+  isAggro: 0
+--- !u!114 &587397540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6225342447639004588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9630ee42328c14bbd0e996064309aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolMoveVelocity: 0.02
+  point1X: 0
+  point1Y: 0
+  point2X: 0
+  point2Y: 0
+  atPointWaitTime: 1
+--- !u!114 &1870136732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6225342447639004588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dfbf88ba2ed14946845fa5c2c476014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroTime: 1
+  isAggro: 0
+--- !u!114 &1870136733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6225342447639004588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9630ee42328c14bbd0e996064309aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolMoveVelocity: 0.02
+  point1X: 0
+  point1Y: 0
+  point2X: 0
+  point2Y: 0
+  atPointWaitTime: 1
 --- !u!1 &6225342448453933719
 GameObject:
   m_ObjectHideFlags: 0
