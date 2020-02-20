@@ -4,24 +4,35 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    public float patrolMoveVelocity = .02f; // Movement speed while the enemy is patrolling
+    public float patrolMoveVelocity = 1f; // Movement speed while the enemy is patrolling
     Vector3 movement; // Movement vector
-    public float point1X = 0; // The X coordinate of the desired first patrol point
-    public float point1Y = 0; // The Y coordinate of the first patrol point
-    public float point2X = 0; // The X coordinate of the second patrol point
-    public float point2Y = 0; // The Y coordinate of the second control point
+    public float relativePoint1X = 0; // The relative X coordinate of the first patrol point
+    public float relativePoint1Y = 0; // The relative Y coordinate of the first patrol point
+    public float relativePoint2X = 0; // The relative X coordinate of the second patrol point
+    public float relativePoint2Y = 0; // The relative Y coordinate of the second patrol point
+    float point1X = 0; // The actual coordinates of the first patrol point
+    float point1Y = 0;
+    float point2X = 0; // The actual coordinates of the second patrol point
+    float point2Y = 0;
     public float atPointWaitTime = 1f; // How long the enemy waits upon reaching one of the patrol points
     bool movingTowardsPoint1 = true; // Whether the enemy should be heading to point 1 or 2
     Rigidbody2D rb;
     Animator anim;
 
-    float tolerance = .01f; // How close the enemy can be to the point for it to be called at the point
+    float tolerance = .05f; // How close the enemy can be to the point for it to be called at the point
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = transform.GetComponent<Rigidbody2D>();
+        rb = transform.GetComponent<Rigidbody2D>(); // get the components
         anim = transform.GetComponent<Animator>();
+
+        float startX = transform.position.x; // Get the initial coordinates of the enemy to convert the relative coordiantes to actual coordinates
+        float startY = transform.position.y;
+        point1X = startX + relativePoint1X;
+        point1Y = startY + relativePoint1Y;
+        point2X = startX + relativePoint2X;
+        point2Y = startY + relativePoint2Y;
     }
 
     public void PatrolPoints() // Makes the enemy patrol between the points
