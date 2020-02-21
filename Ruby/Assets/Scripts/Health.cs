@@ -111,8 +111,17 @@ public class Health : MonoBehaviour
 
     void Die() // Die method that deletes the object
     {
-        Destroy(gameObject); // Destroys the gameobject that is being attacked
+        if (tag == "Player")
+        {
+            Destroy(gameObject); // Destroys the gameobject that is being attacked
 
+        }
+
+        if (tag == "Enemy")
+        {
+            Destroy(this.transform.parent.gameObject); // Destroys the parent of the child
+        }
+        
         print(tag + " Died"); // Prints to console for testing purposes
  
     }
