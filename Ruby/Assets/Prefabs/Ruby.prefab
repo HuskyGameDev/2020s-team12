@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1180911012121003231}
   - component: {fileID: 1180911012121003230}
+  - component: {fileID: 5169793803072987869}
   - component: {fileID: 1180911012121003229}
   - component: {fileID: 1180911012121003225}
   - component: {fileID: 1180911012121003228}
@@ -88,6 +89,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5169793803072987869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180911012121003224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0812a447edcfa84ebc1315bab3a7a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerupExtent: 3
+  rapidFireRate: 5
 --- !u!114 &1180911012121003229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,8 +118,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   invincibilityTime: 2
-  knockFactor: 2
-  knockTimer: 0
+  knockFactor: 50
+  knockTimer: 0.1
   tookDamage: 0
 --- !u!114 &1180911012121003225
 MonoBehaviour:
@@ -135,7 +150,8 @@ MonoBehaviour:
   heartPrefab: {fileID: 5349920854609116783, guid: 5982d51380ba9e840940da205ebbe8c2,
     type: 3}
   fireSpeed: 10
-  fireRate: 5
+  defaultFireRate: 1.2
+  fireRate: 2
 --- !u!50 &1180911012121003218
 Rigidbody2D:
   serializedVersion: 4
@@ -170,7 +186,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 1}
+  m_Offset: {x: 0.5, y: 0.7145506}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -181,7 +197,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.64777946, y: 1.1390378}
   m_EdgeRadius: 0
 --- !u!95 &1778334800
 Animator:

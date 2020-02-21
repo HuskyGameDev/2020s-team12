@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ApplyBuff : MonoBehaviour
 {
-    public int powerupExtent;//how long in seconds powerup lasts
-    public float rapidFireRate;//rate at which rapid fire shoots
-
+    public int powerupExtent; // How long in seconds powerup lasts
+    public float rapidFireRate; // Rate at which rapid fire shoots
+    
     public enum BuffType
     {
         RapidFire
@@ -19,16 +19,15 @@ public class ApplyBuff : MonoBehaviour
         
     }
 
-    void OnTriggerStay2D(Collider2D collision)//When object with this script collides with 'powerup' object
+    void OnTriggerStay2D(Collider2D collision) // When object with this script collides with 'powerup' object
     {
         print("enter pp up");
 
         if (collision.tag == "Powerup")
         {
             StartCoroutine(ApplyEffect(BuffType.RapidFire));
+            Destroy(collision.gameObject); // Destroys powerup after use
         }
-
-        Destroy(collision.gameObject);//destroys powerup after use
 
     }
 
@@ -36,11 +35,11 @@ public class ApplyBuff : MonoBehaviour
     IEnumerator ApplyEffect(BuffType type)
     {
         Shoot shoot = GetComponent<Shoot>();
-        shoot.setFireRate(rapidFireRate);//Set fire rate located in shoot script
+        shoot.setFireRate(rapidFireRate); // Set fire rate located in shoot script
 
 
-        yield return new WaitForSeconds(powerupExtent);//waits using powerupExtend (seconds)
-        shoot.setFireRate(shoot.defaultFireRate);//returns fire rate to default
+        yield return new WaitForSeconds(powerupExtent); // Waits using powerupExtend (seconds)
+        shoot.setFireRate(shoot.defaultFireRate); // Returns fire rate to default
     }
 
 
