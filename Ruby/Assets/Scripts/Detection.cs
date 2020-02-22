@@ -20,7 +20,7 @@ public class Detection : MonoBehaviour
     {
         move = transform.parent.GetComponent<MovingEnemy>();
         patrol = transform.parent.GetComponent<EnemyPatrol>();
-        health = transform.parent.GetComponentInChildren<Health>();
+        health = transform.parent.GetComponent<Health>();
         aggroTimer = transform.parent.GetComponent<AggroTimer>();
         anim = transform.parent.GetComponent<Animator>();
         rb = transform.parent.GetComponent<Rigidbody2D>();
