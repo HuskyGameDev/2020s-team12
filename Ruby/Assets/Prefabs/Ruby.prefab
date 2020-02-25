@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1180911012121003231}
   - component: {fileID: 1180911012121003230}
+  - component: {fileID: 5169793803072987869}
   - component: {fileID: 1180911012121003229}
   - component: {fileID: 1180911012121003225}
   - component: {fileID: 1180911012121003228}
   - component: {fileID: 1180911012121003218}
   - component: {fileID: 4248267916670190977}
   - component: {fileID: 1778334800}
-  - component: {fileID: 1081591843}
   m_Layer: 0
   m_Name: Ruby
   m_TagString: Player
@@ -89,6 +89,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5169793803072987869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180911012121003224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0812a447edcfa84ebc1315bab3a7a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerupExtent: 3
+  rapidFireRate: 5
 --- !u!114 &1180911012121003229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,7 +118,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   invincibilityTime: 2
-  knockFactor: 20
+  knockFactor: 50
   knockTimer: 0.1
   tookDamage: 0
 --- !u!114 &1180911012121003225
@@ -119,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e5059086c0c5e41a622c3baad3c37c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveVelocity: 4
+  moveVelocity: 9
   canMove: 1
 --- !u!114 &1180911012121003228
 MonoBehaviour:
@@ -137,7 +151,7 @@ MonoBehaviour:
     type: 3}
   fireSpeed: 10
   defaultFireRate: 1.2
-  fireRate: 1.2
+  fireRate: 2
 --- !u!50 &1180911012121003218
 Rigidbody2D:
   serializedVersion: 4
@@ -150,7 +164,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -169,10 +183,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.49484682, y: 0.9639281}
+  m_Offset: {x: 0.5, y: 0.7145506}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -183,7 +197,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6186657, y: 1.6392791}
+  m_Size: {x: 0.64777946, y: 1.1390378}
   m_EdgeRadius: 0
 --- !u!95 &1778334800
 Animator:
@@ -204,19 +218,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1081591843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180911012121003224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0812a447edcfa84ebc1315bab3a7a54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rapidFireRate: 3
 --- !u!1 &1180911012711979683
 GameObject:
   m_ObjectHideFlags: 0
