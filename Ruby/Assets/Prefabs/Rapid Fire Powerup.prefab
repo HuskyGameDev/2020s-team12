@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 185177609639444738}
   - component: {fileID: 4871609322747053336}
   - component: {fileID: 1508390166}
+  - component: {fileID: 6842420956514524994}
   m_Layer: 0
-  m_Name: Powerup
+  m_Name: Rapid Fire Powerup
   m_TagString: Powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,3 +130,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &6842420956514524994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5188490772201320478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f8d6a21ad43a1d43bc38e307dcf76c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  powerupExtent: 2
+  healAmount: 0
