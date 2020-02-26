@@ -27,7 +27,7 @@ public class EnemyPatrol : MonoBehaviour
         rb = transform.GetComponent<Rigidbody2D>(); // get the components
         anim = transform.GetComponent<Animator>();
 
-        float startX = transform.position.x; // Get the initial coordinates of the enemy to convert the relative coordiantes to actual coordinates
+        float startX = transform.position.x; // Get the initial coordinates of the enemy to convert the relative coordinates to actual coordinates
         float startY = transform.position.y;
         point1X = startX + relativePoint1X;
         point1Y = startY + relativePoint1Y;
