@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 6225342447639004588, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: m_Name
-      value: Enemy_Chaser (2)
+      value: Enemy_Chaser
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004589, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
@@ -41,12 +41,12 @@ PrefabInstance:
     - target: {fileID: 6225342447639004590, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004590, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004590, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}

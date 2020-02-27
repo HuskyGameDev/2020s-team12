@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    public float patrolMoveVelocity = 1f; // Movement speed while the enemy is patrolling
+    public float patrolVelocity = 1f; // Movement speed while the enemy is patrolling
+    float currVelocity; // current velocity while patrolling
     Vector3 movement; // Movement vector
     public float relativePoint1X = 0; // The relative X coordinate of the first patrol point
     public float relativePoint1Y = 0; // The relative Y coordinate of the first patrol point
@@ -29,6 +30,8 @@ public class EnemyPatrol : MonoBehaviour
     {
         rb = transform.GetComponent<Rigidbody2D>(); // get the components
         anim = transform.GetComponent<Animator>();
+
+        currVelocity = patrolVelocity;
 
         float startX = transform.position.x; // Get the initial coordinates of the enemy to convert the relative coordinates to actual coordinates
         float startY = transform.position.y;
@@ -69,18 +72,21 @@ public class EnemyPatrol : MonoBehaviour
         if (Mathf.Abs(moveX) <= tolerance && Mathf.Abs(moveY) <= tolerance) // Once enemy reaches the desired patrol point within a given tolerance
         {
             movingTowardsPoint1 = !movingTowardsPoint1; // Start heading towards the other point
-            float velocityHolder = patrolMoveVelocity;
-            patrolMoveVelocity = 0; // Stop moving
+            currVelocity = 0; // Stop moving
 
             if (!onePointPatrol)
             {
                 yield return new WaitForSeconds(atPointWaitTime); // Wait for a little bit based on the atPointWaitTime variable
-                patrolMoveVelocity = velocityHolder; // Start moving again
+                currVelocity = patrolVelocity; // Start moving again
             }
+        }
+        else
+        {
+            currVelocity = patrolVelocity;
         }
         
 
-        rb.velocity = movement * patrolMoveVelocity; // Moves the enemy
+        rb.velocity = movement * currVelocity; // Moves the enemy
         float facingAngle = Mathf.Atan2(moveY, moveX) * Mathf.Rad2Deg - 90f; // Sets the angle the enemy is facing in degrees
         anim.SetFloat("Facing", facingAngle); // Tell the animator which way the enemy is facing to set the appropriate sprites
     }
