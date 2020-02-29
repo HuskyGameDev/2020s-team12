@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     public float knockFactor = 0; // Set in editor
     public float knockTimer = 0; // How long knockback lasts
 
-    public bool tookDamage = false;
+    bool tookDamage = false;
     HealthBar bar;
     Rigidbody2D rb;
     Movement pmove;
@@ -52,6 +52,7 @@ public class Health : MonoBehaviour
                     StartCoroutine(KnockBack(collision, knockFactor));
 
                     print(tag + " Took " + damage.damageAmount); // Console print out for testing
+
                     tookDamage = true; // Has the enemy taken damage? Used in the detection/aggroTimer scripts to determine when the enemy should chase the player.
                 }
             }
@@ -72,21 +73,21 @@ public class Health : MonoBehaviour
         rb.velocity = push; // Sets the gameObject's velocity to the resulting velocity vector
         if (tag == "Player")
         {
-            pmove.canMove = false; // If this is the player, keep them from moving
+            pmove.getMove().Equals(false); // If this is the player, keep them from moving
         }
         if (tag == "Enemy") // If this is the enemy, keep them from moving
         {
-            emove.canMove = false;
+            emove.getMove().Equals(false);
         }
         yield return new WaitForSeconds(knockTimer); // wait a bit
         rb.velocity = Vector3.zero; // Stop knockback
         if (tag == "Player")
         {
-            pmove.canMove = true; // Player can move again
+            pmove.getMove().Equals(true); // Player can move again
         }
         if (tag == "Enemy")
         {
-            emove.canMove = true;//enemy move again
+            emove.getMove().Equals(true);//enemy move again
         }
 
 
@@ -121,6 +122,11 @@ public class Health : MonoBehaviour
      
             return (currentHealth / 100);
        
+    }
+
+    public bool getTookDamage()
+    {
+        return tookDamage;
     }
 
     /* Update is called once per frame. Subtracts from i-frame time remaining while player has i-frames and changes 

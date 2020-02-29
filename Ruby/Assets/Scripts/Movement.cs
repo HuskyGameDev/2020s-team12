@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float moveVelocity = 0.125f; // Player movement speed
-    public bool canMove = true;
+    bool canMove = true;
 
     Rigidbody2D rb;
     Animator anim;
@@ -33,5 +33,14 @@ public class Movement : MonoBehaviour
 
             anim.SetBool("Walking", (!movement.Equals(Vector3.zero))); // Tell the animator if Ruby is walking to set the appropriate sprites
         }
+    }
+    public void setMove(bool move)
+    {
+        this.canMove = move;
+    }
+
+    public bool getMove()
+    {
+        return canMove;
     }
 }

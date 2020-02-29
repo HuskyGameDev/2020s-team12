@@ -5,8 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Detection : MonoBehaviour
 {
-    private GameObject player;
-
+    GameObject player;
     MovingEnemy move;
     EnemyPatrol patrol;
     Health health;
@@ -35,20 +34,18 @@ public class Detection : MonoBehaviour
     {
         if (collision.gameObject.Equals(player)) // If collision is with player
         {
-            move.seesPlayer = true; // This enemy can now see the player
+            move.setSee(true); // This enemy can now see the player
         }
     }
-
-
 
     // Update is called once per frame
     void Update()
     {
-        if (move.seesPlayer || health.tookDamage) // Run if in radius or if taking damage from the player
+        if (move.getSee().Equals(true) || health.getTookDamage().Equals(true)) // Run if in radius or if taking damage from the player
         {
             aggroTimer.StartAggro(); // Start chasing the player
-            move.seesPlayer = false; // reset these boolean values
-            health.tookDamage = false;
+            move.setSee(false); // reset these boolean values
+            health.getTookDamage().Equals(false);
         }
 
         if (aggroTimer.isAggro) // If the enemy is currently targeting Ruby

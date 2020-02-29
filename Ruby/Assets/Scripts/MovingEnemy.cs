@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MovingEnemy : MonoBehaviour
 {
-    private Transform player; // Does not need to be set in editor
+    Transform player; // Does not need to be set in editor
     public float moveVelocity = .05f; // Enemy move speed
-    public bool seesPlayer = false;
-    public bool canMove = true;
+    bool seesPlayer = false;
+    bool canMove = true;
 
     Rigidbody2D rb;
     Animator anim;
@@ -46,6 +46,26 @@ public class MovingEnemy : MonoBehaviour
             }
         }
        
+    public void setMove(bool move)
+    {
+        this.canMove = move;
+    }
+
+    public bool getMove()
+    {
+        return canMove;
+    }
+
+    public void setSee(bool see)
+    {
+        this.seesPlayer = see;
+    }
+
+    public bool getSee()
+    {
+        return seesPlayer;
+    }
+
     // Update is called once per frame
     void Update()
     {

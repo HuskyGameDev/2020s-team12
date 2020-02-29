@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
 {
     public const float roomWidth = 30f;
     public const float roomHeight = 20f;
-    public Transform player; // Does not need to be set in editor
+    Transform player; // Does not need to be set in editor
 
     Animator anim;
     int[] currentRoom = { 0, 0 }; // Room coords X and Y
