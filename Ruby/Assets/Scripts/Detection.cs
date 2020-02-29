@@ -18,6 +18,10 @@ public class Detection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (player == null)
+        {
+            player = GameObject.Find("Ruby"); // Sets Ruby
+        }
         move = transform.parent.GetComponent<MovingEnemy>();
         patrol = transform.parent.GetComponent<EnemyPatrol>();
         health = transform.parent.GetComponent<Health>();

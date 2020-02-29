@@ -6,11 +6,15 @@ public class HealthBar : MonoBehaviour
 {
     private Transform bar; // Creates Bar Object
 
-    public Health health;
+    private Health health;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (health == null)
+        {
+            health = GameObject.Find("Ruby").GetComponent<Health>(); // Sets Ruby
+        }
         bar = transform.Find("Bar"); // Sets Bar Object
 
     }

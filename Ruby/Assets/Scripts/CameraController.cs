@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         if(player == null)
-            player = GameObject.Find("Ruby").transform; // Maybe change this later??
+            player = GameObject.Find("Ruby").transform; // Sets Ruby
         anim = GetComponent<Animator>();
     }
 

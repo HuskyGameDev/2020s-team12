@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovingEnemy : MonoBehaviour
 {
-    public Transform player; // Set who the player is in editor
+    public Transform player; // Does not need to be set in editor
     public float moveVelocity = .05f; // Enemy move speed
     public bool seesPlayer = false;
     public bool canMove = true;
@@ -16,6 +16,9 @@ public class MovingEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (player == null) { 
+        player = GameObject.Find("Ruby").transform; // Sets Ruby
+    }
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }

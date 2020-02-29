@@ -118,8 +118,9 @@ public class Health : MonoBehaviour
     }
 
     public float GetHealth() {
-
-        return (currentHealth/100);
+     
+            return (currentHealth / 100);
+       
     }
 
     /* Update is called once per frame. Subtracts from i-frame time remaining while player has i-frames and changes 
