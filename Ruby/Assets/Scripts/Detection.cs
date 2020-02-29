@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Detection : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
 
     MovingEnemy move;
     EnemyPatrol patrol;

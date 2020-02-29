@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovingEnemy : MonoBehaviour
 {
-    public Transform player; // Does not need to be set in editor
+    private Transform player; // Does not need to be set in editor
     public float moveVelocity = .05f; // Enemy move speed
     public bool seesPlayer = false;
     public bool canMove = true;
