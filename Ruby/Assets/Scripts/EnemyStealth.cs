@@ -38,5 +38,6 @@ public class EnemyStealth : MonoBehaviour
         {
             enemySprite.color = initColor;
         }
+        print(enemySprite.color.a);
     }
 }
