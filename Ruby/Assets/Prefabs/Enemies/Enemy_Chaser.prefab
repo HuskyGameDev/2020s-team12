@@ -93,10 +93,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6225342447639004592, guid: e8c302960853e3741ae7f011aff30b63,
+        type: 3}
+      propertyPath: maxHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004593, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: moveVelocity
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004594, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
