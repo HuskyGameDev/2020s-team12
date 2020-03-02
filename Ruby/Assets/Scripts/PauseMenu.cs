@@ -10,9 +10,13 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    public GameObject settingsUI;
+
     void Start()
     {
         pauseMenuUI.SetActive(false); // To not start paused
+
+        settingsUI.SetActive(false); // To not start in settings
     }
 
     // Update is called once per frame
@@ -34,10 +38,35 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
 
+        settingsUI.SetActive(false);
+
         Time.timeScale = 1f;
 
         gamePaused = false; // Set game to resume
 
+    }
+
+    public void SettingsMenu()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (gamePaused)
+            {
+                Resume();
+            }
+        }
+
+        settingsUI.SetActive(true);
+
+        pauseMenuUI.SetActive(false);
+
+    }
+
+    public void Back()
+    {
+        settingsUI.SetActive(false);
+
+        pauseMenuUI.SetActive(true);
     }
 
     void Pause()

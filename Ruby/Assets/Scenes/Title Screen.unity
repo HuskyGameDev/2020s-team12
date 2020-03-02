@@ -704,6 +704,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audiomixer: {fileID: 24100000, guid: 081042bd8b2c7bd4b9345f68c3f409e8, type: 2}
+  volumeSlider: {fileID: 2108963354}
+  Fullscreen: {fileID: 702166445}
 --- !u!1 &380144789
 GameObject:
   m_ObjectHideFlags: 0
