@@ -23,7 +23,11 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 relativePos = player.position - transform.position;
+        Vector3 relativePos = new Vector3();
+        if (player != null) // Checks if Ruby is dead
+        {
+            relativePos = player.position - transform.position;
+        }
 
         if(relativePos.x > (roomWidth / 2f)) // Player moving to right room
         {

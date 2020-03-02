@@ -20,6 +20,7 @@ public class EnemyPatrol : MonoBehaviour
     float point2Y = 0;
     public float atPointWaitTime = 1f; // How long the enemy waits upon reaching one of the patrol points
     bool movingTowardsPoint1 = true; // Whether the enemy should be heading to point 1 or 2
+    bool moving = true; // If it should currently be moving
     Rigidbody2D rb;
     Animator anim;
 
@@ -76,13 +77,18 @@ public class EnemyPatrol : MonoBehaviour
 
             if (!onePointPatrol)
             {
+                moving = false;
                 yield return new WaitForSeconds(atPointWaitTime); // Wait for a little bit based on the atPointWaitTime variable
+                moving = true;
                 currVelocity = patrolVelocity; // Start moving again
             }
         }
         else
         {
-            currVelocity = patrolVelocity;
+            if (moving)
+            {
+                currVelocity = patrolVelocity;
+            }
         }
         
 
