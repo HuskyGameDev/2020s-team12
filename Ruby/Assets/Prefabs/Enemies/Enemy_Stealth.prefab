@@ -136,11 +136,6 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 6225342449436433892, guid: e8c302960853e3741ae7f011aff30b63,
-        type: 3}
-      propertyPath: damageAmount
-      value: 12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
 --- !u!1 &6856770310990170630 stripped
