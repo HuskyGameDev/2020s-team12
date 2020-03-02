@@ -107,6 +107,7 @@ MonoBehaviour:
   invincibilityTime: 0
   knockFactor: 0
   knockTimer: 0
+  tookDamage: 0
 --- !u!114 &6225342447639004593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b933b9f68575d154c81caabe055128ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   moveVelocity: 8
+  seesPlayer: 0
+  canMove: 1
 --- !u!50 &6225342447639004594
 Rigidbody2D:
   serializedVersion: 4
@@ -166,7 +170,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1.2636623, y: 1.8906403}
-  m_EdgeRadius: 0.02
+  m_EdgeRadius: 0
 --- !u!95 &510383863
 Animator:
   serializedVersion: 3
@@ -280,6 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab500b0da1b8b74f90fb79b47967af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!50 &6225342448453933723
 Rigidbody2D:
   serializedVersion: 4
