@@ -73,21 +73,21 @@ public class Health : MonoBehaviour
         rb.velocity = push; // Sets the gameObject's velocity to the resulting velocity vector
         if (tag == "Player")
         {
-            pmove.getMove().Equals(false); // If this is the player, keep them from moving
+            pmove.setMove(false); // If this is the player, keep them from moving
         }
         if (tag == "Enemy") // If this is the enemy, keep them from moving
         {
-            emove.getMove().Equals(false);
+            emove.setMove(false);
         }
         yield return new WaitForSeconds(knockTimer); // wait a bit
         rb.velocity = Vector3.zero; // Stop knockback
         if (tag == "Player")
         {
-            pmove.getMove().Equals(true); // Player can move again
+            pmove.setMove(true); // Player can move again
         }
         if (tag == "Enemy")
         {
-            emove.getMove().Equals(true);//enemy move again
+            emove.setMove(true);//enemy move again
         }
 
 
