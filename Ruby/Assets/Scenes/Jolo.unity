@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587271, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -219,6 +219,10 @@ PrefabInstance:
     - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
       propertyPath: patrolVelocity
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
+      propertyPath: onePointPatrol
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1870136732, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
       propertyPath: aggroTime
@@ -10262,7 +10266,7 @@ PrefabInstance:
     - target: {fileID: 3688821425805237217, guid: 7d2bea85ded741b4f8b83819155f06a6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3688821425805237219, guid: 7d2bea85ded741b4f8b83819155f06a6,
         type: 3}
@@ -14984,6 +14988,10 @@ PrefabInstance:
       propertyPath: patrolMoveVelocity
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
+      propertyPath: onePointPatrol
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1870136732, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
       propertyPath: aggroTime
       value: 5
@@ -15379,6 +15387,10 @@ PrefabInstance:
       propertyPath: patrolVelocity
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
+      propertyPath: onePointPatrol
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1870136732, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
       propertyPath: aggroTime
       value: 2
@@ -15588,6 +15600,10 @@ PrefabInstance:
     - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
       propertyPath: relativePoint1X
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
+      propertyPath: onePointPatrol
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004588, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
@@ -29554,7 +29570,7 @@ PrefabInstance:
     - target: {fileID: 3688821425805237217, guid: 7d2bea85ded741b4f8b83819155f06a6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3688821425805237219, guid: 7d2bea85ded741b4f8b83819155f06a6,
         type: 3}
@@ -29640,6 +29656,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
       propertyPath: relativePoint2Y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
+      propertyPath: onePointPatrol
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004588, guid: e8c302960853e3741ae7f011aff30b63,
@@ -34567,7 +34587,7 @@ PrefabInstance:
     - target: {fileID: 3688821425805237217, guid: 7d2bea85ded741b4f8b83819155f06a6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3688821425805237219, guid: 7d2bea85ded741b4f8b83819155f06a6,
         type: 3}
@@ -41998,7 +42018,7 @@ PrefabInstance:
     - target: {fileID: 3688821425805237217, guid: 7d2bea85ded741b4f8b83819155f06a6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3688821425805237219, guid: 7d2bea85ded741b4f8b83819155f06a6,
         type: 3}
@@ -42076,6 +42096,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
       propertyPath: relativePoint2Y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
+      propertyPath: onePointPatrol
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1870136732, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
@@ -42264,6 +42288,10 @@ PrefabInstance:
     - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
       propertyPath: patrolMoveVelocity
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
+      propertyPath: onePointPatrol
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1870136732, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
       propertyPath: aggroTime
@@ -52455,7 +52483,7 @@ PrefabInstance:
     - target: {fileID: 3688821425805237217, guid: 7d2bea85ded741b4f8b83819155f06a6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3688821425805237219, guid: 7d2bea85ded741b4f8b83819155f06a6,
         type: 3}
@@ -52794,6 +52822,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
       propertyPath: relativePoint2Y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
+      propertyPath: onePointPatrol
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1870136732, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
