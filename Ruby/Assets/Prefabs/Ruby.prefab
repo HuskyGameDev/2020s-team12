@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0812a447edcfa84ebc1315bab3a7a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rapidFireRate: 5
+  rapidFireRate: 10
 --- !u!114 &1180911012121003229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  invincibilityTime: 2
+  invincibilityTime: 0.5
   knockFactor: 50
   knockTimer: 0.1
 --- !u!114 &1180911012121003225
@@ -148,7 +148,7 @@ MonoBehaviour:
     type: 3}
   fireSpeed: 10
   defaultFireRate: 1.2
-  fireRate: 2
+  fireRate: 1.5
 --- !u!50 &1180911012121003218
 Rigidbody2D:
   serializedVersion: 4

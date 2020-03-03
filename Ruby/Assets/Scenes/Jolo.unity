@@ -15704,10 +15704,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ruby
       objectReference: {fileID: 0}
-    - target: {fileID: 1180911012121003228, guid: 053a2ba25f810c04ba4e4818adadf4c1,
+    - target: {fileID: 1180911012121003230, guid: 053a2ba25f810c04ba4e4818adadf4c1,
         type: 3}
-      propertyPath: fireRate
-      value: 1.5
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180911012121003230, guid: 053a2ba25f810c04ba4e4818adadf4c1,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180911012121003230, guid: 053a2ba25f810c04ba4e4818adadf4c1,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180911012121003230, guid: 053a2ba25f810c04ba4e4818adadf4c1,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1180911012121003231, guid: 053a2ba25f810c04ba4e4818adadf4c1,
         type: 3}
@@ -15763,11 +15778,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5169793803072987869, guid: 053a2ba25f810c04ba4e4818adadf4c1,
-        type: 3}
-      propertyPath: rapidFireRate
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 053a2ba25f810c04ba4e4818adadf4c1, type: 3}
