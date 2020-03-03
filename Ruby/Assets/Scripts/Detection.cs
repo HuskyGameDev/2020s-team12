@@ -21,12 +21,12 @@ public class Detection : MonoBehaviour
         {
             player = GameObject.Find("Ruby"); // Sets Ruby
         }
-        move = transform.parent.GetComponent<MovingEnemy>();
-        patrol = transform.parent.GetComponent<EnemyPatrol>();
-        health = transform.parent.GetComponent<Health>();
+        move       = transform.parent.GetComponent<MovingEnemy>();
+        patrol     = transform.parent.GetComponent<EnemyPatrol>();
+        health     = transform.parent.GetComponent<Health>();
         aggroTimer = transform.parent.GetComponent<AggroTimer>();
-        anim = transform.parent.GetComponent<Animator>();
-        rb = transform.parent.GetComponent<Rigidbody2D>();
+        anim       = transform.parent.GetComponent<Animator>();
+        rb         = transform.parent.GetComponent<Rigidbody2D>();
     }
 
 
