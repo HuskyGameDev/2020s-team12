@@ -6,8 +6,20 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds; // Creates an array of sounds
 
+    public static AudioManager instance;
+
     void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         foreach(Sound s in sounds) // Updates all the sound components onto the selected audio clip
         {
             s.source = gameObject.AddComponent<AudioSource>();
