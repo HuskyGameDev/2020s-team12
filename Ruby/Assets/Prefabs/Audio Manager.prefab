@@ -50,3 +50,10 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - Name: Release
+    clip: {fileID: 8300000, guid: 40803f12c13d9164ca3030d98a2b9a25, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  audioGroup: {fileID: 24300002, guid: 081042bd8b2c7bd4b9345f68c3f409e8, type: 2}
