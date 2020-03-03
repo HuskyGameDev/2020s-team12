@@ -19,12 +19,18 @@ public class Health : MonoBehaviour
     Rigidbody2D rb;
     Movement pmove;
     MovingEnemy emove;
+    SpriteRenderer spriteRenderer;
+
+    Color defaultColor;
+    float flashTime = 25; // Frames of damage flash
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth; // Sets the current health to max upon opening the game
         rb = GetComponent<Rigidbody2D>(); // Get rigid body component
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         if (tag == "Player")
         {
             pmove = GetComponent<Movement>(); // Get player movement component if its a player
@@ -34,6 +40,7 @@ public class Health : MonoBehaviour
             emove = GetComponent<MovingEnemy>(); // Get enemy movement componenet
         }
 
+        defaultColor = spriteRenderer.color;
     }
 
     void OnTriggerStay2D(Collider2D collision) // This is checking for collision
@@ -99,7 +106,7 @@ public class Health : MonoBehaviour
         {
             currentHealth -= DMG; // Takes the damage amount from the health
             Mathf.Clamp(currentHealth, 0, maxHealth); // Prevents the health from dropping into negative values by placing bounds
-
+            damageFlash(); // Flash red (or whatever) upon taking damage
             
             invincibilityTimeRemaining = invincibilityTime; //after damage taken and i-frames expire, resets time remaining.
 
@@ -123,10 +130,33 @@ public class Health : MonoBehaviour
  
     }
 
-    public float GetHealth() {
-     
-            return (currentHealth / 100);
-       
+    void damageFlash() // Flash color
+    {
+        Color flashColor = new Color(1, 0, 0); // Red
+        spriteRenderer.color = flashColor; // Set sprite color to red
+    }
+
+    void updateColor() // Gradually change color to default value if the sprite isn't its normal color
+    {
+        if (spriteRenderer.color != defaultColor) // If the sprite isn't its normal color
+        {
+            float r = spriteRenderer.color.r; // current r component of color
+            float g = spriteRenderer.color.g; // g compononent
+            float b = spriteRenderer.color.b; // b componenent
+            r -= (1f-defaultColor.r) / flashTime; // Reduce r component by a small amount
+            g +=  defaultColor.g / flashTime; // Reduce g componenent by a small amount
+            b += defaultColor.b / flashTime; // Reduce b "
+            r = Mathf.Clamp(r, defaultColor.r, 1); // Keep r clamped to its default value
+            g = Mathf.Clamp(g, 0, defaultColor.g); // g "
+            b = Mathf.Clamp(b, 0, defaultColor.b); // b "
+
+            spriteRenderer.color = new Color(r, g, b); // set the new color
+        }
+    }
+
+    public float GetHealth()
+    {
+        return (currentHealth / 100);
     }
 
     public bool getTookDamage()
@@ -151,5 +181,6 @@ public class Health : MonoBehaviour
             //TODO Make Invincibility Animation (Flashing) and set it here
         }
 
+        updateColor(); // update color
     }
 }
