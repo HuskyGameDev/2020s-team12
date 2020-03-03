@@ -23,6 +23,7 @@ public class GameOver : MonoBehaviour
         if (player == null) // If it can't find the player
         {
             gameOverUI.SetActive(true); // Pulls up the game over screen
+
         }
     }
 

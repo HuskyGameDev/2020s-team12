@@ -114,6 +114,11 @@ public class Health : MonoBehaviour
     {
         Destroy(gameObject); // Destroys the gameobject that is being attacked
         
+        if(tag == "Player")
+        {
+            FindObjectOfType<AudioManager>().Play("PlayerDeath"); // Plays a death sound when the player dies
+        }
+
         print(tag + " Died"); // Prints to console for testing purposes
  
     }
