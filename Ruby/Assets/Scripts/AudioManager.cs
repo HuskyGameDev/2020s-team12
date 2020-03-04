@@ -24,6 +24,7 @@ public class Sound
         source.volume = volume;
         source.pitch = pitch;
         source.loop = loop;
+        source.playOnAwake = playOnAwake;
         source.outputAudioMixerGroup = audioGroup;
     }
 }
@@ -32,6 +33,12 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds; // Creates an array of sounds
     public static AudioManager instance;
+
+    private void Start()
+    {
+        Play("Theme");
+
+    }
 
     void Awake()
     {
