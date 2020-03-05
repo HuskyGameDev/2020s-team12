@@ -7,7 +7,6 @@ public class Shoot : MonoBehaviour
     Transform firePoint; // Makes a transform location called firePoint
     public GameObject heartPrefab; // Makes a GameObject for a heart instance
     public float fireSpeed = 0.2f; // How fast the bullet moves
-    public float defaultFireRate = 1.2f;
     public float fireRate; // How fast you can fire (in bullets per second)
     float currentFireCooldown = 0; // How much time until the player can shoot again
     float aimingAngle = 180f; // The angle in degrees the player is aiming/facing (0 as north, -90 as east, -180 as south, 90/-270 as west)
@@ -51,7 +50,7 @@ public class Shoot : MonoBehaviour
 
             Rigidbody2D rbheart = heart.GetComponent<Rigidbody2D>(); // Gets the RigidBody of the heart
 
-            currentFireCooldown = 60 / fireRate; // Set the cooldown to be the inverse of the fireRate in seconds (fireRate is the desired amount of bullets to be able to shot in a 60 frame [1 second] timeframe)
+            currentFireCooldown = 1 / fireRate; // Set the cooldown to be the inverse of the fireRate in seconds (fireRate is the desired amount of bullets to be able to shot in a 60 frame [1 second] timeframe)
         }
     }
 
@@ -65,8 +64,8 @@ public class Shoot : MonoBehaviour
             Fire(Quaternion.Euler(new Vector3(0, 0, aimingAngle))); // Calls the fire method with the rotation needed for the bullet
         }
 
-        currentFireCooldown--; // Reduce the current cooldown by 1 frame for every frame after you've fired last
-        currentFireCooldown = Mathf.Clamp(currentFireCooldown, 0, (60 / fireRate)); // Prevents currentFireCooldown from going below 0 and above (60/ fireRate)
+        currentFireCooldown -= Time.deltaTime; // Reduce the current cooldown
+        currentFireCooldown = Mathf.Clamp(currentFireCooldown, 0, (1 / fireRate)); // Prevents currentFireCooldown from going below 0 and above (60/ fireRate)
         
         
     }

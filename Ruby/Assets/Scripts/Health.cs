@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     Color defaultColor;
-    float flashTime = 25; // Frames of damage flash
+    float flashTime = .4f; // Seconds of damage flash
 
     // Start is called before the first frame update
     void Start()
@@ -143,9 +143,9 @@ public class Health : MonoBehaviour
             float r = spriteRenderer.color.r; // current r component of color
             float g = spriteRenderer.color.g; // g compononent
             float b = spriteRenderer.color.b; // b componenent
-            r -= (1f-defaultColor.r) / flashTime; // Reduce r component by a small amount
-            g +=  defaultColor.g / flashTime; // Reduce g componenent by a small amount
-            b += defaultColor.b / flashTime; // Reduce b "
+            r -= (1f-defaultColor.r)*Time.deltaTime / flashTime; // Reduce r component by a small amount
+            g +=  defaultColor.g * Time.deltaTime / flashTime; // Reduce g componenent by a small amount
+            b += defaultColor.b * Time.deltaTime / flashTime; // Reduce b "
             r = Mathf.Clamp(r, defaultColor.r, 1); // Keep r clamped to its default value
             g = Mathf.Clamp(g, 0, defaultColor.g); // g "
             b = Mathf.Clamp(b, 0, defaultColor.b); // b "

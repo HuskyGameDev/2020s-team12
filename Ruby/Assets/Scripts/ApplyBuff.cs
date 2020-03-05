@@ -5,6 +5,8 @@ using UnityEngine;
 public class ApplyBuff : MonoBehaviour
 {
     public float rapidFireRate; // Rate at which rapid fire shoots
+    float defaultFireRate;
+    Shoot shoot;
     
     public enum BuffType
     {
@@ -16,7 +18,8 @@ public class ApplyBuff : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        shoot = GetComponent<Shoot>();
+        defaultFireRate = shoot.fireRate;
     }
 
     void OnTriggerStay2D(Collider2D collision) // When object with this script collides with 'powerup' object
@@ -40,17 +43,15 @@ public class ApplyBuff : MonoBehaviour
         switch (power.type) {
 
             case BuffType.RapidFire:
-                Shoot shoot = GetComponent<Shoot>();
-                print("Locked and Loaded");
+
                 shoot.setFireRate(rapidFireRate); // Set fire rate located in shoot script
                 yield return new WaitForSeconds(power.powerupExtent); // Waits using powerupExtend (seconds)
-                shoot.setFireRate(shoot.defaultFireRate); // Returns fire rate to default
+                shoot.setFireRate(defaultFireRate); // Returns fire rate to default
                 break;
 
 
             case BuffType.HealthPickup:
                 Health health = GetComponent<Health>();
-                print("Res me, bro");
                 health.currentHealth = health.currentHealth + power.healAmount;//Adds value to current health
                 break;
 
