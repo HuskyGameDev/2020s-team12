@@ -66,7 +66,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    bool IsDead() // This checks to see if the entity is dead, lessens code amount
+    public bool IsDead() // This checks to see if the entity is dead, lessens code amount
     {
         return currentHealth <= 0; // Returns a boolean
     }
