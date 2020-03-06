@@ -19,6 +19,7 @@ public class TimelineManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(director.state != PlayState.Playing && !fix)
         {
             fix = true;
