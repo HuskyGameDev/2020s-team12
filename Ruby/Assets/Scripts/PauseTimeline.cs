@@ -17,7 +17,7 @@ public class PauseTimeline : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
-        director.Pause();
+        director.playableGraph.GetRootPlayable(0).SetSpeed(0);
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class PauseTimeline : MonoBehaviour
     {
         if (Input.GetAxis("Submit") == 1)
         {
-            director.Resume();
+            director.playableGraph.GetRootPlayable(0).SetSpeed(1);
             portraitSprite.sprite = portraits[0];
         }
     }
