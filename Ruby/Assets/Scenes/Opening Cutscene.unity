@@ -210,7 +210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &644769135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,6 +486,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   director: {fileID: 1797746854}
+  dialogueText: {fileID: 1681400294}
+  speakerName: {fileID: 1369978104}
+  portraitSprite: {fileID: 1217841477}
+  dialogBox: {fileID: 1898358874}
+  portraits:
+  - {fileID: 21300000, guid: 5a6eaefc1d5f499439fc5e957ce3b591, type: 3}
+  - {fileID: 21300000, guid: a692d4c4fe141da4d8cf06cb0e74dc65, type: 3}
 --- !u!1 &1217841475
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +947,7 @@ GameObject:
   - component: {fileID: 1947662266}
   - component: {fileID: 1947662265}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: DialogueHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -955,29 +962,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1947662264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 11500000, guid: e48c4f7c321af174a8c5eabd649e2d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 300
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 5
-    m_MaxSize: 300
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: reee
+  dialogueText: {fileID: 1681400294}
+  speakerName: {fileID: 1369978104}
+  portraitSprite: {fileID: 1217841477}
+  dialogBox: {fileID: 1898358874}
+  portraits:
+  - {fileID: 21300000, guid: a692d4c4fe141da4d8cf06cb0e74dc65, type: 3}
+  - {fileID: 21300000, guid: 5a6eaefc1d5f499439fc5e957ce3b591, type: 3}
 --- !u!222 &1947662266
 CanvasRenderer:
   m_ObjectHideFlags: 0
