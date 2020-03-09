@@ -164,6 +164,11 @@ public class Health : MonoBehaviour
         return tookDamage;
     }
 
+    public void setTookDamage(bool val)
+    {
+        tookDamage = val;
+    }
+
     /* Update is called once per frame. Subtracts from i-frame time remaining while player has i-frames and changes 
     color. Once invincibility expires and number is reset, returns original color to player.
          */

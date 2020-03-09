@@ -11,7 +11,6 @@ public class EnemyPatrol : MonoBehaviour
     List<Vector2> absolutePatrolPoints;
 
     public float atPointWaitTime = 1f; // How long the enemy waits upon reaching one of the patrol points
-    bool movingTowardsPoint1 = true; // Whether the enemy should be heading to point 1 or 2
     bool moving = true; // If the enemy should be moving
     Rigidbody2D rb;
     Animator anim;
@@ -62,26 +61,25 @@ public class EnemyPatrol : MonoBehaviour
 
         if (Mathf.Abs(moveX) <= tolerance && Mathf.Abs(moveY) <= tolerance) // Once enemy reaches the desired patrol point within a given tolerance
         {
-            movingTowardsPoint1 = !movingTowardsPoint1; // Start heading towards the other point
             currVelocity = 0; // Stop moving
 
-            if (absolutePatrolPoints.Count != 0)
+            if (absolutePatrolPoints.Count != 1)
             {
                 moving = false; // Don't move
+                pointIndex = ((pointIndex + 1) >= absolutePatrolPoints.Count) ? 0 : pointIndex + 1; // If enemy has patrolled all the points, go back to the first point
                 yield return new WaitForSeconds(atPointWaitTime); // Wait for a little bit based on the atPointWaitTime variable
                 moving = true; // Move
                 currVelocity = patrolVelocity; // Start moving again
             }
 
-            pointIndex = ((pointIndex + 1) >= absolutePatrolPoints.Count) ? 0 : pointIndex + 1; // If enemy has patrolled all the points, go back to the first point
         }
         else if(moving)
         {
             currVelocity = patrolVelocity;
         }
-        
 
         rb.velocity = movement * currVelocity; // Moves the enemy
+
         float facingAngle = Mathf.Atan2(moveY, moveX) * Mathf.Rad2Deg - 90f; // Sets the angle the enemy is facing in degrees
         anim.SetFloat("Facing", facingAngle); // Tell the animator which way the enemy is facing to set the appropriate sprites
     }

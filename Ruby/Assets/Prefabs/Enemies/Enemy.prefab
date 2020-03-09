@@ -199,11 +199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolVelocity: 3
-  relativePoint1X: 0
-  relativePoint1Y: 0
-  relativePoint2X: 0
-  relativePoint2Y: 0
-  onePointPatrol: 1
+  relativePatrolPoints:
+  - {x: 0, y: 0}
   atPointWaitTime: 1
 --- !u!114 &1870136732
 MonoBehaviour:
