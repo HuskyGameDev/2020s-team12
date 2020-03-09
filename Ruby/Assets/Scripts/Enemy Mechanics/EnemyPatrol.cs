@@ -7,17 +7,9 @@ public class EnemyPatrol : MonoBehaviour
     public float patrolVelocity = 1f; // Movement speed while the enemy is patrolling
     float currVelocity; // current velocity while patrolling
     Vector3 movement; // Movement vector
-    public float relativePoint1X = 0; // The relative X coordinate of the first patrol point
-    public float relativePoint1Y = 0; // The relative Y coordinate of the first patrol point
-    public float relativePoint2X = 0; // The relative X coordinate of the second patrol point
-    public float relativePoint2Y = 0; // The relative Y coordinate of the second patrol point
+    public List<Vector2> relativePatrolPoints;
+    List<Vector2> absolutePatrolPoints;
 
-    public bool onePointPatrol = false;
-
-    float point1X = 0; // The actual coordinates of the first patrol point
-    float point1Y = 0;
-    float point2X = 0; // The actual coordinates of the second patrol point
-    float point2Y = 0;
     public float atPointWaitTime = 1f; // How long the enemy waits upon reaching one of the patrol points
     bool movingTowardsPoint1 = true; // Whether the enemy should be heading to point 1 or 2
     bool moving = true; // If the enemy should be moving
@@ -25,6 +17,7 @@ public class EnemyPatrol : MonoBehaviour
     Animator anim;
 
     float tolerance = .1f; // How close the enemy can be to the point for it to be called at the point
+    int pointIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -36,35 +29,32 @@ public class EnemyPatrol : MonoBehaviour
 
         float startX = transform.position.x; // Get the initial coordinates of the enemy to convert the relative coordinates to actual coordinates
         float startY = transform.position.y;
-        point1X = startX + relativePoint1X;
-        point1Y = startY + relativePoint1Y;
-        point2X = startX + relativePoint2X;
-        point2Y = startY + relativePoint2Y;
+
+        absolutePatrolPoints = new List<Vector2>();
+        for (int i = 0; i < relativePatrolPoints.Count; i++)
+        {
+            absolutePatrolPoints.Add(relativePatrolPoints[i] + (new Vector2(startX, startY)));
+        }
+
     }
 
     public void PatrolPoints() // Makes the enemy patrol between the points
     {
-        if (onePointPatrol)
+        if (absolutePatrolPoints.Count == 1)
         {
-            StartCoroutine(MoveTowardsPoint(point1X, point1Y));
+            StartCoroutine(MoveTowardsPoint(absolutePatrolPoints[0]));
         }
         else
         {
-            if (movingTowardsPoint1)
-            {
-                StartCoroutine(MoveTowardsPoint(point1X, point1Y));
-            }
-            else
-            {
-                StartCoroutine(MoveTowardsPoint(point2X, point2Y));
-            }
+            StartCoroutine(MoveTowardsPoint(absolutePatrolPoints[pointIndex]));
         }
     }
 
-    IEnumerator MoveTowardsPoint(float xCoord, float yCoord)
+    IEnumerator MoveTowardsPoint(Vector2 point)
     {
-        float moveX = xCoord - transform.position.x; // Calculate movement vector based on current position and the point
-        float moveY = yCoord - transform.position.y;
+        float moveX = point.x - transform.position.x; // Calculate movement vector based on current position and the point
+        float moveY = point.y - transform.position.y;
+
 
         movement = new Vector3(moveX, moveY, 0); // Set values for movement vector
 
@@ -75,13 +65,15 @@ public class EnemyPatrol : MonoBehaviour
             movingTowardsPoint1 = !movingTowardsPoint1; // Start heading towards the other point
             currVelocity = 0; // Stop moving
 
-            if (!onePointPatrol)
+            if (absolutePatrolPoints.Count != 0)
             {
                 moving = false; // Don't move
                 yield return new WaitForSeconds(atPointWaitTime); // Wait for a little bit based on the atPointWaitTime variable
                 moving = true; // Move
                 currVelocity = patrolVelocity; // Start moving again
             }
+
+            pointIndex = ((pointIndex + 1) >= absolutePatrolPoints.Count) ? 0 : pointIndex + 1; // If enemy has patrolled all the points, go back to the first point
         }
         else if(moving)
         {
