@@ -240,7 +240,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1944137275}
         m_MethodName: LoadTitleScreen
         m_Mode: 1
         m_Arguments:
@@ -263,6 +263,10 @@ GameObject:
   - component: {fileID: 532671370764714296}
   - component: {fileID: 532671370764714299}
   - component: {fileID: 532671370764714298}
+  - component: {fileID: 1944137275}
+  - component: {fileID: 1944137276}
+  - component: {fileID: 1944137277}
+  - component: {fileID: 1944137278}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -353,6 +357,60 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1944137275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532671370764714301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd9278dbb5038d44a484091b2aa773f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverUI: {fileID: 8588005291352053809}
+--- !u!114 &1944137276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532671370764714301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf349a948004a1c4ea827cba4e75d01d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1944137277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532671370764714301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea882bd0c1e682a4fadefd48330f5176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audiomixer: {fileID: 24100000, guid: 081042bd8b2c7bd4b9345f68c3f409e8, type: 2}
+  volumeSlider: {fileID: 8386398505871812011}
+  Fullscreen: {fileID: 457499764365043677}
+--- !u!114 &1944137278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532671370764714301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eff966893cb2554baaaaa767117ea56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 4337145098748120434}
+  settingsUI: {fileID: 4183804725640851676}
 --- !u!1 &532671371199298526
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +700,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6947895643371424339}
   - component: {fileID: 8386398505871812011}
+  - component: {fileID: 200174604}
   m_Layer: 5
   m_Name: VolumeSlider
   m_TagString: Untagged
@@ -721,7 +780,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1944137277}
         m_MethodName: SetVolume
         m_Mode: 0
         m_Arguments:
@@ -732,6 +791,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &200174604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592913955006425253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Release
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1117695375167504925
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,7 +936,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1944137278}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -1273,7 +1360,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1944137276}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -1788,7 +1875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3389435632122134808
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1965,7 +2052,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1944137278}
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
@@ -2129,7 +2216,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1944137278}
         m_MethodName: SettingsMenu
         m_Mode: 1
         m_Arguments:
@@ -2177,7 +2264,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 84}
+  m_SizeDelta: {x: 0, y: 85}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &6628450145093240349
 CanvasRenderer:
@@ -2379,7 +2466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7687177907363457680
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2522,7 +2609,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1944137277}
         m_MethodName: SetFullscreen
         m_Mode: 0
         m_Arguments:
@@ -2651,7 +2738,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1944137278}
         m_MethodName: Back
         m_Mode: 1
         m_Arguments:
