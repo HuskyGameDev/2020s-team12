@@ -59,7 +59,7 @@ public class Shoot : MonoBehaviour
     {
         Aim();
 
-        if (Input.GetButton("Fire1") && (currentFireCooldown == 0)) // Uses the unity editor to choose the keybind. Can't fire unless currentFireCooldown is 0
+        if (Input.GetButton("Shoot") && (currentFireCooldown == 0)) // Uses the unity editor to choose the keybind. Can't fire unless currentFireCooldown is 0
         {    
             Fire(Quaternion.Euler(new Vector3(0, 0, aimingAngle))); // Calls the fire method with the rotation needed for the bullet
         }

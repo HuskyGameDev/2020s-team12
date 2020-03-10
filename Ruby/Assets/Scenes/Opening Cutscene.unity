@@ -259,8 +259,8 @@ Canvas:
   m_GameObject: {fileID: 644769134}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1853360001}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -497,9 +497,7 @@ MonoBehaviour:
   speakerName: {fileID: 1369978104}
   portraitSprite: {fileID: 1217841477}
   dialogBox: {fileID: 1898358874}
-  portraits:
-  - {fileID: 21300000, guid: 5a6eaefc1d5f499439fc5e957ce3b591, type: 3}
-  - {fileID: 21300000, guid: a692d4c4fe141da4d8cf06cb0e74dc65, type: 3}
+  script: {fileID: 4900000, guid: 74827621999e28044800db5880bb9b62, type: 3}
 --- !u!1 &1217841475
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,11 +603,11 @@ RectTransform:
   m_Father: {fileID: 1898358873}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 140, y: 57}
-  m_SizeDelta: {x: 600, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 345, y: -94}
+  m_SizeDelta: {x: 196, y: 39}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1369978104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,7 +633,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 54
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -753,8 +751,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: -50}
-  m_SizeDelta: {x: 600, y: 100}
+  m_AnchoredPosition: {x: 100, y: -27}
+  m_SizeDelta: {x: 649, y: 161}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1681400294
 MonoBehaviour:
@@ -776,12 +774,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 535c200fdd4c4184ebddf5b54601bc75, type: 3}
-    m_FontSize: 54
+    m_FontSize: 42
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 4
     m_MaxSize: 54
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -796,6 +794,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681400292}
   m_CullTransparentMesh: 0
+--- !u!20 &1853360001 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4245261064176868426, guid: 36cc07b6e34b5c84f8c3d5fe026e4765,
+    type: 3}
+  m_PrefabInstance: {fileID: 1473414330}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1898358872
 GameObject:
   m_ObjectHideFlags: 0
