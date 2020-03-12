@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class EnemyShooting : MonoBehaviour
 {
-    public float fireDelay = .2f; // Delay between shots
-    public float dispersion; // TODO will implement later
-    public MovingEnemy movingEnemy;
+    public float      fireDelay = .2f; // Delay between shots
+    public float      dispersion; // TODO will implement later
+    public float      offsetY = 0.0f; // offsets projectile origin Y
+    public float      offsetX = 0.0f; // offsets projectile origin X
     public GameObject projectilePrefab;
-    public GameObject player;
-    public LayerMask obstacles;
 
-    private bool allowFire;
+    private GameObject  player;
+    private LayerMask   obstacles;
+    public MovingEnemy  movingEnemy;
+    public float       timer = 0;
+
+    private AggroTimer aggroTimer;
 
 
     // Start is called before the first frame update
@@ -20,27 +24,21 @@ public class EnemyShooting : MonoBehaviour
         movingEnemy = GetComponent<MovingEnemy>();
         obstacles = 1<<8; // This sets the layerMask to the "Obstacle" unity layer. It's a literal bit mask. Ask Kasey if you need clarification.
         player = GameObject.FindWithTag("Player");
+        aggroTimer = GetComponent<AggroTimer>();
     }
 
     // coroutine that spawns projectile and moves it towards a given point
-    IEnumerator Shoot()
+    void Shoot()
     {
-        while (true)
-        {
-            //Debug.Log("Enemy shot"); // debug
-            allowFire = false;
+        // Determine angle projectile needs to move in
+        float angleX = player.transform.position.x - transform.position.x;
+        float angleY = player.transform.position.y - transform.position.y;
+        float shotAngle = Mathf.Atan2(angleY, angleX) * Mathf.Rad2Deg - 90f;
 
-            // Determine angle projectile needs to move in
-            float angleX = player.transform.position.x - transform.position.x;
-            float angleY = player.transform.position.y - transform.position.y;
-            float shotAngle = Mathf.Atan2(angleY, angleX) * Mathf.Rad2Deg - 90f;
+        // Instantiate given prefab
+        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.Euler(new Vector3(offsetX, offsetY, shotAngle)));
 
-            // Instantiate given prefab
-            GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, shotAngle)));
-
-            //yield return WaitForSeconds(fireDelay); // Wait for fireDelay
-            allowFire = true;
-        }
+        timer = 0.0f;
     }
 
     // Update is called once per frame
@@ -49,10 +47,11 @@ public class EnemyShooting : MonoBehaviour
         //seesPlayer = movingEnemy.seesPlayer;
         Vector3 playerDirection = transform.position - player.transform.position;
 
-        // if enemy sees player, is within firerate and not obstructed by obstacles
-        if (allowFire && movingEnemy.getSee() && !Physics2D.Raycast(transform.position, playerDirection, Mathf.Infinity, obstacles, -Mathf.Infinity, Mathf.Infinity))
+        // if enemy sees player and is within firerate
+        if (aggroTimer.isAggro)
         {
             Shoot();
+            timer = 0.0f;
         }
     }
 }

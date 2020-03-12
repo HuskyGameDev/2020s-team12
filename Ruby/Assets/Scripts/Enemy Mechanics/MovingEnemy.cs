@@ -6,8 +6,8 @@ public class MovingEnemy : MonoBehaviour
 {
     Transform player; // Does not need to be set in editor
     public float moveVelocity = .05f; // Enemy move speed
-    bool seesPlayer = false;
-    bool canMove = true;
+    public bool seesPlayer = false;
+    public bool canMove = true;
 
     Rigidbody2D rb;
     Animator anim;

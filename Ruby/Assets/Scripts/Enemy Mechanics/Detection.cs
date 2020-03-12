@@ -12,6 +12,7 @@ public class Detection : MonoBehaviour
     AggroTimer aggroTimer;
     Animator anim;
     Rigidbody2D rb;
+    public LayerMask obstacles;
 
 
     // Start is called before the first frame update
@@ -27,14 +28,37 @@ public class Detection : MonoBehaviour
         aggroTimer = transform.parent.GetComponent<AggroTimer>();
         anim = transform.parent.GetComponent<Animator>();
         rb = transform.parent.GetComponent<Rigidbody2D>();
+        obstacles = 1 << 8; // This sets the layerMask to the "Obstacle" unity layer. It's a literal bit mask. Ask Kasey if you need clarification.
     }
 
+    /*
+     * Sends a raycast between this enemy and the player. If it does not collide with
+     * any obstacles in the obstacle layermask, then it will return true. If it collides,
+     * it returns false.
+     */
+    bool IsVisible()
+    {
+        Vector3 direction = (player.transform.position - transform.position).normalized; // get direction
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        // If raycast hits target
+        if (Physics2D.Raycast(transform.position, direction, distance, obstacles))
+        {
+            return false;
+        } 
+        else
+        {
+            return true;
+        }
+    }
 
     void OnTriggerStay2D(Collider2D collision) // Collide with detection radius
     {
         if (collision.gameObject.Equals(player)) // If collision is with player
         {
-            move.setSee(true); // This enemy can now see the player
+            if (IsVisible())
+            {
+                move.setSee(true); // This enemy can now see the player
+            }
         }
     }
 
