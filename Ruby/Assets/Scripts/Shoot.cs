@@ -11,6 +11,7 @@ public class Shoot : MonoBehaviour
     public float fireRate; // How fast you can fire (in bullets per second)
     float currentFireCooldown = 0; // How much time until the player can shoot again
     float aimingAngle = 180f; // The angle in degrees the player is aiming/facing (0 as north, -90 as east, -180 as south, 90/-270 as west)
+    int spreadMultiplier = 1;
     Animator anim;
 
     // Start is called before the first frame update
@@ -23,6 +24,10 @@ public class Shoot : MonoBehaviour
     public void setFireRate(float firerate)
     {
         fireRate = firerate;
+    }
+    public void setSpreadMultiplier(int spread)
+    {
+        spreadMultiplier = spread;
     }
 
 
@@ -46,12 +51,26 @@ public class Shoot : MonoBehaviour
     {
         if (!PauseMenu.gamePaused)
         {
+            if (spreadMultiplier == 1)
+            {
+                print("not a lot of damage");
+                GameObject heart = Instantiate(heartPrefab, firePoint.position, bulletRotation); // Instantiates a heart to fire from the firepoint to the rotation
 
-            GameObject heart = Instantiate(heartPrefab, firePoint.position, bulletRotation); // Instantiates a heart to fire from the firepoint to the rotation
+                Rigidbody2D rbheart = heart.GetComponent<Rigidbody2D>(); // Gets the RigidBody of the heart
 
-            Rigidbody2D rbheart = heart.GetComponent<Rigidbody2D>(); // Gets the RigidBody of the heart
+                currentFireCooldown = 60 / fireRate; // Set the cooldown to be the inverse of the fireRate in seconds (fireRate is the desired amount of bullets to be able to shot in a 60 frame [1 second] timeframe)
+            }
+            else if (spreadMultiplier != 1)
+            {
+                for (int i = 0; i < spreadMultiplier; i++)
+                {
+                    //print("NOW THATS A LOT OF DAMAGE");
+                    GameObject heart = Instantiate(heartPrefab, new Vector3((float)(firePoint.position.x - (Mathf.Pow(-1, i)) + Mathf.Pow(( -3/4 ), i)), firePoint.position.y, firePoint.position.z), bulletRotation);
 
-            currentFireCooldown = 60 / fireRate; // Set the cooldown to be the inverse of the fireRate in seconds (fireRate is the desired amount of bullets to be able to shot in a 60 frame [1 second] timeframe)
+                    Rigidbody2D rbheart = heart.GetComponent<Rigidbody2D>();
+                }
+                currentFireCooldown = 60 / fireRate;
+            }
         }
     }
 

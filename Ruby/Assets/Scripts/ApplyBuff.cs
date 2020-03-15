@@ -5,11 +5,13 @@ using UnityEngine;
 public class ApplyBuff : MonoBehaviour
 {
     public float rapidFireRate; // Rate at which rapid fire shoots
+    public int spreadShotMultiplier = 3; // Number of Shots during spread shot power up
     
     public enum BuffType
     {
         RapidFire,
-        HealthPickup
+        HealthPickup,
+        MultiAttack
     }
 
 
@@ -54,7 +56,13 @@ public class ApplyBuff : MonoBehaviour
                 health.currentHealth = health.currentHealth + power.healAmount;//Adds value to current health
                 break;
 
-
+            case BuffType.MultiAttack:
+                Shoot shooot = GetComponent<Shoot>();
+                print("Now that's a lot of damage");
+                shooot.setSpreadMultiplier(spreadShotMultiplier);
+                yield return new WaitForSeconds(power.powerupExtent);
+                shooot.setSpreadMultiplier(1);
+                break;
                 //Can add more types of powerups here
 
         }
