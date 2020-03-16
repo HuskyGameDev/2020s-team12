@@ -6,7 +6,8 @@ public class ApplyBuff : MonoBehaviour
 {
     public float rapidFireRate; // Rate at which rapid fire shoots
     public int spreadShotMultiplier = 3; // Number of Shots during spread shot power up
-    
+    public PowerBar powerBar;
+
     public enum BuffType
     {
         RapidFire,
@@ -36,6 +37,9 @@ public class ApplyBuff : MonoBehaviour
 
     }
 
+ 
+
+
 
     IEnumerator ApplyEffect(PowerUp power) {
 
@@ -45,6 +49,7 @@ public class ApplyBuff : MonoBehaviour
                 Shoot shoot = GetComponent<Shoot>();
                 print("Locked and Loaded");
                 shoot.setFireRate(rapidFireRate); // Set fire rate located in shoot script
+                powerBar.StartTickDown(power.powerupExtent);
                 yield return new WaitForSeconds(power.powerupExtent); // Waits using powerupExtend (seconds)
                 shoot.setFireRate(shoot.defaultFireRate); // Returns fire rate to default
                 break;
@@ -60,6 +65,7 @@ public class ApplyBuff : MonoBehaviour
                 Shoot shooot = GetComponent<Shoot>();
                 print("Now that's a lot of damage");
                 shooot.setSpreadMultiplier(spreadShotMultiplier);
+                powerBar.StartTickDown(power.powerupExtent);
                 yield return new WaitForSeconds(power.powerupExtent);
                 shooot.setSpreadMultiplier(1);
                 break;
