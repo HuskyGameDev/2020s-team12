@@ -28,7 +28,7 @@ Dialogue: "*knock*"
 
 Portrait: "trevor confused"
 Speaker: "Trevor"
-Dialogue: "Hey what was the noise?"
+Dialogue: "Hey what was that noise?"
 
 Portrait: "ruby worry"
 Speaker: "Ruby"
@@ -36,6 +36,6 @@ Dialogue: "'Hey, I think someone wants to come in.'"
 
 Portrait: "trevor determined2"
 Speaker: "Trevor"
-Dialogue: "Let's check it out"
+Dialogue: "Let's check it out."
 
 
