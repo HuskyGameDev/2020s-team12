@@ -39,9 +39,12 @@ public class PowerBar : MonoBehaviour
 
     private void Update()
     {
-        SetBarPercent( remainingDuration / powerUpExtent);
-        remainingDuration -= Time.deltaTime;
-        remainingDuration = Mathf.Clamp(remainingDuration, 0, powerUpExtent);
+        if (remainingDuration > 0)
+        {
+            SetBarPercent(remainingDuration / powerUpExtent);
+            remainingDuration -= Time.deltaTime;
+            remainingDuration = Mathf.Clamp(remainingDuration, 0, powerUpExtent);
+        }
     }
 
 }
