@@ -15,6 +15,8 @@ public class Health : MonoBehaviour
     public float knockTimer = 0; // How long knockback lasts
 
     bool tookDamage = false;
+    bool damageFlashed = false;
+    bool otherColorChange = false;
     HealthBar bar;
     Rigidbody2D rb;
     Movement pmove;
@@ -56,7 +58,10 @@ public class Health : MonoBehaviour
 
                     TakeDamage(damage.damageAmount); // Uses the Take Damage method and uses the damage amount from the damage class
 
-                    StartCoroutine(KnockBack(collision, knockFactor));
+                    if (!knockTimer.Equals(0))
+                    {
+                        StartCoroutine(KnockBack(collision, knockFactor));
+                    }
 
                     print(tag + " Took " + damage.damageAmount); // Console print out for testing
 
@@ -64,6 +69,11 @@ public class Health : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void setOtherColorChange(bool val)
+    {
+        otherColorChange = val;
     }
 
     public bool IsDead() // This checks to see if the entity is dead, lessens code amount
@@ -132,25 +142,30 @@ public class Health : MonoBehaviour
 
     void damageFlash() // Flash color
     {
-        Color flashColor = new Color(1, 0, 0); // Red
+        Color flashColor = new Color(1, 0, 0, spriteRenderer.color.a); // Red
         spriteRenderer.color = flashColor; // Set sprite color to red
+        damageFlashed = true;
     }
 
     void updateColor() // Gradually change color to default value if the sprite isn't its normal color
     {
-        if (spriteRenderer.color != defaultColor) // If the sprite isn't its normal color
+        if (spriteRenderer.color.r != defaultColor.r || spriteRenderer.color.g != defaultColor.g || spriteRenderer.color.b != defaultColor.b) // If the sprite isn't its normal color
         {
             float r = spriteRenderer.color.r; // current r component of color
             float g = spriteRenderer.color.g; // g compononent
             float b = spriteRenderer.color.b; // b componenent
             r -= (1f-defaultColor.r)*Time.deltaTime / flashTime; // Reduce r component by a small amount
-            g +=  defaultColor.g * Time.deltaTime / flashTime; // Reduce g componenent by a small amount
-            b += defaultColor.b * Time.deltaTime / flashTime; // Reduce b "
+            g +=  defaultColor.g * Time.deltaTime / flashTime; // Increase g componenent by a small amount
+            b += defaultColor.b * Time.deltaTime / flashTime; // Increase b "
             r = Mathf.Clamp(r, defaultColor.r, 1); // Keep r clamped to its default value
             g = Mathf.Clamp(g, 0, defaultColor.g); // g "
             b = Mathf.Clamp(b, 0, defaultColor.b); // b "
 
-            spriteRenderer.color = new Color(r, g, b); // set the new color
+            spriteRenderer.color = new Color(r, g, b, spriteRenderer.color.a); // set the new color
+        }
+        else
+        {
+            damageFlashed = false;
         }
     }
 
@@ -186,6 +201,9 @@ public class Health : MonoBehaviour
             //TODO Make Invincibility Animation (Flashing) and set it here
         }
 
-        updateColor(); // update color
+        if (damageFlashed && !otherColorChange)
+        {
+            updateColor(); // update color
+        }
     }
 }

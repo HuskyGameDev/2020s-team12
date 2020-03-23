@@ -69,6 +69,9 @@ public class MovingEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        float moveX = rb.velocity.x;
+        float moveY = rb.velocity.y;
+        float facingAngle = Mathf.Atan2(moveY, moveX) * Mathf.Rad2Deg - 90f; // Sets the angle the enemy is facing in degrees
+        anim.SetFloat("Facing", facingAngle); // Tell the animator which way the enemy is facing to set the appropriate sprites
     }
 }

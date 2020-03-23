@@ -12,6 +12,7 @@ public class Detection : MonoBehaviour
     AggroTimer aggroTimer;
     Animator anim;
     Rigidbody2D rb;
+    OWMS enemyAttack;
     public LayerMask obstacles;
 
 
@@ -21,6 +22,10 @@ public class Detection : MonoBehaviour
         if (player == null)
         {
             player = GameObject.Find("Ruby"); // Sets Ruby
+        }
+        if (transform.parent.name.Equals("Enemy Boss"))
+        {
+            enemyAttack = transform.parent.GetComponent<OWMS>();
         }
         move = transform.parent.GetComponent<MovingEnemy>();
         patrol = transform.parent.GetComponent<EnemyPatrol>();
@@ -74,7 +79,18 @@ public class Detection : MonoBehaviour
 
         if (aggroTimer.isAggro) // If the enemy is currently targeting Ruby
         {
-            move.MoveTowardsPlayer(); // Move towards Ruby
+
+            if (transform.parent.name.Equals("Enemy Boss"))
+            {
+                if (!enemyAttack.isAttacking())
+                {
+                    StartCoroutine(enemyAttack.ChargeAttack());
+                }
+            }
+            else
+            {
+                move.MoveTowardsPlayer(); // Move towards Ruby
+            }
         }
         else
         {
