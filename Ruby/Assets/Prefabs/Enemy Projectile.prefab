@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5349920854609116690}
   - component: {fileID: 5349920854609116689}
   - component: {fileID: 114754080221085632}
-  - component: {fileID: 114109450508300164}
   - component: {fileID: 5349920854609116688}
   - component: {fileID: 348077984173773947}
+  - component: {fileID: 4839447142538878962}
   m_Layer: 0
   m_Name: Enemy Projectile
   m_TagString: Player
@@ -97,20 +97,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 10
---- !u!114 &114109450508300164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5349920854609116783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62ffeea18ced56a40aecf7e3a8228728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireSpeed: 20
-  heartRigid: {fileID: 5349920854609116688}
 --- !u!50 &5349920854609116688
 Rigidbody2D:
   serializedVersion: 4
@@ -148,3 +134,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &4839447142538878962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5349920854609116783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f964efe0d38c8e54a9eadd20f0f76467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireSpeed: 10
+  heartRigid: {fileID: 5349920854609116688}

@@ -1,0 +1,41 @@
+Portrait: "bully normal"
+Speaker: "Bully"
+Dialogue: "Why don't you say something, huh?"
+
+Portrait: "ruby annoyance"
+Speaker: "Ruby"
+Dialogue: "'Oh, I would if I could.'"
+
+Portrait: "trevor assuring"
+Speaker: "Trevor"
+Dialogue: "Hey, hey. You don't need to deal with this, lets leave."
+
+Portrait: "bully normal"
+Speaker: "Bully"
+Dialogue: "Run away like you always do!"
+
+Portrait: "trevor assuring"
+Speaker: "Trevor"
+Dialogue: "Hey, you don't need to hide from her."
+
+Portrait: "ruby fear"
+Speaker: "Ruby"
+Dialogue: "'I don't think it's safe.'"
+
+Portrait: "none"
+Speaker: "Door"
+Dialogue: "*knock*"
+
+Portrait: "trevor confused"
+Speaker: "Trevor"
+Dialogue: "Hey what was that noise?"
+
+Portrait: "ruby worry"
+Speaker: "Ruby"
+Dialogue: "'Hey, I think someone wants to come in.'"
+
+Portrait: "trevor determined2"
+Speaker: "Trevor"
+Dialogue: "Let's check it out."
+
+

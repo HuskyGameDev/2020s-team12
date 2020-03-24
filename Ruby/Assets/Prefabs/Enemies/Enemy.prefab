@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6225342447639004589}
   - component: {fileID: 6225342447639004592}
   - component: {fileID: 6225342447639004593}
+  - component: {fileID: 9185965233560181337}
   - component: {fileID: 6225342447639004594}
   - component: {fileID: 8188144964286355754}
   - component: {fileID: 510383863}
@@ -120,6 +121,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveVelocity: 6
+  seesPlayer: 0
+  canMove: 1
+--- !u!114 &9185965233560181337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6225342447639004588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1fc914e7e5d8b4eb36fe3a93262826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveAwayVelocity: 2
+  chargeVelocity: 10
+  moveAwayTime: 2
 --- !u!50 &6225342447639004594
 Rigidbody2D:
   serializedVersion: 4
@@ -199,11 +217,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolVelocity: 3
-  relativePoint1X: 0
-  relativePoint1Y: 0
-  relativePoint2X: 0
-  relativePoint2Y: 0
-  onePointPatrol: 1
+  relativePatrolPoints:
+  - {x: 0, y: 0}
   atPointWaitTime: 1
 --- !u!114 &1870136732
 MonoBehaviour:
@@ -280,6 +295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab500b0da1b8b74f90fb79b47967af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacles:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &6225342448453933723
 Rigidbody2D:
   serializedVersion: 4

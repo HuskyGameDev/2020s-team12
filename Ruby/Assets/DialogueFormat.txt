@@ -1,0 +1,8 @@
+Portrait: "NAME"
+Speaker: "NAME"
+Dialogue: "TEXT"
+
+Portrait: "NAME"
+Speaker: "NAME"
+Dialogue: "TEXT"
+Dialogue: "TEXT"
