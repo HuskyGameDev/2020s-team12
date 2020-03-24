@@ -4,41 +4,52 @@ using UnityEngine;
 
 public class EnemyShooting : MonoBehaviour
 {
-    public float      fireDelay = .2f; // Delay between shots
-    public float      dispersion; // TODO will implement later
-    public float      offsetY = 0.0f; // offsets projectile origin Y
-    public float      offsetX = 0.0f; // offsets projectile origin X
+    public float shotDelay = .2f; // Delay between shots
+    public float offsetY = 0.0f; // offsets projectile origin Y
+    public float offsetX = 0.0f; // offsets projectile origin X
     public GameObject projectilePrefab;
 
     private GameObject  player;
-    private LayerMask   obstacles;
     public MovingEnemy  movingEnemy;
-    public float       timer = 0;
 
     private AggroTimer aggroTimer;
+    bool firecontrol = false; // used to stop unity from starting several shoot coroutines at once
 
 
     // Start is called before the first frame update
     void Start()
     {
         movingEnemy = GetComponent<MovingEnemy>();
-        obstacles = 1<<8; // This sets the layerMask to the "Obstacle" unity layer. It's a literal bit mask. Ask Kasey if you need clarification.
         player = GameObject.FindWithTag("Player");
         aggroTimer = GetComponent<AggroTimer>();
     }
 
     // coroutine that spawns projectile and moves it towards a given point
-    void Shoot()
+    void startShooting()
     {
-        // Determine angle projectile needs to move in
-        float angleX = player.transform.position.x - transform.position.x;
-        float angleY = player.transform.position.y - transform.position.y;
-        float shotAngle = Mathf.Atan2(angleY, angleX) * Mathf.Rad2Deg - 90f;
+        Debug.Log("startshooting"); // debug
+        StartCoroutine(Shoot());
+    }
 
-        // Instantiate given prefab
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.Euler(new Vector3(offsetX, offsetY, shotAngle)));
+    IEnumerator Shoot() // style convention dictates coroutines are generally capitalized
+    {
+        while (aggroTimer.isAggro)
+        {
+            Debug.Log("shot"); // debug
+            
+            // Determine angle projectile needs to move in
+            float angleX = player.transform.position.x - (transform.position.x + offsetX);
+            float angleY = player.transform.position.y - (transform.position.y + offsetY);
+            float shotAngle = Mathf.Atan2(angleY, angleX) * Mathf.Rad2Deg - 90f;
 
-        timer = 0.0f;
+            // Determine shot origin based on this object's position with given offsets applied
+            Vector3 shotOrigin = transform.position;
+            shotOrigin.x = shotOrigin.x + offsetX; // apply offsets
+            shotOrigin.y = shotOrigin.y + offsetY;
+
+            Instantiate(projectilePrefab, shotOrigin, Quaternion.Euler(new Vector3(offsetX, offsetY, shotAngle)));
+            yield return new WaitForSeconds(shotDelay);
+        }
     }
 
     // Update is called once per frame
@@ -48,10 +59,17 @@ public class EnemyShooting : MonoBehaviour
         Vector3 playerDirection = transform.position - player.transform.position;
 
         // if enemy sees player and is within firerate
-        if (aggroTimer.isAggro)
+        if (aggroTimer.isAggro && !firecontrol)
         {
-            Shoot();
-            timer = 0.0f;
+            startShooting();
+            firecontrol = true;
+        }
+
+        // if the enemy is no longer antagonized, turn off firecontrol
+        if (!aggroTimer.isAggro)
+        {
+            firecontrol = false;
+            //StopCoroutine(Shoot());
         }
     }
 }

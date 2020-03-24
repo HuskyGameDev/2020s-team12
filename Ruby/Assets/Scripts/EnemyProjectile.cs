@@ -5,16 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class EnemyProjectile : MonoBehaviour
 {
-    public float fireSpeed = 10f; // Fire speed of heart
+    public float fireSpeed = 20f; // Fire speed of heart
 
-    public Rigidbody2D heartRigid; // Creates a rigidbody to put the heart into the script
+    public Rigidbody2D projectileRigid; // Creates a rigidbody to put the heart into the script
 
 
     // Start is called before the first frame update
     void Start()
     {
 
-        heartRigid.velocity = transform.up * fireSpeed; // Moves the heart
+        projectileRigid.velocity = transform.up * fireSpeed; // Moves the heart
 
     }
 
