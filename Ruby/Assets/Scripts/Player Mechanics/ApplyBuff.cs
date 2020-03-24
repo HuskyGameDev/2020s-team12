@@ -61,7 +61,7 @@ public class ApplyBuff : MonoBehaviour
                 shoot.setFireRate(rapidFireRate); // Set fire rate located in shoot script
                 powerBar.StartTickDown(power.powerupExtent);
                 yield return new WaitForSeconds(power.powerupExtent); // Waits using powerupExtend (seconds)
-                shoot.setFireRate(shoot.defaultFireRate); // Returns fire rate to default
+                shoot.setFireRate(defaultFireRate); // Returns fire rate to default
                 currentPower = BuffType.Default;
                 icontrol.changeImage();
                 break;
