@@ -13,24 +13,21 @@ public class ImageControl : MonoBehaviour
     public Sprite nothing;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         powerup = GameObject.Find("Ruby").GetComponent<ApplyBuff>();
         image = GetComponent<Image>();
     }
 
-    public void changeImage()
+    public void ChangeImage()
     {
-        
         if (powerup.currentPower.Equals(ApplyBuff.BuffType.RapidFire))
         {
-            print("a");
             image.sprite = rapid;
         }
 
         if (powerup.currentPower.Equals(ApplyBuff.BuffType.MultiAttack))
         {
-            print("b");
             image.sprite = multi;
         }
 
