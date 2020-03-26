@@ -14,6 +14,7 @@ public class Detection : MonoBehaviour
     Rigidbody2D rb;
     OWMS enemyAttack;
     public LayerMask obstacles;
+    public bool isBoss = false;
 
 
     // Start is called before the first frame update
@@ -23,7 +24,7 @@ public class Detection : MonoBehaviour
         {
             player = GameObject.Find("Ruby"); // Sets Ruby
         }
-        if (transform.parent.name.Equals("Enemy Boss"))
+        if (isBoss)
         {
             enemyAttack = transform.parent.GetComponent<OWMS>();
         }
@@ -80,11 +81,11 @@ public class Detection : MonoBehaviour
         if (aggroTimer.isAggro) // If the enemy is currently targeting Ruby
         {
 
-            if (transform.parent.name.Equals("Enemy Boss"))
+            if (isBoss) // If the enemy is the boss enemy
             {
-                if (!enemyAttack.isAttacking())
+                if (!enemyAttack.isAttacking()) // As long as it isn't already attacking
                 {
-                    StartCoroutine(enemyAttack.ChargeAttack());
+                    StartCoroutine(enemyAttack.ChargeAttack()); // Start charge attack
                 }
             }
             else

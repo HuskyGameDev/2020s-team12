@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OWMS : MonoBehaviour
+public class OWMS : MonoBehaviour // I apologize for the naming scheme, it was the only thing I could think of while writing the teleport behind mechanic. If you get what it stands for then you're a weeb.
 {
-    public float moveAwayVelocity = 2;
-    public float chargeVelocity = 10;
+    public float moveAwayVelocity = 2; // How fast the enemy moves away from Ruby
+    public float chargeVelocity = 10; // How fast the enemy charges towrads Ruby
     public float moveAwayTime = 2; // Pause time in seconds before charging
-    public float crashStun = 1;
-    float currentMoveAwayTime = 0;
-    bool attacking = false;
+    public float crashStun = 1; // How long the enemy is stunned upon finally crashing into a wall
+    bool attacking = false; // Whether or not the enemy is in the middle of executing an attack (Used in detection for behavior decision making)
 
     Rigidbody2D rb;
     Transform playerPos;
@@ -22,7 +21,7 @@ public class OWMS : MonoBehaviour
     {
         if (playerPos == null)
         {
-            playerPos = GameObject.Find("Ruby").GetComponent<Transform>();
+            playerPos = GameObject.Find("Ruby").GetComponent<Transform>(); // Get Ruby Transform
         }
         rb = GetComponent<Rigidbody2D>();
         enemySprite = GetComponent<SpriteRenderer>();
@@ -33,58 +32,54 @@ public class OWMS : MonoBehaviour
     {
         return attacking;
     }
-    void TeleportBehind()
-    {
-
-    }
 
     public IEnumerator ChargeAttack()
     {
-        attacking = true;
+        attacking = true; // Is now attacking
 
-        bool attackRandomizer = (Random.value > .5f);
-        print(attackRandomizer);
-        if (attackRandomizer)
+        bool attackRandomizer = (Random.value > .5f); // Randomizer variable (50/50) Determines whether or not the enemy teleports before charging
+
+        if (attackRandomizer) // Teleport attack
         {
             float elapsedTime = 0;
-            Vector2 tpLocation = playerPos.position;
-            while (elapsedTime < moveAwayTime)
+            Vector2 tpLocation = playerPos.position; // Get the player's position at this point in time
+            while (elapsedTime < moveAwayTime) // Do this until moveAwayTime has elapsed
             {
                 MoveAway();
-                yield return new WaitForEndOfFrame();
-                float newTransparency = Mathf.Clamp(initColor.a * Time.deltaTime / moveAwayTime, 0, initColor.a);
-                enemySprite.color -= new Color(0, 0, 0, newTransparency);
-                elapsedTime += Time.deltaTime;
+                yield return new WaitForEndOfFrame(); // Wait a frame
+                float newTransparency = Mathf.Clamp(initColor.a * Time.deltaTime / moveAwayTime, 0, initColor.a); // create a Color var with a decreased transparency
+                enemySprite.color -= new Color(0, 0, 0, newTransparency); // Set the boss's color to the new less transparent color
+                elapsedTime += Time.deltaTime; // Increment elapsed time
             }
-            enemySprite.color = initColor;
-            transform.position = tpLocation;
+            enemySprite.color = initColor; // Return color to normal
+            transform.position = tpLocation; // Teleport to the position Ruby was in a [moveAwayTime] seconds ago
         }
-        else
+        else // Don't teleport
         {
             MoveAway();
             yield return new WaitForSeconds(moveAwayTime);
         }
 
-        do
+        do // Charge at Ruby
         {
             Vector2 chargeVector = playerPos.position - transform.position;
             chargeVector.Normalize();
             rb.velocity = chargeVector * chargeVelocity;
-            yield return new WaitUntil(() => rb.velocity.x.Equals(0) | rb.velocity.y.Equals(0));
-        } while (Random.value < .6f);
+            yield return new WaitUntil(() => rb.velocity.x.Equals(0) | rb.velocity.y.Equals(0)); // Wait until the boss hits a wall
+        } while (Random.value < .6f); // 60% chance to bounce and charge towards Ruby again
 
-        rb.velocity = Vector2.zero;
-        yield return new WaitForSeconds(crashStun);
+        rb.velocity = Vector2.zero; // Stop moving
+        yield return new WaitForSeconds(crashStun); // Be stunned for a bit
 
         float elapsedTime2 = 0;
-        while (elapsedTime2 < moveAwayTime)
+        while (elapsedTime2 < moveAwayTime) // Move towards Ruby a little bit
         {
             MoveTowards();
             yield return new WaitForEndOfFrame();
             elapsedTime2 += Time.deltaTime;
         }
 
-        attacking = false;
+        attacking = false; // Done attacking
     }
 
     void MoveAway()
