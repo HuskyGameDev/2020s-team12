@@ -12,11 +12,15 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject settingsUI;
 
+    public SetCursor curs;
+
     void Start()
     {
         pauseMenuUI.SetActive(false); // To not start paused
 
         settingsUI.SetActive(false); // To not start in settings
+
+        curs = GetComponent<SetCursor>();
     }
 
     // Update is called once per frame
@@ -27,9 +31,11 @@ public class PauseMenu : MonoBehaviour
             if (gamePaused)
             {
                 Resume();
+                curs.ChangeCursor(SetCursor.CursorType.shoot);
             }
             else
             {
+                curs.ChangeCursor(SetCursor.CursorType.normal);
                 Pause();
             }
         }

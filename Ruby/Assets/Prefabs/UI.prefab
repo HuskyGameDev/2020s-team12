@@ -2577,6 +2577,7 @@ GameObject:
   - component: {fileID: 615621171}
   - component: {fileID: 615621172}
   - component: {fileID: 615621173}
+  - component: {fileID: 919833499074140643}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -2722,6 +2723,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 1785328899}
+--- !u!114 &919833499074140643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532671370764714301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f011e32d39dadd14db22939e252b7adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootCursor: {fileID: 0}
 --- !u!1 &532671371199298526
 GameObject:
   m_ObjectHideFlags: 0

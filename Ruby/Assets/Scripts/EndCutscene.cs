@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EndCutscene : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void OnEnable()
     {
