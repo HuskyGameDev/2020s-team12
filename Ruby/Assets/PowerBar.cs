@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PowerBar : MonoBehaviour
 {
@@ -15,7 +16,11 @@ public class PowerBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (powerup == null)
+        if (powerup == null && SceneManager.GetActiveScene().name.Equals("MapA"))
+        {
+            powerup = GameObject.Find("Trevor").GetComponent<ApplyBuff>();
+        }
+        else if (powerup == null)
         {
             powerup = GameObject.Find("Ruby").GetComponent<ApplyBuff>(); // Sets Ruby
         }

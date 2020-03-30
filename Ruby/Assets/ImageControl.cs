@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ImageControl : MonoBehaviour
 {
@@ -15,7 +16,15 @@ public class ImageControl : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        powerup = GameObject.Find("Ruby").GetComponent<ApplyBuff>();
+        if (SceneManager.GetActiveScene().name.Equals("MapA"))
+        {
+            powerup = GameObject.Find("Trevor").GetComponent<ApplyBuff>();
+        }
+        else
+        {
+            powerup = GameObject.Find("Ruby").GetComponent<ApplyBuff>();
+        }
+
         image = GetComponent<Image>();
     }
 

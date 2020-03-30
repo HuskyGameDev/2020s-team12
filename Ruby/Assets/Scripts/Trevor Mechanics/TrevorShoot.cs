@@ -10,7 +10,7 @@ public class TrevorShoot : MonoBehaviour
     public float fireRate; // How fast you can fire (in bullets per second)
     float currentFireCooldown = 0; // How much time until the player can shoot again
     float aimingAngle = 180f; // The angle in degrees the player is aiming/facing (0 as north, -90 as east, -180 as south, 90/-270 as west)
-    int spreadMultiplier = 1;
+    int spreadMultiplier = 9;
     Animator anim;
 
     // Start is called before the first frame update

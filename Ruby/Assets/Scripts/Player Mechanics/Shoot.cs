@@ -51,7 +51,6 @@ public class Shoot : MonoBehaviour
         if (!PauseMenu.gamePaused)
         {
 
-            print("not a lot of damage");
             GameObject heart = Instantiate(heartPrefab, firePoint.position, bulletRotation); // Instantiates a heart to fire from the firepoint to the rotation
 
             Rigidbody2D rbheart = heart.GetComponent<Rigidbody2D>(); // Gets the RigidBody of the heart

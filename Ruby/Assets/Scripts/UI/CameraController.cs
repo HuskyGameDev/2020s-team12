@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Animator))]
 public class CameraController : MonoBehaviour
@@ -15,8 +16,14 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(player == null)
+        if (player == null && SceneManager.GetActiveScene().name.Equals("MapA"))
+        {
+            player = GameObject.Find("Trevor").transform; // Sets Trevor if MapA scene
+        }
+        else if (player == null)
+        {
             player = GameObject.Find("Ruby").transform; // Sets Ruby
+        }
         anim = GetComponent<Animator>();
     }
 

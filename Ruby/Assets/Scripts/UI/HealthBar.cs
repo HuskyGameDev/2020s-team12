@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (SceneManager.GetActiveScene().name.Equals("MapA") && health == null)
+        {
+            health = GameObject.Find("Trevor").GetComponent<Health>(); // Sets Trevors' Health if in MapA Scene
+        }
         if (health == null)
         {
             health = GameObject.Find("Ruby").GetComponent<Health>(); // Sets Ruby
