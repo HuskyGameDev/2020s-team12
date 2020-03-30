@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot : MonoBehaviour
+public class TrevorShoot : MonoBehaviour
 {
     Transform firePoint; // Makes a transform location called firePoint
     public GameObject heartPrefab; // Makes a GameObject for a heart instance
@@ -71,7 +71,7 @@ public class Shoot : MonoBehaviour
         {
             for (int i = 0; i < spreadMultiplier; i++)
             {
-                Fire(Quaternion.Euler(new Vector3(0, 0, aimingAngle + ((i + 1) / 2 * 5 * Mathf.Pow(-1, i))))); // Calls the fire method with the rotation needed for the bullet
+                Fire(Quaternion.Euler(new Vector3(0, 0, aimingAngle + ((i+1)/2 * 5 * Mathf.Pow(-1,i))))); // Calls the fire method with the rotation needed for the bullet
             }
 
         }

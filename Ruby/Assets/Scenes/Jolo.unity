@@ -63837,100 +63837,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 432271438}
     m_Modifications:
-    - target: {fileID: 1981257616884030794, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: chargeVelocity
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951273790274466424, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: relativePatrolPoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951273790274466424, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: relativePatrolPoints.Array.data[0].y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951273790274466424, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: relativePatrolPoints.Array.data[1].y
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951273790274466424, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: relativePatrolPoints.Array.data[0].x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951273790274466424, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: relativePatrolPoints.Array.data[2].y
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951273790274466424, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: relativePatrolPoints.Array.data[3].y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951273790274466424, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: relativePatrolPoints.Array.data[4].y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951273790274466424, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: relativePatrolPoints.Array.data[2].x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951273790274466424, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: relativePatrolPoints.Array.data[3].x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951273790274466424, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: relativePatrolPoints.Array.data[4].x
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6967461606662706746, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6967461607846564165, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: isBoss
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6967461608623902316, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: maxHealth
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6967461608623902318, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6967461608623902320, guid: f5f1b1d141d933344914c967fdba2a6a,
         type: 3}
       propertyPath: m_Name
       value: Enemy Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 6967461608623902321, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.5768442
-      objectReference: {fileID: 0}
-    - target: {fileID: 6967461608623902321, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6967461608623902321, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6967461608623902322, guid: f5f1b1d141d933344914c967fdba2a6a,
         type: 3}
@@ -63986,16 +63896,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6967461608623902322, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6967461608623902322, guid: f5f1b1d141d933344914c967fdba2a6a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5f1b1d141d933344914c967fdba2a6a, type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveAwayVelocity: 2
-  chargeVelocity: 10
+  chargeVelocity: 8
   moveAwayTime: 2
   crashStun: 1
 --- !u!1001 &3951273790760815580
@@ -51,27 +51,27 @@ PrefabInstance:
     - target: {fileID: 6225342447639004589, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 0.5768442
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004589, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
-      propertyPath: m_Color.b
-      value: 0.19927931
+      propertyPath: m_Color.g
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004590, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.89
+      value: 6.38
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004590, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004590, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004590, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
@@ -116,12 +116,7 @@ PrefabInstance:
     - target: {fileID: 6225342447639004590, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6225342447639004590, guid: e8c302960853e3741ae7f011aff30b63,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004592, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
@@ -137,6 +132,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mass
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225342448453933721, guid: e8c302960853e3741ae7f011aff30b63,
+        type: 3}
+      propertyPath: isBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225342449436433894, guid: e8c302960853e3741ae7f011aff30b63,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9185965233560181337, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
