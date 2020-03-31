@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OWMS : MonoBehaviour // I apologize for the naming scheme, it was the only thing I could think of while writing the teleport behind mechanic. If you get what it stands for then you're a weeb.
 {
@@ -9,6 +10,7 @@ public class OWMS : MonoBehaviour // I apologize for the naming scheme, it was t
     public float moveAwayTime = 2; // Pause time in seconds before charging
     public float crashStun = 1; // How long the enemy is stunned upon finally crashing into a wall
     bool attacking = false; // Whether or not the enemy is in the middle of executing an attack (Used in detection for behavior decision making)
+    float minVelocity = 4; // The minimum velocity the boss should be charging at
 
     Rigidbody2D rb;
     Transform playerPos;
@@ -19,7 +21,11 @@ public class OWMS : MonoBehaviour // I apologize for the naming scheme, it was t
     // Start is called before the first frame update
     void Start()
     {
-        if (playerPos == null)
+        if (playerPos == null && SceneManager.GetActiveScene().name.Equals("MapA"))
+        {
+            playerPos = GameObject.Find("Trevor").GetComponent<Transform>(); // Trevor transform
+        }
+        else if (playerPos == null)
         {
             playerPos = GameObject.Find("Ruby").GetComponent<Transform>(); // Get Ruby Transform
         }
@@ -65,7 +71,7 @@ public class OWMS : MonoBehaviour // I apologize for the naming scheme, it was t
             Vector2 chargeVector = playerPos.position - transform.position;
             chargeVector.Normalize();
             rb.velocity = chargeVector * chargeVelocity;
-            yield return new WaitUntil(() => rb.velocity.x.Equals(0) | rb.velocity.y.Equals(0)); // Wait until the boss hits a wall
+            yield return new WaitUntil(() => rb.velocity.x.Equals(0) | rb.velocity.y.Equals(0) | rb.velocity.magnitude < minVelocity); // Wait until the boss hits a wall
         } while (Random.value < .6f); // 60% chance to bounce and charge towards Ruby again
 
         rb.velocity = Vector2.zero; // Stop moving

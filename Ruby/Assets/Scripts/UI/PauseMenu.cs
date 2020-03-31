@@ -31,17 +31,18 @@ public class PauseMenu : MonoBehaviour
             if (gamePaused)
             {
                 Resume();
-                curs.ChangeCursor(SetCursor.CursorType.shoot);
+
             }
             else
             {
-                curs.ChangeCursor(SetCursor.CursorType.normal);
+
                 Pause();
             }
         }
     }
     public void Resume()
     {
+        curs.ChangeCursor(SetCursor.CursorType.shoot);
         pauseMenuUI.SetActive(false);
 
         settingsUI.SetActive(false);
@@ -77,6 +78,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+        curs.ChangeCursor(SetCursor.CursorType.normal);
         pauseMenuUI.SetActive(true);
 
         Time.timeScale = 0f;

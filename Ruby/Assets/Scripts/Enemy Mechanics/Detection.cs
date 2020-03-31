@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Collider2D))]
 public class Detection : MonoBehaviour
@@ -20,7 +21,11 @@ public class Detection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (player == null)
+        if (player == null && SceneManager.GetActiveScene().name.Equals("MapA"))
+        {
+            player = GameObject.Find("Trevor"); // Sets Trevor if MapA Scene
+        }
+        else if (player == null)
         {
             player = GameObject.Find("Ruby"); // Sets Ruby
         }

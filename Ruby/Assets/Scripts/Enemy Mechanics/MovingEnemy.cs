@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovingEnemy : MonoBehaviour
 {
@@ -16,9 +17,13 @@ public class MovingEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (player == null) { 
-        player = GameObject.Find("Ruby").transform; // Sets Ruby
-    }
+        if (player == null && SceneManager.GetActiveScene().name.Equals("MapA"))
+        {
+            player = GameObject.Find("Trevor").transform; // Sets trevor if MapA Scene
+        }
+        else if (player == null) { 
+            player = GameObject.Find("Ruby").transform; // Sets Ruby
+        }
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }

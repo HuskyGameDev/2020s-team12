@@ -8,6 +8,7 @@ public class TrevorShoot : MonoBehaviour
     public GameObject heartPrefab; // Makes a GameObject for a heart instance
     public float fireSpeed = 0.2f; // How fast the bullet moves
     public float fireRate; // How fast you can fire (in bullets per second)
+    public Sound shootSound;
     float currentFireCooldown = 0; // How much time until the player can shoot again
     float aimingAngle = 180f; // The angle in degrees the player is aiming/facing (0 as north, -90 as east, -180 as south, 90/-270 as west)
     int spreadMultiplier = 9;
@@ -50,8 +51,10 @@ public class TrevorShoot : MonoBehaviour
     {
         if (!PauseMenu.gamePaused)
         {
-
-            print("not a lot of damage");
+            if (shootSound != null)
+            {
+                AudioSource.PlayClipAtPoint(shootSound.clip, firePoint.position);
+            }
             GameObject heart = Instantiate(heartPrefab, firePoint.position, bulletRotation); // Instantiates a heart to fire from the firepoint to the rotation
 
             Rigidbody2D rbheart = heart.GetComponent<Rigidbody2D>(); // Gets the RigidBody of the heart

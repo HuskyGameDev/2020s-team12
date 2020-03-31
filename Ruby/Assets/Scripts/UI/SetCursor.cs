@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SetCursor : MonoBehaviour
 {
@@ -25,7 +26,15 @@ public class SetCursor : MonoBehaviour
         {
             normalCursor = Resources.Load("cursor") as Texture2D;
         }
-        Cursor.SetCursor(shootReticle, RETICLE_HOTSPOT, CursorMode.Auto);
+
+        if (SceneManager.GetActiveScene().name.Equals("Title Screen"))
+        {
+            Cursor.SetCursor(normalCursor, Vector2.zero, CursorMode.Auto);
+        }
+        else
+        {
+            Cursor.SetCursor(shootReticle, RETICLE_HOTSPOT, CursorMode.Auto);
+        }
     }
 
     public void ChangeCursor(CursorType cursorType)
