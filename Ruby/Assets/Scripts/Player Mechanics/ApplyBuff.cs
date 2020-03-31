@@ -93,7 +93,14 @@ public class ApplyBuff : MonoBehaviour
 
             case BuffType.HealthPickup:
                 Health health = GetComponent<Health>();
-                health.currentHealth = health.currentHealth + power.healAmount;//Adds value to current health
+                if (health.currentHealth <= health.currentHealth - power.healAmount)
+                {
+                    health.currentHealth = health.currentHealth + power.healAmount;//Adds value to current health
+                }
+                else
+                {
+                    health.currentHealth = health.maxHealth;
+                }
                 break;
 
             case BuffType.MultiAttack:
