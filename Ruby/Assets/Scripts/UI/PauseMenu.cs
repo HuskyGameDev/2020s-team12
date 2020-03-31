@@ -12,17 +12,21 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject settingsUI;
 
+    GameOver gameOver;
+
     void Start()
     {
         pauseMenuUI.SetActive(false); // To not start paused
 
         settingsUI.SetActive(false); // To not start in settings
+
+        gameOver = GetComponent<GameOver>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !(gameOver.getGameOver()))
         {
             if (gamePaused)
             {

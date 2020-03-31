@@ -8,9 +8,11 @@ public class GameOver : MonoBehaviour
 
     public GameObject gameOverUI;
     Transform player;
+    public static bool gameOver = false;
 
     void Start()
     {
+
         if (SceneOrganizer.trevorScenes.Contains(SceneManager.GetActiveScene()) && player == null)
         {
             player = GameObject.Find("Trevor").transform; // Sets Trevor as the player if in the MapA scene
@@ -29,12 +31,18 @@ public class GameOver : MonoBehaviour
         {
             gameOverUI.SetActive(true); // Pulls up the game over screen
             SetCursor.ChangeCursor(SetCursor.CursorType.normal);
+            gameOver = true;
         }
     }
 
     public void LoadTitleScreen()
     {
         SceneManager.LoadScene("Title Screen"); // Loads the title screen, so long as the name doesn't change
+    }
+
+    public bool getGameOver()
+    {
+        return gameOver;
     }
 
 }
