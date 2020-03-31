@@ -16,7 +16,7 @@ public class ImageControl : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if (SceneManager.GetActiveScene().name.Equals("MapA"))
+        if (SceneOrganizer.trevorScenes.Contains(SceneManager.GetActiveScene()))
         {
             powerup = GameObject.Find("Trevor").GetComponent<ApplyBuff>();
         }

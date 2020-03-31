@@ -11,7 +11,7 @@ public class GameOver : MonoBehaviour
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().name.Equals("MapA") && player == null)
+        if (SceneOrganizer.trevorScenes.Contains(SceneManager.GetActiveScene()) && player == null)
         {
             player = GameObject.Find("Trevor").transform; // Sets Trevor as the player if in the MapA scene
         }
@@ -28,7 +28,7 @@ public class GameOver : MonoBehaviour
         if (player == null) // If it can't find the player
         {
             gameOverUI.SetActive(true); // Pulls up the game over screen
-
+            SetCursor.ChangeCursor(SetCursor.CursorType.normal);
         }
     }
 

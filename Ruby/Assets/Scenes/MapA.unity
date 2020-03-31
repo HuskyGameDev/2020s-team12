@@ -539,26 +539,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 532671371199298524, guid: a95be364734f4ec42b403fa7d4dd5dec,
-        type: 3}
-      propertyPath: health
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 532671371199298524, guid: a95be364734f4ec42b403fa7d4dd5dec,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4337145098748120434, guid: a95be364734f4ec42b403fa7d4dd5dec,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8588005291352053809, guid: a95be364734f4ec42b403fa7d4dd5dec,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a95be364734f4ec42b403fa7d4dd5dec, type: 3}
 --- !u!1 &1252647430

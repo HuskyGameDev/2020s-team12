@@ -21,7 +21,7 @@ public class Detection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (player == null && SceneManager.GetActiveScene().name.Equals("MapA"))
+        if (player == null && SceneOrganizer.trevorScenes.Contains(SceneManager.GetActiveScene()))
         {
             player = GameObject.Find("Trevor"); // Sets Trevor if MapA Scene
         }

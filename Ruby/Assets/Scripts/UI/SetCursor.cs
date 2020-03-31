@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SetCursor : MonoBehaviour
 {
-    public Texture2D shootReticle;
-    public Texture2D normalCursor;
-    Vector2 RETICLE_HOTSPOT = new Vector2(16, 16);
+    public static Texture2D shootReticle;
+    public static Texture2D normalCursor;
+    public static Vector2 RETICLE_HOTSPOT = new Vector2(16, 16);
 
     public enum CursorType
     {
@@ -37,12 +37,12 @@ public class SetCursor : MonoBehaviour
         }
     }
 
-    public void ChangeCursor(CursorType cursorType)
+    public static void ChangeCursor(CursorType cursorType)
     {
         switch (cursorType)
         {
             case CursorType.shoot:
-                Cursor.SetCursor(shootReticle,RETICLE_HOTSPOT,CursorMode.Auto);
+                Cursor.SetCursor(SetCursor.shootReticle,RETICLE_HOTSPOT,CursorMode.Auto);
                 break;
             default:
                 Cursor.SetCursor(normalCursor, Vector2.zero, CursorMode.Auto);

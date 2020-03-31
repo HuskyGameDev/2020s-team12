@@ -21,7 +21,7 @@ public class OWMS : MonoBehaviour // I apologize for the naming scheme, it was t
     // Start is called before the first frame update
     void Start()
     {
-        if (playerPos == null && SceneManager.GetActiveScene().name.Equals("MapA"))
+        if (playerPos == null && SceneOrganizer.trevorScenes.Contains(SceneManager.GetActiveScene()))
         {
             playerPos = GameObject.Find("Trevor").GetComponent<Transform>(); // Trevor transform
         }
