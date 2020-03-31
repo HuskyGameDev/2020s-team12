@@ -53128,6 +53128,14 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 153404645}
+    - target: {fileID: 524435367, guid: a95be364734f4ec42b403fa7d4dd5dec, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 153404645}
+    - target: {fileID: 524435367, guid: a95be364734f4ec42b403fa7d4dd5dec, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
     - target: {fileID: 532671370764714296, guid: a95be364734f4ec42b403fa7d4dd5dec,
         type: 3}
       propertyPath: m_Camera
