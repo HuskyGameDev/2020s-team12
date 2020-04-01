@@ -16,14 +16,8 @@ public class ImageControl : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if (SceneOrganizer.trevorScenes.Contains(SceneManager.GetActiveScene()))
-        {
-            powerup = GameObject.Find("Trevor").GetComponent<ApplyBuff>();
-        }
-        else
-        {
-            powerup = GameObject.Find("Ruby").GetComponent<ApplyBuff>();
-        }
+
+        powerup = GameObject.FindObjectOfType<ApplyBuff>(); // Get the ApplyBuff component from the player character (Should only be one of these scripts per scene)
 
         image = GetComponent<Image>();
     }

@@ -21,14 +21,7 @@ public class OWMS : MonoBehaviour // I apologize for the naming scheme, it was t
     // Start is called before the first frame update
     void Start()
     {
-        if (playerPos == null && SceneOrganizer.trevorScenes.Contains(SceneManager.GetActiveScene()))
-        {
-            playerPos = GameObject.Find("Trevor").GetComponent<Transform>(); // Trevor transform
-        }
-        else if (playerPos == null)
-        {
-            playerPos = GameObject.Find("Ruby").GetComponent<Transform>(); // Get Ruby Transform
-        }
+        playerPos = GameObject.FindObjectOfType<Movement>().gameObject.transform;
         rb = GetComponent<Rigidbody2D>();
         enemySprite = GetComponent<SpriteRenderer>();
         initColor = enemySprite.color;
@@ -97,9 +90,12 @@ public class OWMS : MonoBehaviour // I apologize for the naming scheme, it was t
 
     void MoveTowards()
     {
-        Vector2 move = playerPos.position - transform.position;
-        move.Normalize();
-        rb.velocity = move * moveAwayVelocity;
+        if (playerPos != null)
+        {
+            Vector2 move = playerPos.position - transform.position;
+            move.Normalize();
+            rb.velocity = move * moveAwayVelocity;
+        }
     }
 
     // Update is called once per frame

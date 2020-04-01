@@ -21,14 +21,7 @@ public class Detection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (player == null && SceneOrganizer.trevorScenes.Contains(SceneManager.GetActiveScene()))
-        {
-            player = GameObject.Find("Trevor"); // Sets Trevor if MapA Scene
-        }
-        else if (player == null)
-        {
-            player = GameObject.Find("Ruby"); // Sets Ruby
-        }
+        player = GameObject.FindObjectOfType<Movement>().gameObject;
         if (isBoss)
         {
             enemyAttack = transform.parent.GetComponent<OWMS>();

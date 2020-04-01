@@ -13,14 +13,7 @@ public class GameOver : MonoBehaviour
     void Start()
     {
 
-        if (SceneOrganizer.trevorScenes.Contains(SceneManager.GetActiveScene()) && player == null)
-        {
-            player = GameObject.Find("Trevor").transform; // Sets Trevor as the player if in the MapA scene
-        }
-        else if (player == null)
-        {
-            player = GameObject.Find("Ruby").transform; // Sets Ruby
-        }
+        player = GameObject.FindObjectOfType<Movement>().gameObject.transform;
         gameOverUI.SetActive(false); // To not start in game over
     }
 

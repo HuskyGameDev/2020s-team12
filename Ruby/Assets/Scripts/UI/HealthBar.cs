@@ -12,14 +12,7 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneOrganizer.trevorScenes.Contains(SceneManager.GetActiveScene()) && health == null)
-        {
-            health = GameObject.Find("Trevor").GetComponent<Health>(); // Sets Trevors' Health if in MapA Scene
-        }
-        else if (health == null)
-        {
-            health = GameObject.Find("Ruby").GetComponent<Health>(); // Sets Ruby
-        }
+        health = GameObject.FindObjectOfType<Movement>().gameObject.GetComponent<Health>();
         bar = transform.Find("Bar"); // Sets Bar Object
 
     }
