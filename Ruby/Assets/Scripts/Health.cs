@@ -114,7 +114,14 @@ public class Health : MonoBehaviour
     {
         if (!IsDead()) // This is to keep the game from breaking when the player dies
         {
-            currentHealth -= DMG; // Takes the damage amount from the health
+            if (currentHealth - DMG < 0)
+            {
+                currentHealth = 0;
+            }
+            else
+            {
+                currentHealth -= DMG; // Takes the damage amount from the health
+            }
             Mathf.Clamp(currentHealth, 0, maxHealth); // Prevents the health from dropping into negative values by placing bounds
             damageFlash(); // Flash red (or whatever) upon taking damage
             
