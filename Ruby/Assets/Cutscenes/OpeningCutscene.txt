@@ -1,41 +1,179 @@
 Portrait: "bully normal"
-Speaker: "Bully"
-Dialogue: "Why don't you say something, huh?"
+Speaker: "Noelle"
+Dialogue: "Say something, bitch."
 
 Portrait: "ruby annoyance"
 Speaker: "Ruby"
-Dialogue: "'Oh, I would if I could.'"
-
-Portrait: "trevor assuring"
-Speaker: "Trevor"
-Dialogue: "Hey, hey. You don't need to deal with this, lets leave."
+Dialogue: "(Sure, let me just grow some vocal cords for you right now.)"
 
 Portrait: "bully normal"
-Speaker: "Bully"
-Dialogue: "Run away like you always do!"
+Speaker: "Noelle"
+Dialogue: "Oh that's right, the little bitch can't."
+
+Portrait: "ruby annoyance"
+Speaker: ""
+Dialogue: ""
 
 Portrait: "trevor assuring"
 Speaker: "Trevor"
-Dialogue: "Hey, you don't need to hide from her."
+Dialogue: "Ignore her, Ruby."
 
-Portrait: "ruby fear"
+Portrait: "ruby annoyance"
 Speaker: "Ruby"
-Dialogue: "'I don't think it's safe.'"
+Dialogue: "(Oh? What do you think I've been doing?)"
+
+Portrait: "trevor worry"
+Speaker: "Trevor"
+Dialogue: "C'mon. Let's go, don't do this."
+
+Portrait: "bully normal"
+Speaker: "Noelle"
+Dialogue: "What are you gonna do mute?"
+Dialogue: "Yell at me?"
+
+Portrait: "trevor assuring"
+Speaker: "Trevor"
+Dialogue: "She isn't worth it. Let's go. Now."
+
+Portrait: "bully normal"
+Speaker: "Noelle"
+Dialogue: ""
+
+Portrait: "trevor kind3"
+Speaker: "Trevor"
+Dialogue: "For me?"
+
+Portrait: "ruby normal"
+Speaker: "Ruby"
+Dialogue: "(Fine.)"
+
+Portrait: "bully normal"
+Speaker: "Noelle"
+Dialogue: "Oh? Now you're just gonna run away? Pathetic."
+
+Portrait: "trevor kind3"
+Speaker: "Trevor"
+Dialogue: "Boy, isn't she a handful, huh?"
+
+Portrait: "ruby annoyance"
+Speaker: ""
+Dialogue: ""
+
+Portrait: "trevor kind2"
+Speaker: "Trevor"
+Dialogue: "Yeah... I'm sorry she's always in your business. You don't deserve that."
+
+Portrait: "ruby annoyance"
+Speaker: ""
+Dialogue: ""
+
+Portrait: "trevor kind"
+Speaker: "Trevor"
+Dialogue: "Hey! Wanna go to my super secret hide-out?"
+
+Portrait: "ruby confusion"
+Speaker: "Ruby"
+Dialogue: "(You have a hide-out?)"
+
+Portrait: "trevor kind3"
+Speaker: "Trevor"
+Dialogue: "Why of course. Everyone needs a place to go when they're overwhelmed."
+
+Portrait: "ruby worry"
+Speaker: "Ruby"
+Dialogue: "(So even you get overwhelmed, huh?)"
+
+Portrait: "trevor kind3"
+Speaker: "Trevor"
+Dialogue: "C'mon, let's go!"
+
+Portrait: "ruby disgust2"
+Speaker: "Ruby"
+Dialogue: "(Your secret hide-out... is the janitors closet...)"
+
+Portrait: "trevor mirthful"
+Speaker: "Trevor"
+Dialogue: "Don't give me that look. What? My hide-out not up to the Ruby standard?"
+Dialogue: "I'll have you know, this is the safest place in the school. Me and the janitor are bros."
+
+Portrait: "ruby disgust"
+Speaker: "Ruby"
+Dialogue: "(Oh whatever you say, O Great Trevor.)"
+
+Portrait: "ruby small smile"
+Speaker: "Ruby"
+Dialogue: "(Ok. I'll admit it. There are worse places to be.)"
+
+Portrait: "trevor kind"
+Speaker: "Trevor"
+Dialogue: "Welcome to casa de Trevor."
+Dialogue: "The best place to have a mental breakdown."
+
+Portrait: "ruby normal"
+Speaker: "Ruby"
+Dialogue: "(...)"
+
+Portrait: "trevor kind3"
+Speaker: "Trevor"
+Dialogue: "It's the best place, because we're here together!"
+
+Portrait: "ruby small smile2"
+Speaker: ""
+Dialogue: ""
 
 Portrait: "none"
-Speaker: "Door"
+Speaker: ""
 Dialogue: "*knock*"
 
 Portrait: "trevor confused"
 Speaker: "Trevor"
-Dialogue: "Hey what was that noise?"
+Dialogue: "I didn't think the janitor would be back this early?"
 
-Portrait: "ruby worry"
+Portrait: "none"
+Speaker: ""
+Dialogue: "*bang*"
+
+Portrait: "trevor worry"
+Speaker: "Trevor"
+Dialogue: "What the heck?"
+
+Portrait: "ruby fear2"
 Speaker: "Ruby"
-Dialogue: "'Hey, I think someone wants to come in.'"
+Dialogue: "(I don't think this is normal.)"
+
+Portrait: "none"
+Speaker: ""
+Dialogue: "*bang* *bang*"
+
+Portrait: "trevor worry2"
+Speaker: "Trevor"
+Dialogue: "Somethings wrong. Stay behind me."
+
+Portrait: "ruby fear4"
+Speaker: "Ruby"
+Dialogue: "(Hey. You're not gonna go out there are you?)"
 
 Portrait: "trevor determined2"
 Speaker: "Trevor"
-Dialogue: "Let's check it out."
+Dialogue: "Someone could be out there."
 
+Portrait: "trevor disgust"
+Speaker: "Trevor"
+Dialogue: "Other than the fact that everythings disgusting and completely wrong. We seem safe."
 
+Portrait: "ruby fear3"
+Speaker: "Ruby"
+Dialogue: "(Great. Can we leave now?)"
+
+Portrait: "trevor hopeless"
+Speaker: "Trevor"
+Dialogue: "Uh. Do you see those... things?"
+
+Portrait: "ruby fear4"
+Speaker: "Ruby"
+Dialogue: "(Not if I close my eyes. We need to GO!)"
+
+Portrait: "trevor worry2"
+Speaker: "Trevor"
+Dialogue: "The exit is that way. Guess we're gonna have to fight? Unless they're peaceful."
+Dialogue: "I really hope they're peaceful."
