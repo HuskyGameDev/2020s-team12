@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerReceiver : MonoBehaviour
+public class KillEnemies_Trigger : MonoBehaviour
 {
     bool triggered = false;
     public List<GameObject> enemyList;

@@ -10,15 +10,18 @@ public class TrevorHeart : MonoBehaviour
 
     public Rigidbody2D heartRigid; // Creates a rigidbody to put the heart into the script
 
-    public float lifeTime = 0.1f;  
+    public float lifeTime = 0.3f;  
 
     float curLifeTime = 0;
+
+    Vector3 playerVelocity;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        heartRigid.velocity = transform.up * fireSpeed; // Moves the heart
+        playerVelocity = GameObject.FindObjectOfType<Movement>().gameObject.GetComponent<Rigidbody2D>().velocity;
+        heartRigid.velocity = transform.up * fireSpeed + playerVelocity; // Moves the heart
         curLifeTime = lifeTime;
     }
 
