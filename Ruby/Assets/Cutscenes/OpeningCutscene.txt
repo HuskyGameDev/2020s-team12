@@ -28,7 +28,7 @@ Dialogue: "C'mon. Let's go, don't do this."
 
 Portrait: "bully normal"
 Speaker: "Noelle"
-Dialogue: "What are you gonna do mute?"
+Dialogue: "What are you gonna do, mute?"
 Dialogue: "Yell at me?"
 
 Portrait: "trevor assuring"
@@ -36,7 +36,7 @@ Speaker: "Trevor"
 Dialogue: "She isn't worth it. Let's go. Now."
 
 Portrait: "bully normal"
-Speaker: "Noelle"
+Speaker: ""
 Dialogue: ""
 
 Portrait: "trevor kind3"
