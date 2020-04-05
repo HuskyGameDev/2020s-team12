@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyStealth : MonoBehaviour
 {
-    public float initOpacity = 0; // Initial opacity of the sprite from 0 (invisible) to 1 (opaque)
+    public float initOpacity = .01f; // Initial opacity of the sprite from 0 (invisible) to 1 (opaque)
     public float aggroOpacity = 1; // Opacity of sprite during aggro
     private Color initColor;
     private Color aggroColor;

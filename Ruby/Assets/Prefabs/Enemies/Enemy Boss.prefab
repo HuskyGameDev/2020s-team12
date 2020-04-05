@@ -148,6 +148,11 @@ PrefabInstance:
       propertyPath: chargeVelocity
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 9185965233560181337, guid: e8c302960853e3741ae7f011aff30b63,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
 --- !u!1 &6967461608623902320 stripped

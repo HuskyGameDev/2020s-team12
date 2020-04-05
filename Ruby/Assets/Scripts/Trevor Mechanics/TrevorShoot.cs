@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrevorShoot : MonoBehaviour
+public class TrevorShoot : Shoot
 {
     Transform firePoint; // Makes a transform location called firePoint
-    public GameObject heartPrefab; // Makes a GameObject for a heart instance
-    public float fireSpeed = 0.2f; // How fast the bullet moves
-    public float fireRate; // How fast you can fire (in bullets per second)
     public Sound shootSound;
     float currentFireCooldown = 0; // How much time until the player can shoot again
     float aimingAngle = 180f; // The angle in degrees the player is aiming/facing (0 as north, -90 as east, -180 as south, 90/-270 as west)
@@ -20,16 +17,6 @@ public class TrevorShoot : MonoBehaviour
         firePoint = transform.Find("FirePoint"); // References the tranform object to the actual Fire Point object
         anim = GetComponent<Animator>();
     }
-
-    public void setFireRate(float firerate)
-    {
-        fireRate = firerate;
-    }
-    public void setSpreadMultiplier(int spread)
-    {
-        spreadMultiplier = spread;
-    }
-
 
     void Aim()
     {

@@ -40,7 +40,14 @@ public class ApplyBuff : MonoBehaviour
             icont = GameObject.Find("/UI/BackBarPower/TheImage");
             icontrol = icont.GetComponent<ImageControl>();
         }
-        shoot = GetComponent<Shoot>();
+        if (name == "Trevor")
+        {
+            shoot = GetComponent<TrevorShoot>();
+        }
+        else
+        {
+            shoot = GetComponent<Shoot>();
+        }
         defaultFireRate = shoot.fireRate;
         backBar.SetActive(false);
     }

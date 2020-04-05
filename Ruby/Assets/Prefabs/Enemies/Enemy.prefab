@@ -130,7 +130,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6225342447639004588}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c1fc914e7e5d8b4eb36fe3a93262826, type: 3}
   m_Name: 
@@ -138,6 +138,7 @@ MonoBehaviour:
   moveAwayVelocity: 2
   chargeVelocity: 10
   moveAwayTime: 2
+  crashStun: 1
 --- !u!50 &6225342447639004594
 Rigidbody2D:
   serializedVersion: 4
@@ -298,6 +299,7 @@ MonoBehaviour:
   obstacles:
     serializedVersion: 2
     m_Bits: 0
+  isBoss: 0
 --- !u!50 &6225342448453933723
 Rigidbody2D:
   serializedVersion: 4
