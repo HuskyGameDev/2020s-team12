@@ -21,3 +21,25 @@ Dialogue: "(The wall closed!)"
 Portrait: "ruby confusion"
 Speaker: "Ruby"
 Dialogue: "(What can I do with this?)"
+
+Portrait: "none"
+Speaker: "Voice"
+Dialogue: "Help me!"
+
+Portrait: "ruby confusion"
+Speaker: "Ruby"
+Dialogue: "(Can I really help with this? And would I help her?)"
+
+Portrait: "bully normal"
+Speaker: "Noelle"
+Dialogue: "Please help me!"
+
+Portrait: "ruby normal"
+Speaker: "Ruby"
+Dialogue: "(Trevor would do it. I have to do this.)"
+
+Dialogue: "(Huh. It opened up. Let's go.)"
+
+
+
+

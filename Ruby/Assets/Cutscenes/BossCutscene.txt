@@ -1,0 +1,39 @@
+Portrait: ""
+Speaker: ""
+Dialogue: ""
+
+Portrait: ""
+Speaker: ""
+Dialogue: ""
+
+Portrait: ""
+Speaker: ""
+Dialogue: ""
+
+Portrait: ""
+Speaker: ""
+Dialogue: ""
+
+Portrait: ""
+Speaker: ""
+Dialogue: ""
+
+Portrait: ""
+Speaker: ""
+Dialogue: ""
+
+Portrait: ""
+Speaker: ""
+Dialogue: ""
+
+Portrait: ""
+Speaker: ""
+Dialogue: ""
+
+Portrait: ""
+Speaker: ""
+Dialogue: ""
+
+Portrait: ""
+Speaker: ""
+Dialogue: ""
