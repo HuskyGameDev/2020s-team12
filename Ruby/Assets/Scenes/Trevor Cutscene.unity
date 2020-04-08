@@ -5057,7 +5057,7 @@ MonoBehaviour:
   speakerName: {fileID: 1558677177}
   portraitSprite: {fileID: 1577040538}
   dialogBox: {fileID: 2036448944}
-  script: {fileID: 4900000, guid: 74827621999e28044800db5880bb9b62, type: 3}
+  script: {fileID: 4900000, guid: ebad395445989824e9507d74c603d69c, type: 3}
 --- !u!4 &2008478687
 Transform:
   m_ObjectHideFlags: 0

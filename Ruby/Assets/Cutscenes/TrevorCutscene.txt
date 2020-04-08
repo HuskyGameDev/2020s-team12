@@ -1,35 +1,23 @@
-Portrait: "trevor"
+Portrait: "trevor cocky"
 Speaker: "Trevor"
 Dialogue: "Alright. The coast looks clear for a little bit."
 
-Portrait: "ruby"
+Portrait: "ruby annoyance"
 Speaker: "Ruby"
 Dialogue: "(We're still far away from the door.)"
 
-Portrait: "trevor"
+Portrait: "trevor determined3"
 Speaker: "Trevor"
 Dialogue: "I think I see something over there. Let me go check it out."
 
-Portrait: ""
-Speaker: ""
-Dialogue: ""
+Portrait: "ruby horror"
+Speaker: "Ruby"
+Dialogue: "(Hey! Wait!)"
 
-Portrait: ""
-Speaker: ""
-Dialogue: ""
+Portrait: "ruby horror4"
+Speaker: "Ruby"
+Dialogue: "(The wall closed!)"
 
-Portrait: ""
-Speaker: ""
-Dialogue: ""
-
-Portrait: ""
-Speaker: ""
-Dialogue: ""
-
-Portrait: ""
-Speaker: ""
-Dialogue: ""
-
-Portrait: ""
-Speaker: ""
-Dialogue: ""
+Portrait: "ruby confusion"
+Speaker: "Ruby"
+Dialogue: "(What can I do with this?)"
