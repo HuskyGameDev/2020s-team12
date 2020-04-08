@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6945804960538537690}
   - component: {fileID: 8881247891231785816}
   m_Layer: 8
-  m_Name: Tilemap (AppearOnEnter,KillEnemiesTrigger)
+  m_Name: Tilemap (AppearOnEnter)
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,6 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activateOnEnter: []
   deactivateOnExit: []
+  deactivateOnEnter: []
 --- !u!1 &3620340367668129167
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,7 +1894,7 @@ GameObject:
   - component: {fileID: 8547004445802739483}
   m_Layer: 8
   m_Name: Tilemap (KillEnemiesTrigger)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
