@@ -11,7 +11,7 @@ Speaker: "Noelle"
 Dialogue: "Oh that's right, the little bitch can't."
 
 Portrait: "ruby annoyance"
-Speaker: ""
+Speaker: "Ruby"
 Dialogue: ""
 
 Portrait: "trevor assuring"
@@ -36,7 +36,7 @@ Speaker: "Trevor"
 Dialogue: "She isn't worth it. Let's go. Now."
 
 Portrait: "bully normal"
-Speaker: ""
+Speaker: "Noelle"
 Dialogue: ""
 
 Portrait: "trevor kind3"
@@ -56,7 +56,7 @@ Speaker: "Trevor"
 Dialogue: "Boy, isn't she a handful, huh?"
 
 Portrait: "ruby annoyance"
-Speaker: ""
+Speaker: "Ruby"
 Dialogue: ""
 
 Portrait: "trevor kind2"
@@ -64,7 +64,7 @@ Speaker: "Trevor"
 Dialogue: "Yeah... I'm sorry she's always in your business. You don't deserve that."
 
 Portrait: "ruby annoyance"
-Speaker: ""
+Speaker: "Ruby"
 Dialogue: ""
 
 Portrait: "trevor kind"
@@ -100,6 +100,10 @@ Portrait: "ruby disgust"
 Speaker: "Ruby"
 Dialogue: "(Oh whatever you say, O Great Trevor.)"
 
+Portrait: "none"
+Speaker: ""
+Dialogue: "*click*"
+
 Portrait: "ruby small smile"
 Speaker: "Ruby"
 Dialogue: "(Ok. I'll admit it. There are worse places to be.)"
@@ -118,7 +122,7 @@ Speaker: "Trevor"
 Dialogue: "It's the best place, because we're here together!"
 
 Portrait: "ruby small smile2"
-Speaker: ""
+Speaker: "Ruby"
 Dialogue: ""
 
 Portrait: "none"

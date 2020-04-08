@@ -1,0 +1,35 @@
+Portrait: "trevor"
+Speaker: "Trevor"
+Dialogue: "Alright. The coast looks clear for a little bit."
+
+Portrait: "ruby"
+Speaker: "Ruby"
+Dialogue: "(We're still far away from the door.)"
+
+Portrait: "trevor"
+Speaker: "Trevor"
+Dialogue: "I think I see something over there. Let me go check it out."
+
+Portrait: ""
+Speaker: ""
+Dialogue: ""
+
+Portrait: ""
+Speaker: ""
+Dialogue: ""
+
+Portrait: ""
+Speaker: ""
+Dialogue: ""
+
+Portrait: ""
+Speaker: ""
+Dialogue: ""
+
+Portrait: ""
+Speaker: ""
+Dialogue: ""
+
+Portrait: ""
+Speaker: ""
+Dialogue: ""
