@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ruby_idleS
+  m_Name: Ruby_wbear_idleNE
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,10 +20,10 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1131623832485133343, guid: 9a2551b816225604fa012291a5aae3cc,
+      value: {fileID: 4113699455635910272, guid: 18f53261708afb84c9fe1259afd7589f,
         type: 3}
     - time: 0.016666668
-      value: {fileID: -1131623832485133343, guid: 9a2551b816225604fa012291a5aae3cc,
+      value: {fileID: 4113699455635910272, guid: 18f53261708afb84c9fe1259afd7589f,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -44,8 +44,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1131623832485133343, guid: 9a2551b816225604fa012291a5aae3cc, type: 3}
-    - {fileID: -1131623832485133343, guid: 9a2551b816225604fa012291a5aae3cc, type: 3}
+    - {fileID: 4113699455635910272, guid: 18f53261708afb84c9fe1259afd7589f, type: 3}
+    - {fileID: 4113699455635910272, guid: 18f53261708afb84c9fe1259afd7589f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
