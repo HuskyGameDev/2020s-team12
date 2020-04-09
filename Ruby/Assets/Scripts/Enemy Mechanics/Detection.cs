@@ -18,6 +18,7 @@ public class Detection : MonoBehaviour
     public bool isBoss = false;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
