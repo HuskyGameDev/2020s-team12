@@ -6,6 +6,7 @@ public class AggroTimer : MonoBehaviour
 {
     public float aggroTime = 1; // How long the enemy is aggro'd in seconds upon being hit/detecting Ruby
     public bool isAggro = false; // Is the enemy currently chasing Ruby?
+    public bool aggroOnEnable = false;
     float currentAggroTime = 0; // How long until it stops chasing Ruby
 
     // Start is called before the first frame update
@@ -17,6 +18,14 @@ public class AggroTimer : MonoBehaviour
     public void StartAggro() // Start chasing the player
     {
         currentAggroTime = aggroTime; // Set the aggro time
+    }
+
+    private void OnEnable()
+    {
+        if (aggroOnEnable)
+        {
+            StartAggro();
+        }
     }
 
     // Update is called once per frame
