@@ -121,12 +121,17 @@ PrefabInstance:
     - target: {fileID: 6225342447639004593, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: moveVelocity
-      value: 3
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004594, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: m_Mass
-      value: 100
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225342447639004594, guid: e8c302960853e3741ae7f011aff30b63,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6225342448453933721, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}

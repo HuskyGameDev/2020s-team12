@@ -64,6 +64,7 @@ MonoBehaviour:
   obstacles:
     serializedVersion: 2
     m_Bits: 0
+  isBoss: 0
 --- !u!50 &3414160015922178554
 Rigidbody2D:
   serializedVersion: 4
@@ -206,9 +207,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b933b9f68575d154c81caabe055128ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveVelocity: 0
   seesPlayer: 0
   canMove: 1
+  moveVelocity: 0
+  nextWaypointDistance: 0.1
+  seekerOffsetX: 0
+  seekerOffsetY: 0
 --- !u!114 &467891945676646712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,8 +323,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dfbf88ba2ed14946845fa5c2c476014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroTime: 2
+  aggroTime: 15
   isAggro: 0
+  aggroOnEnable: 0
 --- !u!114 &8720468110587529767
 MonoBehaviour:
   m_ObjectHideFlags: 0

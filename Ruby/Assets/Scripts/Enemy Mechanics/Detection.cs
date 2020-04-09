@@ -67,6 +67,8 @@ public class Detection : MonoBehaviour
         }
     }
 
+    private bool moving = false; // Used to control use of movement script
+
     // Update is called once per frame
     void Update()
     {
@@ -89,12 +91,19 @@ public class Detection : MonoBehaviour
             }
             else
             {
-                move.MoveTowardsPlayer(); // Move towards Ruby
+                if (!moving)
+                {
+                    move.MoveTowardsPlayer(); // Move towards Ruby
+                    moving = true;
+                    patrol.patrolVelocity = 0f;
+                }
             }
         }
         else
         {
+            moving = false;
             patrol.PatrolPoints(); // Otherwise, continue to patrol points
+            patrol.patrolVelocity = 3f;
         }
         anim.SetBool("Walking", (!rb.velocity.Equals(Vector3.zero))); // Tell the animator if the enemy is moving to set the appropriate sprites
 

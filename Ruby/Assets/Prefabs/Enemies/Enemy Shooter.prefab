@@ -64,6 +64,7 @@ MonoBehaviour:
   obstacles:
     serializedVersion: 2
     m_Bits: 0
+  isBoss: 0
 --- !u!50 &3414160015922178554
 Rigidbody2D:
   serializedVersion: 4
@@ -104,6 +105,7 @@ GameObject:
   - component: {fileID: 8720468110292880069}
   - component: {fileID: 8720468111437592317}
   - component: {fileID: 8720468110587529767}
+  - component: {fileID: 3957942079023431062}
   m_Layer: 0
   m_Name: Enemy Shooter
   m_TagString: Enemy
@@ -206,9 +208,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b933b9f68575d154c81caabe055128ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveVelocity: 3.02
   seesPlayer: 0
   canMove: 1
+  moveVelocity: 350
+  nextWaypointDistance: 0.3
+  seekerOffsetX: 0
+  seekerOffsetY: 0
 --- !u!114 &467891945676646712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +243,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 74088a20095e82a4590501c5d04ba8f9, type: 2}
@@ -319,8 +324,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dfbf88ba2ed14946845fa5c2c476014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroTime: 2
+  aggroTime: 8
   isAggro: 0
+  aggroOnEnable: 0
 --- !u!114 &8720468110587529767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,6 +345,34 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5349920854609116783, guid: 4bb7f17153cf9be48bfef2481ce8389b,
     type: 3}
   movingEnemy: {fileID: 0}
+--- !u!114 &3957942079023431062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3414160016713512653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!1 &3414160016837602947
 GameObject:
   m_ObjectHideFlags: 0

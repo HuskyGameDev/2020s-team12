@@ -38,8 +38,8 @@ public class EnemyShooting : MonoBehaviour
             Debug.Log("shot"); // debug
             
             // Determine angle projectile needs to move in
-            float angleX = player.transform.position.x - (transform.position.x + offsetX);
-            float angleY = player.transform.position.y - (transform.position.y + offsetY);
+            float angleX = (player.transform.position.x + .5f) - (transform.position.x + offsetX);
+            float angleY = (player.transform.position.y + 1.0f) - (transform.position.y + offsetY);
             float shotAngle = Mathf.Atan2(angleY, angleX) * Mathf.Rad2Deg - 90f;
 
             // Determine shot origin based on this object's position with given offsets applied

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 510383863}
   - component: {fileID: 587397540}
   - component: {fileID: 1870136732}
+  - component: {fileID: 4344334043108779755}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -120,9 +121,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b933b9f68575d154c81caabe055128ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveVelocity: 6
   seesPlayer: 0
   canMove: 1
+  moveVelocity: 800
+  nextWaypointDistance: 0.3
+  seekerOffsetX: 0.55
+  seekerOffsetY: 1
 --- !u!114 &9185965233560181337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,8 +237,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dfbf88ba2ed14946845fa5c2c476014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroTime: 2
+  aggroTime: 6
   isAggro: 0
+  aggroOnEnable: 0
+--- !u!114 &4344334043108779755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6225342447639004588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!1 &6225342448453933719
 GameObject:
   m_ObjectHideFlags: 0
