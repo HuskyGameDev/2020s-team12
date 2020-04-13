@@ -60,7 +60,10 @@ public class ApplyBuff : MonoBehaviour
 
         if (pow != null)//Checks if the collision object (The powerup) has PowerUp component
         {
-            backBar.SetActive(true);
+            if (pow.type != BuffType.HealthPickup)
+            {
+                backBar.SetActive(true);
+            }
             StartCoroutine(ApplyEffect(pow));
             Destroy(collision.gameObject); // Destroys powerup after use
         }
@@ -78,12 +81,13 @@ public class ApplyBuff : MonoBehaviour
  
 
     IEnumerator ApplyEffect(PowerUp power) {
-        
 
+        if (power.type != BuffType.HealthPickup)
+        {
+            currentPower = power.type;
+        }
 
-        currentPower = power.type;
-       
-        icontrol.ChangeImage();
+            icontrol.ChangeImage();
 
         switch (power.type) {
 
@@ -116,7 +120,6 @@ public class ApplyBuff : MonoBehaviour
                 powerBar.StartTickDown(power.powerupExtent);
                 yield return new WaitForSeconds(power.powerupExtent);
                 shooot.setSpreadMultiplier(1);
-                
                 icontrol.ChangeImage();
                 CheckIfActive(power.type);
                 break;
