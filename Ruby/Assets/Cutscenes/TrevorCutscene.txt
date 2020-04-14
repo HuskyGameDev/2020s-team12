@@ -30,7 +30,7 @@ Portrait: "ruby confusion"
 Speaker: "Ruby"
 Dialogue: "(Can I really help with this? And would I help her?)"
 
-Portrait: "bully normal"
+Portrait: "bully fright"
 Speaker: "Noelle"
 Dialogue: "Please help me!"
 

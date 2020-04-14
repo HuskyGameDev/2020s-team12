@@ -1,30 +1,70 @@
-Portrait: ""
-Speaker: ""
-Dialogue: ""
+Portrait: "bully fright"
+Speaker: "Noelle"
+Dialogue: "Please! Help!"
 
-Portrait: ""
-Speaker: ""
-Dialogue: ""
+Portrait: "ruby annoyance"
+Speaker: "Ruby"
+Dialogue: "(I don't like her but, I don't want her to get hurt.)"
 
-Portrait: ""
-Speaker: ""
-Dialogue: ""
+Portrait: "bully relieved"
+Speaker: "Noelle"
+Dialogue: "Thank you! Uh... Ruby?"
 
-Portrait: ""
-Speaker: ""
-Dialogue: ""
+Portrait: "ruby annoyance"
+Speaker: "Ruby"
+Dialogue: "(It's the one and only...)"
 
-Portrait: ""
-Speaker: ""
-Dialogue: ""
+Portrait: "bully relieved"
+Speaker: "Noelle"
+Dialogue: "Ah. Right... not able to speak... Should we start heading off?"
 
-Portrait: ""
-Speaker: ""
-Dialogue: ""
+Portrait: "ruby normal"
+Speaker: "Ruby"
+Dialogue: "*nods*"
 
-Portrait: ""
-Speaker: ""
-Dialogue: ""
+Portrait: "bully relieved"
+Speaker: "Noelle"
+Dialogue: "Alright. I thought I saw a way out over that way. Let's go."
+
+Portrait: "bully normal"
+Speaker: "Noelle"
+Dialogue: "We're here."
+
+Portrait: "ruby annoyance"
+Speaker: "Ruby"
+Dialogue: "(This isn't the exit.)"
+
+Portrait: "bully normal"
+Speaker: "Noelle"
+Dialogue: "This is the exit. For you."
+
+Portrait: "ruby annoyance"
+Speaker: "Ruby"
+Dialogue: "(That doesn't make any sense?)"
+
+Portrait: "bully normal"
+Speaker: "Noelle"
+Dialogue: "God. Even after all this long you still couldn't get the courage to do it yourself, huh?"
+
+Dialogue: "I had to take you here. I even made you come deeper into this by making you think you'd be some kind of 'hero'."
+
+Dialogue: "Pathetic. What are you gonna do now without Trevor? Do you think you're strong now?"
+
+Portrait: "ruby worry"
+Speaker: "Ruby"
+Dialogue: "(What are you talking about?)"
+
+Portrait: "bully normal"
+Speaker: "Noelle"
+Dialogue: "Trevor's not coming back for you."
+
+Portrait: "ruby worry"
+Speaker: "Ruby"
+Dialogue: "(Huh?)"
+
+Portrait: "trevor anger"
+Speaker: "Trevor"
+Dialogue: "Why couldn't you ever learn to fight your own damn battles. Always dragging me in to help you."
 
 Portrait: ""
 Speaker: ""
