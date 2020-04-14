@@ -33,7 +33,7 @@ public class EnemyShooting : MonoBehaviour
 
     IEnumerator Shoot() // style convention dictates coroutines are generally capitalized
     {
-        while (aggroTimer.isAggro)
+        while (aggroTimer.isAggro && (GameObject.Find("Ruby") != null || GameObject.Find("Trevor") != null))
         {
             Debug.Log("shot"); // debug
             
@@ -55,21 +55,24 @@ public class EnemyShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //seesPlayer = movingEnemy.seesPlayer;
-        Vector3 playerDirection = transform.position - player.transform.position;
-
-        // if enemy sees player and is within firerate
-        if (aggroTimer.isAggro && !firecontrol)
+        if (GameObject.Find("Ruby") != null || GameObject.Find("Trevor") != null)
         {
-            startShooting();
-            firecontrol = true;
-        }
+            //seesPlayer = movingEnemy.seesPlayer;
+            Vector3 playerDirection = transform.position - player.transform.position;
 
-        // if the enemy is no longer antagonized, turn off firecontrol
-        if (!aggroTimer.isAggro)
-        {
-            firecontrol = false;
-            //StopCoroutine(Shoot());
+            // if enemy sees player and is within firerate
+            if (aggroTimer.isAggro && !firecontrol)
+            {
+                startShooting();
+                firecontrol = true;
+            }
+
+            // if the enemy is no longer antagonized, turn off firecontrol
+            if (!aggroTimer.isAggro)
+            {
+                firecontrol = false;
+                //StopCoroutine(Shoot());
+            }
         }
     }
 }

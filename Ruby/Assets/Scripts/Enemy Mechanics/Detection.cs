@@ -72,40 +72,42 @@ public class Detection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (move.getSee().Equals(true) || health.getTookDamage().Equals(true)) // Run if in radius or if taking damage from the player
+        if (GameObject.Find("Ruby") != null || GameObject.Find("Trevor") != null)
         {
-            aggroTimer.StartAggro(); // Start chasing the player
-            move.setSee(false); // reset these boolean values
-            health.setTookDamage(false);
-        }
-
-        if (aggroTimer.isAggro) // If the enemy is currently targeting Ruby
-        {
-
-            if (isBoss) // If the enemy is the boss enemy
+            if (move.getSee().Equals(true) || health.getTookDamage().Equals(true)) // Run if in radius or if taking damage from the player
             {
-                if (!enemyAttack.isAttacking()) // As long as it isn't already attacking
+                aggroTimer.StartAggro(); // Start chasing the player
+                move.setSee(false); // reset these boolean values
+                health.setTookDamage(false);
+            }
+
+            if (aggroTimer.isAggro) // If the enemy is currently targeting Ruby
+            {
+
+                if (isBoss) // If the enemy is the boss enemy
                 {
-                    StartCoroutine(enemyAttack.ChargeAttack()); // Start charge attack
+                    if (!enemyAttack.isAttacking()) // As long as it isn't already attacking
+                    {
+                        StartCoroutine(enemyAttack.ChargeAttack()); // Start charge attack
+                    }
+                }
+                else
+                {
+                    if (!moving)
+                    {
+                        move.MoveTowardsPlayer(); // Move towards Ruby
+                        moving = true;
+                        patrol.patrolVelocity = 0f;
+                    }
                 }
             }
             else
             {
-                if (!moving)
-                {
-                    move.MoveTowardsPlayer(); // Move towards Ruby
-                    moving = true;
-                    patrol.patrolVelocity = 0f;
-                }
+                moving = false;
+                patrol.PatrolPoints(); // Otherwise, continue to patrol points
+                patrol.patrolVelocity = 3f;
             }
+            anim.SetBool("Walking", (!rb.velocity.Equals(Vector3.zero))); // Tell the animator if the enemy is moving to set the appropriate sprites
         }
-        else
-        {
-            moving = false;
-            patrol.PatrolPoints(); // Otherwise, continue to patrol points
-            patrol.patrolVelocity = 3f;
-        }
-        anim.SetBool("Walking", (!rb.velocity.Equals(Vector3.zero))); // Tell the animator if the enemy is moving to set the appropriate sprites
-
     }
 }

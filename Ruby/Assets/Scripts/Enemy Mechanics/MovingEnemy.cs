@@ -80,7 +80,7 @@ public class MovingEnemy : MonoBehaviour
 
     void UpdatePath()
     {
-        if (seeker.IsDone() && aggroTimer.isAggro)
+        if (seeker.IsDone() && aggroTimer.isAggro && (GameObject.Find("Ruby") != null || GameObject.Find("Trevor") != null))
         {
             // Offset position to center of seeker
             Vector3 seekerOrigin = transform.position;
@@ -114,46 +114,45 @@ public class MovingEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveX = rb.velocity.x;
-        float moveY = rb.velocity.y;
-        float facingAngle = Mathf.Atan2(moveY, moveX) * Mathf.Rad2Deg - 90f; // Sets the angle the enemy is facing in degrees
-        anim.SetFloat("Facing", facingAngle); // Tell the animator which way the enemy is facing to set the appropriate sprites
-
-        // A*
-        // Offset position to center of seeker
-        Vector2 seekerOrigin = transform.position;
-        seekerOrigin.x = seekerOrigin.x + seekerOffsetX; // apply offsets
-        seekerOrigin.y = seekerOrigin.y + seekerOffsetY;
-
-        if (path == null)
+        if (GameObject.Find("Ruby") != null || GameObject.Find("Trevor") != null)
         {
-            return;
+            float moveX = rb.velocity.x;
+            float moveY = rb.velocity.y;
+            float facingAngle = Mathf.Atan2(moveY, moveX) * Mathf.Rad2Deg - 90f; // Sets the angle the enemy is facing in degrees
+            anim.SetFloat("Facing", facingAngle); // Tell the animator which way the enemy is facing to set the appropriate sprites
+
+            // A*
+            // Offset position to center of seeker
+            Vector2 seekerOrigin = transform.position;
+            seekerOrigin.x = seekerOrigin.x + seekerOffsetX; // apply offsets
+            seekerOrigin.y = seekerOrigin.y + seekerOffsetY;
+
+            if (path == null)
+            {
+                return;
+            }
+
+            if (currentWaypoint >= path.vectorPath.Count)
+            {
+                reachedEndOfPath = true;
+                return;
+            }
+            else
+            {
+                reachedEndOfPath = false;
+            }
+
+            Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - seekerOrigin).normalized;
+            Vector2 force = direction * moveVelocity * Time.deltaTime; // Multiplied by time to keep speed normal regardless of framerate
+
+            rb.AddForce(force);
+
+            float distance = Vector2.Distance(seekerOrigin, path.vectorPath[currentWaypoint]);
+
+            if (distance < nextWaypointDistance)
+            {
+                currentWaypoint++;
+            }
         }
-
-        if (currentWaypoint >= path.vectorPath.Count)
-        {
-            reachedEndOfPath = true;
-            return;
-        }
-        else
-        {
-            reachedEndOfPath = false;
-        }
-        
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - seekerOrigin).normalized;
-        Vector2 force = direction * moveVelocity * Time.deltaTime; // Multiplied by time to keep speed normal regardless of framerate
-
-        rb.AddForce(force);
-
-        float distance = Vector2.Distance(seekerOrigin, path.vectorPath[currentWaypoint]);
-
-        if (distance < nextWaypointDistance)
-        {
-            currentWaypoint++;
-        }
-
-        /*
-         * look into moving this to a controlled routine
-         */
     }
 }
