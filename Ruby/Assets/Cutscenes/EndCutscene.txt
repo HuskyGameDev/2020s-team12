@@ -1,5 +1,5 @@
-Portrait: ""
-Speaker: ""
+Portrait: "trevor"
+Speaker: "Trevor"
 Dialogue: ""
 
 Portrait: ""

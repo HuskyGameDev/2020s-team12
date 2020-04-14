@@ -46,7 +46,9 @@ Portrait: "bully normal"
 Speaker: "Noelle"
 Dialogue: "God. Even after all this long you still couldn't get the courage to do it yourself, huh?"
 
-Dialogue: "I had to take you here. I even made you come deeper into this by making you think you'd be some kind of 'hero'."
+Dialogue: "I had to take you here. You just blindly followed me."
+
+Dialogue: "I led you deeper into this hell by making you think you'd be some kind of 'hero'."
 
 Dialogue: "Pathetic. What are you gonna do now without Trevor? Do you think you're strong now?"
 
@@ -64,16 +66,17 @@ Dialogue: "(Huh?)"
 
 Portrait: "trevor anger"
 Speaker: "Trevor"
-Dialogue: "Why couldn't you ever learn to fight your own damn battles. Always dragging me in to help you."
+Dialogue: "Why couldn't you ever learn to fight your own damn battles."
+Dialogue: "Always dragging me in to help you."
 
-Portrait: ""
-Speaker: ""
-Dialogue: ""
+Portrait: "trevor anger"
+Speaker: "Trevor"
+Dialogue: "Well now, it's your turn to do it yourself."
 
-Portrait: ""
-Speaker: ""
-Dialogue: ""
+Portrait: "ruby worry"
+Speaker: "Ruby"
+Dialogue: "(What...)"
 
-Portrait: ""
-Speaker: ""
-Dialogue: ""
+Portrait: "ruby fear"
+Speaker: "Ruby"
+Dialogue: "(What is that?)"
