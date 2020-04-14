@@ -46,7 +46,7 @@ Portrait: "bully normal"
 Speaker: "Noelle"
 Dialogue: "God. Even after all this long you still couldn't get the courage to do it yourself, huh?"
 
-Dialogue: "I had to take you here. You just blindly followed me."
+Dialogue: "I took you here. You just blindly followed me."
 
 Dialogue: "I led you deeper into this hell by making you think you'd be some kind of 'hero'."
 
