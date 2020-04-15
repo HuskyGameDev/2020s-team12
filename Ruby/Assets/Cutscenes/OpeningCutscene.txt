@@ -163,7 +163,7 @@ Dialogue: "Someone could be out there."
 
 Portrait: "trevor disgust"
 Speaker: "Trevor"
-Dialogue: "Other than the fact that everythings disgusting and completely wrong. We seem safe."
+Dialogue: "Everything seems the same, but I feel like somethings off. We seem safe right now."
 
 Portrait: "ruby fear3"
 Speaker: "Ruby"

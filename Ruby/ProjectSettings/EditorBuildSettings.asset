@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MapA.unity
     guid: c026809a161bf9541b4926075eccf7ff
   - enabled: 1
+    path: Assets/Scenes/Trevor Cutscene.unity
+    guid: 0aa0a94870429f34c8fe4b083ae1e375
+  - enabled: 1
     path: Assets/Scenes/Boss Cutscene.unity
     guid: 5dfebb2a7a6135c4895f881f86d6bd8c
   - enabled: 1
