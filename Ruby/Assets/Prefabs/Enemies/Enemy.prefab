@@ -127,6 +127,7 @@ MonoBehaviour:
   nextWaypointDistance: 0.3
   seekerOffsetX: 0.55
   seekerOffsetY: 1
+  useCoolMovement: 1
 --- !u!114 &9185965233560181337
 MonoBehaviour:
   m_ObjectHideFlags: 0

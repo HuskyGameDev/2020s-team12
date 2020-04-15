@@ -96,7 +96,10 @@ public class Detection : MonoBehaviour
                     if (!moving)
                     {
                         move.MoveTowardsPlayer(); // Move towards Ruby
-                        moving = true;
+                        if (transform.parent.GetComponent<MovingEnemy>().usePathFinding)
+                        {
+                            moving = true;
+                        }
                         patrol.patrolVelocity = 0f;
                     }
                 }
