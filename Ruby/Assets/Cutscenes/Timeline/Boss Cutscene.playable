@@ -496,7 +496,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 1.1499999999999986
     m_PreExtrapolationTime: 16.483333333333327
-    m_DisplayName: Ruby_idleW
+    m_DisplayName: Trevor_idleW
   - m_Version: 1
     m_Start: 17.799999999999994
     m_ClipIn: 0
@@ -547,7 +547,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Ruby_walkE
+    m_DisplayName: Trevor_walkE
   - m_Version: 1
     m_Start: 17.66666666666666
     m_ClipIn: 0
@@ -616,7 +616,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0.06666666666666643
     m_PreExtrapolationTime: 0
-    m_DisplayName: Ruby_idleS
+    m_DisplayName: Trevor_idleS
   - m_Version: 1
     m_Start: 17.766666666666662
     m_ClipIn: 0
@@ -667,7 +667,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Ruby_idleE
+    m_DisplayName: Trevor_idleE
   - m_Version: 1
     m_Start: 19.416666666666668
     m_ClipIn: 0
@@ -718,7 +718,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0.016666666666669272
     m_PreExtrapolationTime: 0
-    m_DisplayName: Ruby_idleS
+    m_DisplayName: Trevor_idleS
   - m_Version: 1
     m_Start: 19.36666666666667
     m_ClipIn: 0
@@ -769,7 +769,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0.016666666666662167
     m_PreExtrapolationTime: 0
-    m_DisplayName: Ruby_idleE
+    m_DisplayName: Trevor_idleE
   - m_Version: 1
     m_Start: 19.466666666666672
     m_ClipIn: 0
@@ -838,7 +838,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
     m_PreExtrapolationTime: 0
-    m_DisplayName: Ruby_idleW
+    m_DisplayName: Trevor_idleW
   m_Markers:
     m_Objects: []
   m_InfiniteClipPreExtrapolation: 0
@@ -1038,7 +1038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 75069be7bbfdc94439e3a98df67e2438, type: 2}
+  m_Clip: {fileID: 7400000, guid: 1c6d7c8c3ce2e634d9317119e47a0924, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -1191,7 +1191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: c03df1a7a7c98aa42b3fcdbf1288ddfe, type: 2}
+  m_Clip: {fileID: 7400000, guid: 86593fb24a8ccd349925aa14b9e06fa4, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset(Clone)(Clone)
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 9cb914b43dbac6144920e276e9fded50, type: 2}
+  m_Clip: {fileID: 7400000, guid: 438299da13b2bf5428cd6eb4535673a3, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -2080,7 +2080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: ae4dc98c69367f945982959a232141cb, type: 2}
+  m_Clip: {fileID: 7400000, guid: f030f1b525abf4e4e821371c39a3a7ce, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -2388,7 +2388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 75069be7bbfdc94439e3a98df67e2438, type: 2}
+  m_Clip: {fileID: 7400000, guid: 79cafd46c978db248ab100247f8eabf1, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -2638,7 +2638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: c03df1a7a7c98aa42b3fcdbf1288ddfe, type: 2}
+  m_Clip: {fileID: 7400000, guid: a65299f5c23b54e4bbf2c20d23427984, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -3513,7 +3513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 9961f0aca4d9e9a43903c24e55a996f4, type: 2}
+  m_Clip: {fileID: 7400000, guid: 5c40645ff6e56e649b11e74117f63ae8, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -3559,7 +3559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 9cb914b43dbac6144920e276e9fded50, type: 2}
+  m_Clip: {fileID: 7400000, guid: 78c69eefea6ea3a46990ced27296735b, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -5756,7 +5756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 9cb914b43dbac6144920e276e9fded50, type: 2}
+  m_Clip: {fileID: 7400000, guid: 438299da13b2bf5428cd6eb4535673a3, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -9321,7 +9321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 9cb914b43dbac6144920e276e9fded50, type: 2}
+  m_Clip: {fileID: 7400000, guid: 78c69eefea6ea3a46990ced27296735b, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -9343,7 +9343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 9cb914b43dbac6144920e276e9fded50, type: 2}
+  m_Clip: {fileID: 7400000, guid: 78c69eefea6ea3a46990ced27296735b, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -9515,7 +9515,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
     m_PreExtrapolationTime: 15.583333333333332
-    m_DisplayName: Ruby_idleW
+    m_DisplayName: Noelle_idleW
   m_Markers:
     m_Objects: []
   m_InfiniteClipPreExtrapolation: 0
@@ -9572,7 +9572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 75069be7bbfdc94439e3a98df67e2438, type: 2}
+  m_Clip: {fileID: 7400000, guid: 79cafd46c978db248ab100247f8eabf1, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -9818,7 +9818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 9cb914b43dbac6144920e276e9fded50, type: 2}
+  m_Clip: {fileID: 7400000, guid: 438299da13b2bf5428cd6eb4535673a3, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -10551,7 +10551,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
     m_PreExtrapolationTime: 20.21666666666667
-    m_DisplayName: Ruby_idleW
+    m_DisplayName: Trevor_idleW
   m_Markers:
     m_Objects: []
   m_InfiniteClipPreExtrapolation: 1
@@ -10620,7 +10620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 75069be7bbfdc94439e3a98df67e2438, type: 2}
+  m_Clip: {fileID: 7400000, guid: 1c6d7c8c3ce2e634d9317119e47a0924, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -10869,7 +10869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 9961f0aca4d9e9a43903c24e55a996f4, type: 2}
+  m_Clip: {fileID: 7400000, guid: 97226f307d5086c4e98b459eaed1b052, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -11405,7 +11405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 4e4c7fea89f1cdc4db4a03e4445f2f2a, type: 2}
+  m_Clip: {fileID: 7400000, guid: 8f3988efacc64f745866c33b95741aa6, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -12022,7 +12022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 9961f0aca4d9e9a43903c24e55a996f4, type: 2}
+  m_Clip: {fileID: 7400000, guid: 97226f307d5086c4e98b459eaed1b052, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -12232,7 +12232,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 2.0166666666666666
     m_PreExtrapolationTime: 1.1833333333333333
-    m_DisplayName: Ruby_idleS
+    m_DisplayName: Noelle_idleS
   - m_Version: 1
     m_Start: 3.2333333333333334
     m_ClipIn: 0
@@ -12301,7 +12301,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Ruby_walkS
+    m_DisplayName: Noelle_walkS
   - m_Version: 1
     m_Start: 3.8666666666666667
     m_ClipIn: 0
@@ -12370,7 +12370,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Ruby_walkW
+    m_DisplayName: Noelle_walkW
   - m_Version: 1
     m_Start: 4.866666666666667
     m_ClipIn: 0
@@ -12439,7 +12439,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 1.9333333333333327
     m_PreExtrapolationTime: 0
-    m_DisplayName: Ruby_idleW
+    m_DisplayName: Noelle_idleW
   - m_Version: 1
     m_Start: 6.833333333333333
     m_ClipIn: 0
@@ -12508,7 +12508,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0.11666688919067436
     m_PreExtrapolationTime: 0
-    m_DisplayName: Ruby_idleS
+    m_DisplayName: Noelle_idleS
   - m_Version: 1
     m_Start: 7.016666889190674
     m_ClipIn: 0
@@ -12577,7 +12577,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Ruby_walkE
+    m_DisplayName: Noelle_walkE
   - m_Version: 1
     m_Start: 6.983333555857341
     m_ClipIn: 0
@@ -12646,7 +12646,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Ruby_idleE
+    m_DisplayName: Noelle_idleE
   - m_Version: 1
     m_Start: 7.966666666666667
     m_ClipIn: 0
@@ -12715,7 +12715,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
     m_PreExtrapolationTime: 0
-    m_DisplayName: Ruby_idleW
+    m_DisplayName: Noelle_idleW
   m_Markers:
     m_Objects: []
   m_InfiniteClipPreExtrapolation: 0
