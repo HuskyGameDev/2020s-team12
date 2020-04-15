@@ -15,9 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Opening Cutscene.unity
     guid: 12d436e0c9d1f0546a720bdce3c2e3a6
   - enabled: 1
-    path: Assets/Scenes/Playtest.unity
-    guid: 59189747d8085904db50e9b2ac69a97c
-  - enabled: 1
     path: Assets/Scenes/MapA.unity
     guid: c026809a161bf9541b4926075eccf7ff
+  - enabled: 1
+    path: Assets/Scenes/Boss Cutscene.unity
+    guid: 5dfebb2a7a6135c4895f881f86d6bd8c
+  - enabled: 1
+    path: Assets/Scenes/Final Cutscene.unity
+    guid: 0d3fc97a935805243b4e08fb1bbba238
+  - enabled: 1
+    path: Assets/Scenes/The End.unity
+    guid: 2c46dd9b3f7895b46a283bf58e1c9de7
   m_configObjects: {}
