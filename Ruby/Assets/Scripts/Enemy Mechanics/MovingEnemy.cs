@@ -24,6 +24,7 @@ public class MovingEnemy : MonoBehaviour
     public float nextWaypointDistance = .1f;
     public float seekerOffsetX = 0.55f;
     public float seekerOffsetY = 1f;
+    public bool usePathFinding = true;
 
     // Start is called before the first frame update
     void Start()
@@ -56,21 +57,25 @@ public class MovingEnemy : MonoBehaviour
     {
         if (player != null && canMove) // If the player doesn't exist an error will occur, so the player must exist
         {
-            /*
-            float moveX = player.position.x - transform.position.x; // Checks the players coordinates on the x plane in comparison to the enemies
-            float moveY = player.position.y - transform.position.y; // Checks the players coordinates on the y plane in comparison to the enemies
+            if (!usePathFinding)
+            {
+                float moveX = player.position.x - transform.position.x; // Checks the players coordinates on the x plane in comparison to the enemies
+                float moveY = player.position.y - transform.position.y; // Checks the players coordinates on the y plane in comparison to the enemies
 
-            movement = new Vector3(moveX, moveY, 0f); // Creates a movement vector of the difference between the player and the enemy
+                movement = new Vector3(moveX, moveY, 0f); // Creates a movement vector of the difference between the player and the enemy
 
-            movement.Normalize(); // Normalizes so it's not faster on diagonals
+                movement.Normalize(); // Normalizes so it's not faster on diagonals
 
-            rb.velocity = (movement * moveVelocity); // Moves the enemy towards the player
+                rb.velocity = (movement * moveVelocity); // Moves the enemy towards the player
 
-            float facingAngle = Mathf.Atan2(moveY, moveX) * Mathf.Rad2Deg - 90f; // Sets the angle the enemy is facing in degrees
-            anim.SetFloat("Facing", facingAngle); // Tell the animator which way the enemy is facing to set the appropriate sprites
-            */
-            
-            InvokeRepeating("UpdatePath", .1f, .1f);
+                float facingAngle = Mathf.Atan2(moveY, moveX) * Mathf.Rad2Deg - 90f; // Sets the angle the enemy is facing in degrees
+                anim.SetFloat("Facing", facingAngle); // Tell the animator which way the enemy is facing to set the appropriate sprites
+            }
+            else
+            {
+                InvokeRepeating("UpdatePath", .1f, .1f);
+            }
+
         }
         else
             {
@@ -80,7 +85,7 @@ public class MovingEnemy : MonoBehaviour
 
     void UpdatePath()
     {
-        if (seeker.IsDone() && aggroTimer.isAggro && (GameObject.Find("Ruby") != null || GameObject.Find("Trevor") != null))
+        if (seeker.IsDone() && aggroTimer.isAggro && (GameObject.Find("Ruby") != null || GameObject.Find("Trevor") != null) && usePathFinding)
         {
             // Offset position to center of seeker
             Vector3 seekerOrigin = transform.position;
@@ -114,7 +119,7 @@ public class MovingEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.Find("Ruby") != null || GameObject.Find("Trevor") != null)
+        if ((GameObject.Find("Ruby") != null || GameObject.Find("Trevor") != null) && usePathFinding)
         {
             float moveX = rb.velocity.x;
             float moveY = rb.velocity.y;

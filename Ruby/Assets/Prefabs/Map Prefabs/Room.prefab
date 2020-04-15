@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 6699189291679490799}
   - component: {fileID: 5468292233551626191}
   - component: {fileID: 1571104309186920887}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap (ShootOver)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
