@@ -50,10 +50,53 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+    playOnAwake: 0
+    audioGroup: {fileID: 24300002, guid: 081042bd8b2c7bd4b9345f68c3f409e8, type: 2}
   - Name: Release
     clip: {fileID: 8300000, guid: 40803f12c13d9164ca3030d98a2b9a25, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 0
-  audioGroup: {fileID: 24300002, guid: 081042bd8b2c7bd4b9345f68c3f409e8, type: 2}
+    playOnAwake: 0
+    audioGroup: {fileID: 24300002, guid: 081042bd8b2c7bd4b9345f68c3f409e8, type: 2}
+  - Name: PlayerHurt
+    clip: {fileID: 8300000, guid: 2d9c7e6856a557f47badeba348d629ae, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    playOnAwake: 0
+    audioGroup: {fileID: 0}
+  - Name: MonsterGrowl
+    clip: {fileID: 8300000, guid: b65cc9c181ff8dc49ae7174e20ba076e, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    playOnAwake: 0
+    audioGroup: {fileID: 24300002, guid: 081042bd8b2c7bd4b9345f68c3f409e8, type: 2}
+  - Name: Slimey
+    clip: {fileID: 8300000, guid: 71df3aa154d014c4cb8784955a5958ee, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    playOnAwake: 0
+    audioGroup: {fileID: 24300002, guid: 081042bd8b2c7bd4b9345f68c3f409e8, type: 2}
+  - Name: SnakeHiss1
+    clip: {fileID: 8300000, guid: 44c3e4a3b3a4df14fab82a08b345fbd3, type: 3}
+    volume: 0.69
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    playOnAwake: 0
+    audioGroup: {fileID: 24300002, guid: 081042bd8b2c7bd4b9345f68c3f409e8, type: 2}
+  - Name: SnakeHiss2
+    clip: {fileID: 8300000, guid: 03be5420c0a584d48b80ebfa54b2cdff, type: 3}
+    volume: 0.69
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    playOnAwake: 0
+    audioGroup: {fileID: 24300002, guid: 081042bd8b2c7bd4b9345f68c3f409e8, type: 2}

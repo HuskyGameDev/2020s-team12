@@ -117,10 +117,13 @@ public class Health : MonoBehaviour
             if (currentHealth - DMG < 0)
             {
                 currentHealth = 0;
+
+                FindObjectOfType<AudioManager>().Play("PlayerDeath");
             }
             else
             {
                 currentHealth -= DMG; // Takes the damage amount from the health
+                FindObjectOfType<AudioManager>().Play("PlayerHurt");
             }
             Mathf.Clamp(currentHealth, 0, maxHealth); // Prevents the health from dropping into negative values by placing bounds
             damageFlash(); // Flash red (or whatever) upon taking damage

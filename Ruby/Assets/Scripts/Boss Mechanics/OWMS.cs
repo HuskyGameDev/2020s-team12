@@ -36,6 +36,15 @@ public class OWMS : MonoBehaviour // I apologize for the naming scheme, it was t
     {
         attacking = true; // Is now attacking
 
+        if (Random.value > .5f)
+        {
+            FindObjectOfType<AudioManager>().Play("SnakeHiss1");
+        }
+        else
+        {
+            FindObjectOfType<AudioManager>().Play("SnakeHiss2");
+        }
+
         bool attackRandomizer = (Random.value > .5f); // Randomizer variable (50/50) Determines whether or not the enemy teleports before charging
 
         if (attackRandomizer) // Teleport attack

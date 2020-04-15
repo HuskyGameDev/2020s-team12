@@ -422,18 +422,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8794867674439742251, guid: 3e0125fecff7fd54fb141b0e647f5f7d,
-        type: 3}
-      propertyPath: sounds.Array.data[0].audioGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 081042bd8b2c7bd4b9345f68c3f409e8,
-        type: 2}
-    - target: {fileID: 8794867674439742251, guid: 3e0125fecff7fd54fb141b0e647f5f7d,
-        type: 3}
-      propertyPath: sounds.Array.data[1].audioGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 081042bd8b2c7bd4b9345f68c3f409e8,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e0125fecff7fd54fb141b0e647f5f7d, type: 3}
 --- !u!114 &153404645 stripped
@@ -52637,22 +52625,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 593822639}
     m_Modifications:
-    - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
-      propertyPath: relativePoint1Y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
-      propertyPath: relativePoint2Y
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
-      propertyPath: atPointWaitTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
-      propertyPath: onePointPatrol
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004588, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: m_Name
