@@ -44,7 +44,7 @@ Dialogue: "(That doesn't make any sense?)"
 
 Portrait: "bully normal"
 Speaker: "Noelle"
-Dialogue: "God. Even after all this long you still couldn't get the courage to do it yourself, huh?"
+Dialogue: "God. Even after all this time you still couldn't get the courage to do it yourself, huh?"
 
 Dialogue: "I took you here. You just blindly followed me."
 
