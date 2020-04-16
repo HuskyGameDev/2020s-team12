@@ -30,7 +30,7 @@ Portrait: "trevor kind3"
 Speaker: "Trevor"
 Dialogue: "My time is up. You can and will do this."
 
-Portrait: "ruby"
+Portrait: "ruby foreboding"
 Speaker: "Ruby"
 Dialogue: "*sobs*"
 
@@ -42,7 +42,7 @@ Portrait: "janitor normal"
 Speaker: "Janitor"
 Dialogue: "Hey! What are you doing in here?"
 
-Portrait: "ruby"
+Portrait: "ruby foreboding"
 Speaker: "Ruby"
 Dialogue: "*hic* *hic*"
 
@@ -50,15 +50,15 @@ Portrait: "janitor normal"
 Speaker: "Janitor"
 Dialogue: "You speak English? Answer me."
 
-Portrait: "ruby"
+Portrait: "ruby foreboding"
 Speaker: "Ruby"
-Dialogue: "*shakes head*"
+Dialogue: "*nods*"
 
 Portrait: "janitor normal"
 Speaker: "Janitor"
 Dialogue: "Let's go. You shouldn't be in here."
 
-Portrait: "ruby"
+Portrait: "ruby foreboding"
 Speaker: "Ruby"
 Dialogue: "(Trevor...)"
 
@@ -66,6 +66,6 @@ Portrait: "janitor normal"
 Speaker: "Janitor"
 Dialogue: "We're calling your parents and sending you home."
 
-Portrait: "ruby"
+Portrait: "ruby foreboding"
 Speaker: "Ruby"
 Dialogue: "(Trevor... Why did you leave me?)"
