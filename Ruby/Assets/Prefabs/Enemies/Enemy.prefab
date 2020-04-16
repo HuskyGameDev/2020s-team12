@@ -127,7 +127,7 @@ MonoBehaviour:
   nextWaypointDistance: 0.3
   seekerOffsetX: 0.55
   seekerOffsetY: 1
-  useCoolMovement: 1
+  usePathFinding: 1
 --- !u!114 &9185965233560181337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.5
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 74088a20095e82a4590501c5d04ba8f9, type: 2}

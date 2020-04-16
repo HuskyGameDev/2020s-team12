@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+    // Update is called once per frame  
     void Update()
     {
         if (canMove)

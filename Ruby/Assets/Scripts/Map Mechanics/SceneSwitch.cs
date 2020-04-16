@@ -17,7 +17,6 @@ public class SceneSwitch : MonoBehaviour
         print(collision.name);
         if (collision.name == player.name)
         {
-            print("it happened!");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

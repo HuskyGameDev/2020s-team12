@@ -57,7 +57,6 @@ public class Shoot : MonoBehaviour
 
             currentFireCooldown = 60 / fireRate; // Set the cooldown to be the inverse of the fireRate in seconds (fireRate is the desired amount of bullets to be able to shot in a 60 frame [1 second] timeframe)
 
-
         }
     }
 
