@@ -32,13 +32,7 @@ public class MovingEnemy : MonoBehaviour
         aggroTimer = transform.GetComponent<AggroTimer>();
         seeker = GetComponent<Seeker>(); // A* seeker
 
-        if (player == null && SceneManager.GetActiveScene().name.Equals("MapA"))
-        {
-            player = GameObject.Find("Trevor").transform; // Sets trevor if MapA Scene
-        }
-        else if (player == null) { 
-            player = GameObject.Find("Ruby").transform; // Sets Ruby
-        }
+        player = GameObject.FindObjectOfType<Movement>().gameObject.transform;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }

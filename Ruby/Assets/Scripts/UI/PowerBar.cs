@@ -16,13 +16,10 @@ public class PowerBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (powerup == null && SceneManager.GetActiveScene().name.Equals("MapA"))
+
+        if (powerup == null)
         {
-            powerup = GameObject.Find("Trevor").GetComponent<ApplyBuff>();
-        }
-        else if (powerup == null)
-        {
-            powerup = GameObject.Find("Ruby").GetComponent<ApplyBuff>(); // Sets Ruby
+            powerup = GameObject.FindObjectOfType<ApplyBuff>();
         }
         bar = transform.Find("Bar"); // Sets Bar Object
 

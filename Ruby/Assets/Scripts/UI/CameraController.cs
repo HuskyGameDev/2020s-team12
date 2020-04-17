@@ -16,14 +16,11 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (player == null && SceneManager.GetActiveScene().name.Equals("MapA"))
+        if (player == null)
         {
-            player = GameObject.Find("Trevor").transform; // Sets Trevor if MapA scene
+            player = GameObject.FindObjectOfType<Movement>().gameObject.transform;
         }
-        else if (player == null)
-        {
-            player = GameObject.Find("Ruby").transform; // Sets Ruby
-        }
+
         anim = GetComponent<Animator>();
     }
 
