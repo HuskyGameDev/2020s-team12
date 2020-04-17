@@ -149,7 +149,7 @@ MonoBehaviour:
   heartPrefab: {fileID: 5349920854609116783, guid: 5982d51380ba9e840940da205ebbe8c2,
     type: 3}
   fireSpeed: 10
-  fireRate: 1.5
+  fireRate: 3
 --- !u!50 &1180911012121003218
 Rigidbody2D:
   serializedVersion: 4

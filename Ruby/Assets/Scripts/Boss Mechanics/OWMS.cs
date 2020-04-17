@@ -104,14 +104,6 @@ public class OWMS : MonoBehaviour // I apologize for the naming scheme, it was t
         }
     }
 
-    private void OnDestroy()
-    {
-        if (gameObject.GetComponentInChildren<Detection>().isBoss)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-    }
-
     // Update is called once per frame
     void Update()
     {

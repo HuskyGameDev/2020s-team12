@@ -86,7 +86,6 @@ public class PauseTimeline : MonoBehaviour
 
     void NextLine()
     {
-        print(":3c");
         bool updatedDialogue = false;
 
         do
