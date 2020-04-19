@@ -132,9 +132,9 @@ GameObject:
   - component: {fileID: 185678860}
   - component: {fileID: 185678859}
   - component: {fileID: 185678858}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap (Collidable)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1994,7 +1994,7 @@ PrefabInstance:
     - target: {fileID: 532671370764714297, guid: a95be364734f4ec42b403fa7d4dd5dec,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 532671370764714297, guid: a95be364734f4ec42b403fa7d4dd5dec,
         type: 3}
@@ -2286,7 +2286,7 @@ Transform:
   - {fileID: 1856284710}
   - {fileID: 185678857}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508103007
 GameObject:
@@ -2404,7 +2404,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1520652105
 PrefabInstance:
@@ -2421,7 +2421,7 @@ PrefabInstance:
     - target: {fileID: 1180911012121003228, guid: 053a2ba25f810c04ba4e4818adadf4c1,
         type: 3}
       propertyPath: fireRate
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1180911012121003231, guid: 053a2ba25f810c04ba4e4818adadf4c1,
         type: 3}
@@ -9121,6 +9121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Radius
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967461608623902316, guid: f5f1b1d141d933344914c967fdba2a6a,
+        type: 3}
+      propertyPath: maxHealth
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 6967461608623902320, guid: f5f1b1d141d933344914c967fdba2a6a,
         type: 3}
