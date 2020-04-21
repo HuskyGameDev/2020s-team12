@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - Name: PlayerDeath
-    clip: {fileID: 8300000, guid: a55da1fbe98f9ce4a8af9a3ec7cbfe53, type: 3}
+    clip: {fileID: 8300000, guid: 010888b642da89441983dfd772948bc6, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
@@ -94,6 +94,22 @@ MonoBehaviour:
     audioGroup: {fileID: 24300002, guid: 081042bd8b2c7bd4b9345f68c3f409e8, type: 2}
   - Name: SnakeHiss2
     clip: {fileID: 8300000, guid: 03be5420c0a584d48b80ebfa54b2cdff, type: 3}
+    volume: 0.69
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    playOnAwake: 0
+    audioGroup: {fileID: 24300002, guid: 081042bd8b2c7bd4b9345f68c3f409e8, type: 2}
+  - Name: MenuMusic
+    clip: {fileID: 8300000, guid: afae67241ea7deb4aa4c5215293b6d50, type: 3}
+    volume: 0.316
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+    playOnAwake: 1
+    audioGroup: {fileID: 24300002, guid: 081042bd8b2c7bd4b9345f68c3f409e8, type: 2}
+  - Name: GameplayMusic
+    clip: {fileID: 8300000, guid: 5dd3356d1a484f146aed636454b09016, type: 3}
     volume: 0.69
     pitch: 1
     source: {fileID: 0}

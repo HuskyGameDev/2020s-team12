@@ -40,7 +40,7 @@ public class TrevorShoot : Shoot
         {
             if (shootSound != null)
             {
-                AudioSource.PlayClipAtPoint(shootSound.clip, firePoint.position);
+                FindObjectOfType<AudioManager>().Play("Release");
             }
             GameObject heart = Instantiate(heartPrefab, firePoint.position, bulletRotation); // Instantiates a heart to fire from the firepoint to the rotation
 

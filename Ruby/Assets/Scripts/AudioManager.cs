@@ -36,7 +36,8 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        Play("Theme");
+        Play("GameplayMusic");
+        Play("MenuMusic");
 
     }
 
