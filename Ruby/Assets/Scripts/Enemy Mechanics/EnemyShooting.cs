@@ -10,6 +10,7 @@ public class EnemyShooting : MonoBehaviour
     public GameObject projectilePrefab;
 
     private GameObject  player;
+    private Animator anim;
     public MovingEnemy  movingEnemy;
 
     private AggroTimer aggroTimer;
@@ -19,6 +20,7 @@ public class EnemyShooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         movingEnemy = GetComponent<MovingEnemy>();
         player = GameObject.FindWithTag("Player");
         aggroTimer = GetComponent<AggroTimer>();
@@ -63,6 +65,7 @@ public class EnemyShooting : MonoBehaviour
             // if enemy sees player and is within firerate
             if (aggroTimer.isAggro && !firecontrol)
             {
+                anim.SetBool("Shooting", true); // Tell the animator if the enemy is shooting to set the appropriate sprites
                 startShooting();
                 firecontrol = true;
             }
@@ -70,6 +73,7 @@ public class EnemyShooting : MonoBehaviour
             // if the enemy is no longer antagonized, turn off firecontrol
             if (!aggroTimer.isAggro)
             {
+                anim.SetBool("Shooting", false); // Tell the animator if the enemy is shooting to set the appropriate sprites
                 firecontrol = false;
                 //StopCoroutine(Shoot());
             }

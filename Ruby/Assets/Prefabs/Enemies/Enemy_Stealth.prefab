@@ -21,17 +21,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 510383863, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: aea14012c936bca46a8c0ba784f9f51b, type: 2}
     - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
       propertyPath: patrolVelocity
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
-      propertyPath: relativePoint1Y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
-      propertyPath: onePointPatrol
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 587397540, guid: e8c302960853e3741ae7f011aff30b63, type: 3}
       propertyPath: atPointWaitTime
@@ -48,28 +44,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004589, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
-      propertyPath: m_Color.r
-      value: 0.16981131
-      objectReference: {fileID: 0}
-    - target: {fileID: 6225342447639004589, guid: e8c302960853e3741ae7f011aff30b63,
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 771578228220577453, guid: ff2387dbc6d37a94da1bfbc36a3a1e3c,
         type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6225342447639004589, guid: e8c302960853e3741ae7f011aff30b63,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.12307966
-      objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004590, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.78231025
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004590, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -6.818349
       objectReference: {fileID: 0}
     - target: {fileID: 6225342447639004590, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
@@ -126,11 +113,6 @@ PrefabInstance:
       propertyPath: moveVelocity
       value: 900
       objectReference: {fileID: 0}
-    - target: {fileID: 6225342447639004594, guid: e8c302960853e3741ae7f011aff30b63,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 74088a20095e82a4590501c5d04ba8f9, type: 2}
     - target: {fileID: 6225342447639004594, guid: e8c302960853e3741ae7f011aff30b63,
         type: 3}
       propertyPath: m_LinearDrag
