@@ -45,7 +45,7 @@ public class Health : MonoBehaviour
         defaultColor = spriteRenderer.color;
     }
 
-    void OnTriggerStay2D(Collider2D collision) // This is checking for collision
+    void OnTriggerEnter2D(Collider2D collision) // This is checking for collision
     {
         if (invincibilityTimeRemaining <= 0)
         {
